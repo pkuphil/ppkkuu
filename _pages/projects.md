@@ -44,9 +44,11 @@ nav_order: 3
     background: var(--paper);
   }
 
-  /* 去掉 list-group-item 默认白底块 */
+  /* 去掉 list-group-item 默认白底块 + 强制撑满整行宽度（防止右侧日期无法贴边） */
   .list-group-item,
   .list-group-flush > .list-group-item{
+    display: block !important;
+    width: 100% !important;
     background: transparent !important;
   }
 
@@ -64,16 +66,16 @@ nav_order: 3
     letter-spacing: .1px;
   }
 
-  /* 每条 venue：左（名称+tags + 地点） | 右（日期tag） */
+  /* 用 grid 保证右侧日期永远贴紧右边且所有条目对齐 */
   .talk-item{
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr 9.5rem; /* 右侧日期列固定宽度，统一对齐 */
+    column-gap: 1rem;
+    align-items: start;
   }
 
-  /* 左侧主体占满，右侧日期用 margin-left:auto 顶到最右 */
   .talk-main{
-    flex: 1 1 auto;
     min-width: 0;
   }
 
@@ -99,15 +101,14 @@ nav_order: 3
     justify-content: flex-start;
   }
 
-  /* 右侧日期：固定最右、右对齐；给最小宽度让各条目更整齐 */
+  /* 右侧日期：贴紧最右 + 右对齐 */
   .talk-right{
-    margin-left: auto;
-    min-width: 8.5rem;
+    width: 9.5rem;
+    justify-self: end;
     display: flex;
     justify-content: flex-end;
     text-align: right;
     padding-top: .05rem;
-    flex: 0 0 auto;
   }
 
   /* 统一 tag 视觉 */
@@ -131,6 +132,20 @@ nav_order: 3
   /* list-group 边线更柔和 */
   .list-group-item{
     border-color: rgba(232, 226, 217, .75) !important;
+  }
+
+  /* 小屏适配：日期换到下一行（不想要可删） */
+  @media (max-width: 520px){
+    .talk-item{
+      grid-template-columns: 1fr;
+      row-gap: .35rem;
+    }
+    .talk-right{
+      width: auto;
+      justify-self: start;
+      justify-content: flex-start;
+      text-align: left;
+    }
   }
 </style>
 
