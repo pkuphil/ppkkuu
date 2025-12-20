@@ -155,6 +155,38 @@ nav_order: 3
   <div class="card talk-card shadow-sm mb-4">
     <div class="card-body">
       <div class="talk-header">
+        <h2 class="h5 talk-title">“New Object Theory and Illusion”</h2>
+      </div>
+
+      <div class="list-group list-group-flush mt-3">
+        <div class="list-group-item px-0">
+          <div class="talk-item">
+            <div class="talk-main">
+              <div class="talk-venue-line">
+                <div class="fw-semibold">Eastern APA</div>
+                <div class="talk-tags talk-tags--inline">
+                  <span class="tag tag--status">Forthcoming</span>
+                  <span class="tag tag--type">Colloquium</span>
+                  <span class="tag tag--review">paper peer-reviewed</span>
+                </div>
+              </div>
+              <div class="text-muted small">Baltimore, USA</div>
+            </div>
+
+            <div class="talk-right">
+              <span class="tag tag--date">Jan 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+   <!-- Talk 2 -->
+  <div class="card talk-card shadow-sm mb-4">
+    <div class="card-body">
+      <div class="talk-header">
         <h2 class="h5 talk-title">“Mediated Direct Realism”</h2>
       </div>
 
@@ -179,38 +211,6 @@ nav_order: 3
     </div>
   </div>
 
-  <!-- Talk 2 -->
-  <div class="card talk-card shadow-sm mb-4">
-    <div class="card-body">
-      <div class="talk-header">
-        <h2 class="h5 talk-title">“New Object Theory and Illusion”</h2>
-      </div>
-
-      <div class="list-group list-group-flush mt-3">
-        <div class="list-group-item px-0">
-          <div class="talk-item">
-            <div class="talk-main">
-              <div class="talk-venue-line">
-                <div class="fw-semibold">Eastern APA</div>
-                <div class="talk-tags talk-tags--inline">
-                  <span class="tag tag--status">Forthcoming</span>
-                  <span class="tag tag--type">Colloquium</span>
-                  <span class="tag tag--review">peer-reviewed</span>
-                </div>
-              </div>
-              <div class="text-muted small">Baltimore, USA</div>
-            </div>
-
-            <div class="talk-right">
-              <span class="tag tag--date">Jan 2026</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
   <!-- Talk 3 -->
   <div class="card talk-card shadow-sm mb-4">
     <div class="card-body">
@@ -227,7 +227,7 @@ nav_order: 3
                 <div class="fw-semibold">Pacific APA</div>
                 <div class="talk-tags talk-tags--inline">
                   <span class="tag tag--type">Colloquium</span>
-                  <span class="tag tag--review">peer-reviewed</span>
+                  <span class="tag tag--review">paper peer-reviewed</span>
                 </div>
               </div>
               <div class="text-muted small">San Francisco, USA</div>
@@ -292,7 +292,7 @@ nav_order: 3
                 <div class="fw-semibold">Central APA</div>
                 <div class="talk-tags talk-tags--inline">
                   <span class="tag tag--type">Colloquium</span>
-                  <span class="tag tag--review">peer-reviewed</span>
+                  <span class="tag tag--review">paper peer-reviewed</span>
                 </div>
               </div>
               <div class="text-muted small">Online</div>
@@ -324,7 +324,6 @@ nav_order: 3
                 <div class="fw-semibold">Annual Conference of the Australasian Association of Philosophy</div>
                 <div class="talk-tags talk-tags--inline">
                   <span class="tag tag--type">Colloquium</span>
-                  <span class="tag tag--review">abstract peer-reviewed</span>
                 </div>
               </div>
               <div class="text-muted small">Perth, Australia</div>
