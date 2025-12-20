@@ -3,7 +3,7 @@ layout: page
 title: talks
 permalink: 
 description: Talks and presentations.
-nav: true
+nav: false
 nav_order: 3
 
 # ✅ 同一个 title 可以重复出现；每条 talk 只放一个会议（items 里只有 1 条）
