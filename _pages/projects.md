@@ -23,24 +23,31 @@ talks:
         date: "Dec 2025"
 
   - title: "Do Semantic Properties Involve the Future?"
-    selected: false
+    selected: true
     items:
       - venue: "Pacific APA"
         place: "San Francisco, USA"
         date: "Apr 2025"
+ - title: "Do Semantic Properties Involve the Future?"
+    selected: true
+    items:
       - venue: "Eastern APA"
         place: "New York, USA"
         date: "Jan 2025"
-      - venue: "Talk"
-        place: "Beijing, China"
-        date: "2025"
 
   - title: "Is Rich Phenomenology Fragmented?"
-    selected: false
+    selected: true
     items:
       - venue: "Central APA"
         place: "Online"
         date: "Feb/Mar 2025"
+
+ - title: "Do Semantic Properties Involve the Future?"
+    selected: false
+    items:
+      - venue: "Talk"
+        place: "Beijing, China"
+        date: "2025"
 
   - title: "MCICCR"
     selected: false
