@@ -44,13 +44,13 @@ nav_order: 3
     background: var(--paper);
   }
 
-  /* 关键：去掉 Bootstrap list-group-item 默认白底（你看到的“白块”基本就是它） */
+  /* 去掉 list-group-item 默认白底块 */
   .list-group-item,
   .list-group-flush > .list-group-item{
     background: transparent !important;
   }
 
-  /* 标题行：只保留标题（你要把时间放到每条 venue 右侧，所以这里不再放时间） */
+  /* 标题行 */
   .talk-header{
     display: flex;
     flex-wrap: wrap;
@@ -64,47 +64,50 @@ nav_order: 3
     letter-spacing: .1px;
   }
 
-  /* 每条 venue：左侧（文字 + 标签） | 右侧（日期 tag） */
+  /* 每条 venue：左（名称+tags + 地点） | 右（日期tag） */
   .talk-item{
     display: flex;
-    justify-content: space-between;
     gap: 1rem;
     align-items: flex-start;
   }
-  .talk-item .text-muted{ color: var(--muted) !important; }
 
-  .talk-left{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: .5rem 1rem;
+  /* 左侧主体占满，右侧日期用 margin-left:auto 顶到最右 */
+  .talk-main{
     flex: 1 1 auto;
     min-width: 0;
   }
-  .talk-venue{
-    min-width: 15rem;
+
+  /* 名称 + tags 同一行，tags 紧贴名称右侧 */
+  .talk-venue-line{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .35rem .5rem;
   }
 
+  .talk-item .text-muted{ color: var(--muted) !important; }
+
+  /* tags 紧贴会议名称右侧 */
   .talk-tags{
     display: flex;
     flex-wrap: wrap;
     gap: .35rem;
     align-items: center;
-    padding-top: .05rem;
-  }
-  /* 让标签贴着 venue 信息右侧，而不是被推到整行最右 */
-  .talk-tags--inline{
-    justify-content: flex-start;
     padding-top: 0;
   }
+  .talk-tags--inline{
+    justify-content: flex-start;
+  }
 
+  /* 右侧日期：固定最右、右对齐；给最小宽度让各条目更整齐 */
   .talk-right{
+    margin-left: auto;
+    min-width: 8.5rem;
     display: flex;
-    flex: 0 0 auto;
     justify-content: flex-end;
-    align-items: center;
-    gap: .35rem;
+    text-align: right;
     padding-top: .05rem;
+    flex: 0 0 auto;
   }
 
   /* 统一 tag 视觉 */
@@ -143,12 +146,12 @@ nav_order: 3
       <div class="list-group list-group-flush mt-3">
         <div class="list-group-item px-0">
           <div class="talk-item">
-            <div class="talk-left">
-              <div class="talk-venue">
+            <div class="talk-main">
+              <div class="talk-venue-line">
                 <div class="fw-semibold">PKU Philosophy R&amp;W</div>
-                <div class="text-muted small">Beijing, China</div>
+                <div class="talk-tags talk-tags--inline"></div>
               </div>
-              <div class="talk-tags talk-tags--inline"></div>
+              <div class="text-muted small">Beijing, China</div>
             </div>
 
             <div class="talk-right">
@@ -171,23 +174,21 @@ nav_order: 3
       <div class="list-group list-group-flush mt-3">
         <div class="list-group-item px-0">
           <div class="talk-item">
-
-            <div class="talk-left">
-              <div class="talk-venue">
+            <div class="talk-main">
+              <div class="talk-venue-line">
                 <div class="fw-semibold">Eastern APA</div>
-                <div class="text-muted small">Baltimore, USA</div>
+                <div class="talk-tags talk-tags--inline">
+                  <span class="tag tag--status">Forthcoming</span>
+                  <span class="tag tag--type">Colloquium</span>
+                  <span class="tag tag--review">peer-reviewed</span>
+                </div>
               </div>
-              <div class="talk-tags talk-tags--inline">
-                <span class="tag tag--status">Forthcoming</span>
-                <span class="tag tag--type">Colloquium</span>
-                <span class="tag tag--review">peer-reviewed</span>
-              </div>
+              <div class="text-muted small">Baltimore, USA</div>
             </div>
 
             <div class="talk-right">
               <span class="tag tag--date">Jan 2026</span>
             </div>
-
           </div>
         </div>
       </div>
@@ -206,60 +207,54 @@ nav_order: 3
 
         <div class="list-group-item px-0">
           <div class="talk-item">
-
-            <div class="talk-left">
-              <div class="talk-venue">
+            <div class="talk-main">
+              <div class="talk-venue-line">
                 <div class="fw-semibold">Pacific APA</div>
-                <div class="text-muted small">San Francisco, USA</div>
+                <div class="talk-tags talk-tags--inline">
+                  <span class="tag tag--type">Colloquium</span>
+                  <span class="tag tag--review">peer-reviewed</span>
+                </div>
               </div>
-              <div class="talk-tags talk-tags--inline">
-                <span class="tag tag--type">Colloquium</span>
-                <span class="tag tag--review">peer-reviewed</span>
-              </div>
+              <div class="text-muted small">San Francisco, USA</div>
             </div>
 
             <div class="talk-right">
               <span class="tag tag--date">Apr 2025</span>
             </div>
-
           </div>
         </div>
 
         <div class="list-group-item px-0">
           <div class="talk-item">
-
-            <div class="talk-left">
-              <div class="talk-venue">
+            <div class="talk-main">
+              <div class="talk-venue-line">
                 <div class="fw-semibold">Eastern APA</div>
-                <div class="text-muted small">New York, USA</div>
+                <div class="talk-tags talk-tags--inline">
+                  <span class="tag tag--wip">W.I.P.</span>
+                </div>
               </div>
-              <div class="talk-tags talk-tags--inline">
-                <span class="tag tag--wip">W.I.P.</span>
-              </div>
+              <div class="text-muted small">New York, USA</div>
             </div>
 
             <div class="talk-right">
               <span class="tag tag--date">Jan 2025</span>
             </div>
-
           </div>
         </div>
 
         <div class="list-group-item px-0">
           <div class="talk-item">
-
-            <div class="talk-left">
-              <div class="talk-venue">
+            <div class="talk-main">
+              <div class="talk-venue-line">
                 <div class="fw-semibold">Talk</div>
-                <div class="text-muted small">Beijing, China</div>
+                <div class="talk-tags talk-tags--inline"></div>
               </div>
-              <div class="talk-tags talk-tags--inline"></div>
+              <div class="text-muted small">Beijing, China</div>
             </div>
 
             <div class="talk-right">
               <span class="tag tag--date">2025</span>
             </div>
-
           </div>
         </div>
 
@@ -277,22 +272,20 @@ nav_order: 3
       <div class="list-group list-group-flush mt-3">
         <div class="list-group-item px-0">
           <div class="talk-item">
-
-            <div class="talk-left">
-              <div class="talk-venue">
+            <div class="talk-main">
+              <div class="talk-venue-line">
                 <div class="fw-semibold">Central APA</div>
-                <div class="text-muted small">Online</div>
+                <div class="talk-tags talk-tags--inline">
+                  <span class="tag tag--type">Colloquium</span>
+                  <span class="tag tag--review">peer-reviewed</span>
+                </div>
               </div>
-              <div class="talk-tags talk-tags--inline">
-                <span class="tag tag--type">Colloquium</span>
-                <span class="tag tag--review">peer-reviewed</span>
-              </div>
+              <div class="text-muted small">Online</div>
             </div>
 
             <div class="talk-right">
               <span class="tag tag--date">Feb/Mar 2025</span>
             </div>
-
           </div>
         </div>
       </div>
@@ -311,61 +304,55 @@ nav_order: 3
 
         <div class="list-group-item px-0">
           <div class="talk-item">
-
-            <div class="talk-left">
-              <div class="talk-venue">
+            <div class="talk-main">
+              <div class="talk-venue-line">
                 <div class="fw-semibold">Annual Conference of the Australasian Association of Philosophy</div>
-                <div class="text-muted small">Perth, Australia</div>
+                <div class="talk-tags talk-tags--inline">
+                  <span class="tag tag--type">Colloquium</span>
+                  <span class="tag tag--review">abstract peer-reviewed</span>
+                </div>
               </div>
-              <div class="talk-tags talk-tags--inline">
-                <span class="tag tag--type">Colloquium</span>
-                <span class="tag tag--review">abstract peer-reviewed</span>
-              </div>
+              <div class="text-muted small">Perth, Australia</div>
             </div>
 
             <div class="talk-right">
               <span class="tag tag--date">Jul 2024</span>
             </div>
-
           </div>
         </div>
 
         <div class="list-group-item px-0">
           <div class="talk-item">
-
-            <div class="talk-left">
-              <div class="talk-venue">
+            <div class="talk-main">
+              <div class="talk-venue-line">
                 <div class="fw-semibold">Workshop for Young Scholars in Science and Philosophy</div>
-                <div class="text-muted small">Beijing, China</div>
+                <div class="talk-tags talk-tags--inline">
+                  <span class="tag tag--type">Colloquium</span>
+                  <span class="tag tag--review">paper peer-reviewed</span>
+                </div>
               </div>
-              <div class="talk-tags talk-tags--inline">
-                <span class="tag tag--type">Colloquium</span>
-                <span class="tag tag--review">paper peer-reviewed</span>
-              </div>
+              <div class="text-muted small">Beijing, China</div>
             </div>
 
             <div class="talk-right">
               <span class="tag tag--date">Apr 2024</span>
             </div>
-
           </div>
         </div>
 
         <div class="list-group-item px-0">
           <div class="talk-item">
-
-            <div class="talk-left">
-              <div class="talk-venue">
+            <div class="talk-main">
+              <div class="talk-venue-line">
                 <div class="fw-semibold">PKU Philosophy R&amp;W</div>
-                <div class="text-muted small">Beijing, China</div>
+                <div class="talk-tags talk-tags--inline"></div>
               </div>
-              <div class="talk-tags talk-tags--inline"></div>
+              <div class="text-muted small">Beijing, China</div>
             </div>
 
             <div class="talk-right">
               <span class="tag tag--date">Mar 2024</span>
             </div>
-
           </div>
         </div>
 
