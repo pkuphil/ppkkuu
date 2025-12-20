@@ -21,7 +21,7 @@ I’m advised by <a href="https://phil.pku.edu.cn/szdw/szll/wgzxjys/274743.htm" 
 I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and reading personal biographies. I'm also a fan of the band <a href="https://music.apple.com/us/artist/twenty-one-pilots/349736311?l=zh-Hans-CN" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Twenty One Pilots</a> and Hong Kong singer <a href="https://music.apple.com/us/artist/%E8%AE%B8%E5%86%A0%E6%9D%B0/41642722?l=zh-Hans-CN" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Sam Hui</a>.
 
 <h2>
-  <a href="{{ '/talks/' | relative_url }}" class="text-decoration-none">
+  <a href="{{ '/talks/' | relative_url }}" class="text-reset text-decoration-none">
     talks
   </a>
 </h2>
