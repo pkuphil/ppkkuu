@@ -18,3 +18,18 @@ nav_order: 2
 {% bibliography %}
 
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // 1) 把所有 collapse 内容强制变成 show
+    document.querySelectorAll(".publications .collapse").forEach(el => {
+      el.classList.add("show");
+    });
+
+    // 2) 把所有触发按钮状态同步为“已展开”
+    document.querySelectorAll('.publications [data-bs-toggle="collapse"]').forEach(btn => {
+      btn.classList.remove("collapsed");
+      btn.setAttribute("aria-expanded", "true");
+    });
+  });
+</script>
