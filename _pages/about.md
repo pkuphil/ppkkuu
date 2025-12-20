@@ -52,7 +52,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 <div class="home-talks">
   <h2>
     <a href="{{ '/talks/' | relative_url }}" class="text-reset text-decoration-none">
-      selected talks
+      latest talks
     </a>
   </h2>
 
