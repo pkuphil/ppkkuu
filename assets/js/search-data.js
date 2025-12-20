@@ -35,7 +35,7 @@ ninja.data = [{
               description: "",
               section: "Dropdown",
               handler: () => {
-                window.location.href = "";
+                window.location.href = "https://blog.apaonline.org/2025/03/28/apa-member-interview-zhiwei-yang/";
               },
             },{id: "post-a-post-with-plotly-js",
         
