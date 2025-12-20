@@ -38,6 +38,20 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     color: var(--global-text-color-light, #6b7280) !important;
   }
 
+  /* ✅ latest talks：hover 时出现下划线（兼容主题伪下划线实现） */
+  .home-talks h2 a{
+    text-decoration: none;
+    border-bottom: 0;
+    box-shadow: none;
+  }
+  .home-talks h2 a:hover,
+  .home-talks h2 a:focus{
+    text-decoration: underline;
+    text-underline-offset: .18em;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+
   /* 深色模式下的边线与文字更柔和 */
   @media (prefers-color-scheme: dark){
     .home-talks .list-group-item{
@@ -51,7 +65,8 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 <div class="home-talks">
   <h2>
-    <a href="{{ '/talks/' | relative_url }}" class="text-reset text-decoration-none">
+    <!-- ✅ 去掉 text-decoration-none，让 hover 下划线生效 -->
+    <a href="{{ '/talks/' | relative_url }}" class="text-reset">
       latest talks
     </a>
   </h2>
