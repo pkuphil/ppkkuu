@@ -23,19 +23,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/ppkkuu/talks/";
           },
-        },{id: "dropdown-bookshelf",
-              title: "bookshelf",
+        },{id: "dropdown-cv",
+              title: "CV",
               description: "",
               section: "Dropdown",
               handler: () => {
-                window.location.href = "/ppkkuu/books/";
+                window.location.href = "";
               },
-            },{id: "dropdown-blog",
-              title: "blog",
+            },{id: "dropdown-my-apa-interview",
+              title: "my APA interview",
               description: "",
               section: "Dropdown",
               handler: () => {
-                window.location.href = "/ppkkuu/blog/";
+                window.location.href = "";
               },
             },{id: "post-a-post-with-plotly-js",
         
