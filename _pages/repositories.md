@@ -1,7 +1,7 @@
 ---
 layout: page
 title: talks
-permalink: /talks/
+permalink: 
 description: Talks and presentations.
 nav: true
 nav_order: 3
