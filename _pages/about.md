@@ -44,13 +44,22 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     border-bottom: 0;
     box-shadow: none;
   }
-  .home-talks h2 a:hover,
-  .home-talks h2 a:focus{
-    text-decoration: underline;
-    text-underline-offset: .18em;
-    border-bottom: 0 !important;
-    box-shadow: none !important;
-  }
+  /* ✅ latest talks：下划线不抖动（始终占位，默认透明） */
+.home-talks h2 a{
+  text-decoration: underline;
+  text-decoration-color: transparent;     /* 默认看不见 */
+  text-underline-offset: .18em;
+  text-decoration-thickness: 1px;         /* 可选：固定粗细更稳 */
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+.home-talks h2 a:hover,
+.home-talks h2 a:focus{
+  text-decoration-color: currentColor;    /* hover 才显示 */
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
 
   /* 深色模式下的边线与文字更柔和 */
   @media (prefers-color-scheme: dark){
