@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: <a href='#'>Peking University</a>. 5 Yiheyuan Rd, Haidian District, Beijing 100871, China. allenminesky@gmail.com. Etc.
 
 profile:
   align: right
