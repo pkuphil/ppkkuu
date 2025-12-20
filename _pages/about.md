@@ -22,12 +22,12 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 <h2>
   <a href="{{ '/talks/' | relative_url }}" class="text-reset text-decoration-none">
-    talks
+    latest talks
   </a>
 </h2>
 
 <div class="list-group list-group-flush mt-2 mb-2">
-  {% for t in site.data.talks limit:3 %}
+  {% for t in site.data.talks limit:5 %}
     <div class="list-group-item px-0">
       <div class="d-flex flex-wrap justify-content-between gap-2">
         <div class="fw-semibold">“{{ t.title }}”</div>
