@@ -165,7 +165,6 @@ nav_order: 3
               <div class="talk-venue-line">
                 <div class="fw-semibold">Eastern APA</div>
                 <div class="talk-tags talk-tags--inline">
-                  <span class="tag tag--status">Forthcoming</span>
                   <span class="tag tag--type">Colloquium</span>
                   <span class="tag tag--review">paper peer-reviewed</span>
                 </div>
