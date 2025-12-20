@@ -9,8 +9,8 @@ profile:
   image: prof_pic_color.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>5 Yiheyuan Rd, Haidian District</p>
-    <p>Beijing, China 100871</p>
+    <p></p>
+    <p></p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
