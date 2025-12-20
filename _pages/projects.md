@@ -300,6 +300,54 @@ talks:
   body.theme-dark .talk-card.shadow-sm{
     box-shadow: 0 1px 0 rgba(255,255,255,.04) !important;
   }
+
+  /* ==========================================================
+     ✅ 新增：低调高级（淡雅/近透明背景 + 虚线边框 + 高度收缩）
+     说明：
+     - 想“干脆透明”：把 --card-bg 改成 transparent
+     - 其他内容与布局/宽度不变
+     ========================================================== */
+
+  :root{
+    --card-bg: rgba(251,250,248,.45);  /* 更淡雅；要透明就改 transparent */
+    --card-bd: rgba(232,226,217,.95);  /* 虚线边框颜色 */
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root{
+      --card-bg: rgba(11,18,32,.35);
+      --card-bd: rgba(255,255,255,.18);
+    }
+  }
+
+  html[data-theme="dark"],
+  html.dark,
+  body.dark,
+  body.theme-dark{
+    --card-bg: rgba(11,18,32,.35);
+    --card-bd: rgba(255,255,255,.18);
+  }
+
+  /* 卡片：背景变淡雅/近透明 + 虚线边框 + 更干净的阴影 */
+  .talk-card{
+    background: var(--card-bg) !important;
+    border: 1px dashed var(--card-bd) !important;
+    box-shadow: none !important; /* 低调利索（不改 HTML 的 shadow-sm 类） */
+  }
+
+  /* 收缩每个块的高度（主要来自 padding/间距），宽度不变 */
+  .talk-card .card-body{
+    padding: .9rem 1rem !important;
+  }
+
+  .talk-card .list-group{
+    margin-top: .75rem !important; /* 原 mt-3 偏松，这里收紧 */
+  }
+
+  .talk-card .list-group-item{
+    padding-top: .55rem !important;
+    padding-bottom: .55rem !important;
+  }
 </style>
 
 <div class="container px-0">
