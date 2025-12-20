@@ -20,21 +20,42 @@ Hi! I am Zhiwei. I am a third-year PhD student in the Department of Philosophy a
 I’m advised by <a href="https://phil.pku.edu.cn/szdw/szll/wgzxjys/274743.htm" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Qilin Li</a> at Peking University and, during my visit at MIT, by <a href="http://www.alexbyrne.org" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Alex Byrne</a>.<br><br>
 I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and reading personal biographies. I'm also a fan of the band <a href="https://music.apple.com/us/artist/twenty-one-pilots/349736311?l=zh-Hans-CN" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Twenty One Pilots</a> and Hong Kong singer <a href="https://music.apple.com/us/artist/%E8%AE%B8%E5%86%A0%E6%9D%B0/41642722?l=zh-Hans-CN" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Sam Hui</a>.
 
-<h2>
-  <a href="{{ '/talks/' | relative_url }}" class="text-reset text-decoration-none">
-    latest talks
-  </a>
-</h2>
+<style>
+/* Fix: Bootstrap list-group 白底在暗色模式会很刺眼 */
+.home-talks .list-group,
+.home-talks .list-group-item{
+  background: var(--global-bg-color, transparent) !important;
+}
 
-<div class="list-group list-group-flush mt-2 mb-2">
-  {% for t in site.data.talks limit:5 %}
-    <div class="list-group-item px-0">
-      <div class="d-flex flex-wrap justify-content-between gap-2">
-        <div class="fw-semibold">“{{ t.title }}”</div>
-        <div class="text-muted small">{{ t.date }}</div>
+.home-talks .list-group-item{
+  border-color: var(--global-divider-color, rgba(0,0,0,.08)) !important;
+}
+
+/* muted 字体跟随主题 */
+.home-talks .text-muted{
+  color: var(--global-text-color-light, #6b7280) !important;
+}
+</style>
+
+<div class="home-talks">
+  <h2>
+    <a href="{{ '/talks/' | relative_url }}" class="text-reset text-decoration-none">
+      latest talks
+    </a>
+  </h2>
+
+  <div class="list-group list-group-flush mt-2 mb-2">
+    {% assign talks_page = site.pages | where: "permalink", "/talks/" | first %}
+    {% for talk in talks_page.talks limit:5 %}
+      <div class="list-group-item px-0">
+        <div class="d-flex flex-wrap justify-content-between gap-2">
+          <div class="fw-semibold">“{{ talk.title }}”</div>
+          <div class="text-muted small">{{ talk.items[0].date }}</div>
+        </div>
+        <div class="text-muted small">{{ talk.items[0].venue }} · {{ talk.items[0].place }}</div>
       </div>
-      <div class="text-muted small">{{ t.venue }}</div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
+
 
