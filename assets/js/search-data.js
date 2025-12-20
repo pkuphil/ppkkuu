@@ -28,7 +28,7 @@ ninja.data = [{
           description: "Talks and presentations.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/ppkkuu/talks/";
+            window.location.href = "/ppkkuu/_pages/repositories/";
           },
         },{id: "dropdown-cv",
               title: "CV",
