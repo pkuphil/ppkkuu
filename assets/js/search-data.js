@@ -17,11 +17,11 @@ ninja.data = [{
             window.location.href = "/ppkkuu/publications/";
           },
         },{id: "nav-talks",
-          title: "talks",
+          title: "Talks",
           description: "Talks and presentations.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/ppkkuu/projects/";
+            window.location.href = "/ppkkuu/talks/";
           },
         },{id: "dropdown-bookshelf",
               title: "bookshelf",
