@@ -20,7 +20,7 @@ Hi! I am Zhiwei. I am a third-year PhD student in the Department of Philosophy a
 I’m advised by <a href="https://phil.pku.edu.cn/szdw/szll/wgzxjys/274743.htm" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Qilin Li</a> at Peking University and, during my visit at MIT, by <a href="http://www.alexbyrne.org" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Alex Byrne</a>.<br><br>
 I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and reading personal biographies. I'm also a fan of the band <a href="https://music.apple.com/us/artist/twenty-one-pilots/349736311?l=zh-Hans-CN" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Twenty One Pilots</a> and Hong Kong singer <a href="https://music.apple.com/us/artist/%E8%AE%B8%E5%86%A0%E6%9D%B0/41642722?l=zh-Hans-CN" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Sam Hui</a>.
 
-{% assign talks_page = site.pages | where: "url", "/talks/" | first %}
+{% assign talks_page = site.pages | where_exp: "p", "p.url == '/talks/' or p.url == '/talks'" | first %}
 
 <style>
   /* 只影响首页 talks 这一块：修复暗色模式 list-group 白底 */
@@ -33,22 +33,41 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     border-color: rgba(150,150,150,.18) !important;
   }
 
-  /* 让 muted 颜色跟随主题（变量不存在时也不影响） */
+  /* muted 颜色跟随主题（变量不存在时也不影响） */
   .home-talks .text-muted{
     color: var(--global-text-color-light, #6b7280) !important;
+  }
+
+  /* 深色模式下的边线与文字更柔和 */
+  @media (prefers-color-scheme: dark){
+    .home-talks .list-group-item{
+      border-color: rgba(255,255,255,.12) !important;
+    }
+    .home-talks .text-muted{
+      color: rgba(229,231,235,.72) !important;
+    }
   }
 </style>
 
 <div class="home-talks">
   <h2>
     <a href="{{ '/talks/' | relative_url }}" class="text-reset text-decoration-none">
-      latest talks
+      selected talks
     </a>
   </h2>
 
   {% if talks_page and talks_page.talks %}
+    {% assign selected_talks = talks_page.talks | where: "selected", true %}
+
+    {%- comment -%}
+      兜底：如果 talks 页面没有标 selected，则展示前 5 条
+    {%- endcomment -%}
+    {% if selected_talks == nil or selected_talks.size == 0 %}
+      {% assign selected_talks = talks_page.talks %}
+    {% endif %}
+
     <div class="list-group list-group-flush mt-2 mb-2">
-      {% for talk in talks_page.talks limit:5 %}
+      {% for talk in selected_talks limit:5 %}
         {% assign first_item = talk.items | first %}
         <div class="list-group-item px-0">
           <div class="d-flex flex-wrap justify-content-between gap-2">
@@ -63,6 +82,3 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     </div>
   {% endif %}
 </div>
-
-
-
