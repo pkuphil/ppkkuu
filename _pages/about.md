@@ -32,6 +32,8 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 <h2>talks</h2>
 
+<h2>talks</h2>
+
 <div class="list-group list-group-flush mt-2 mb-2">
   {% for t in site.data.talks limit:3 %}
     <div class="list-group-item px-0">
