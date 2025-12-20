@@ -6,7 +6,7 @@ subtitle: <a href='#'>Peking University</a>. 5 Yiheyuan Rd, Haidian District, Be
 
 profile:
   align: right
-  image: Weixin Image_2025-12-20_132750_780.jpg
+  image: prof_pic_color.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>555 your office number</p>
