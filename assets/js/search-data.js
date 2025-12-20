@@ -28,7 +28,7 @@ ninja.data = [{
               description: "",
               section: "Dropdown",
               handler: () => {
-                window.location.href = "";
+                window.location.href = "/ppkkuu/404.html";
               },
             },{id: "dropdown-my-apa-interview",
               title: "my APA interview",
