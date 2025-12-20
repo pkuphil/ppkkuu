@@ -73,457 +73,299 @@ talks:
 ---
 
 <style>
-  /* 温润学术配色（偏纸张/墨蓝/鼠尾草） */
-  :root{
-    --ink: #1f2937;
-    --muted: #6b7280;
+  /* =========================
+     Classic Jekyll/CV-style talks list
+     - no cards, no colored pills
+     - clean separators
+     - right-aligned date column
+     ========================= */
 
-    --paper: #fbfaf8;
-    --paper-border: #e8e2d9;
-
-    --date-bg: #f7f3eb;
-    --date-bd: #e8ddcf;
-    --date-tx: #5b4636;
-
-    --status-bg: #fff4e6;   /* forthcoming */
-    --status-bd: #ffd8a8;
-    --status-tx: #8a4b00;
-
-    --type-bg: #eaf2f8;     /* colloquium */
-    --type-bd: #cfe3f1;
-    --type-tx: #235a7a;
-
-    --review-bg: #eaf6f1;   /* peer-reviewed */
-    --review-bd: #caead9;
-    --review-tx: #1f5c43;
-
-    --wip-bg: #f1f5f9;      /* W.I.P. */
-    --wip-bd: #d8e1ec;
-    --wip-tx: #334155;
+  .talks-classic{
+    margin-top: 1.25rem;
   }
 
-  /* 卡片整体更“纸感”一点 */
-  .talk-card{
-    border: 1px solid var(--paper-border);
-    border-radius: 14px;
-    background: var(--paper);
+  .talk-block{
+    margin: 0 0 1.8rem 0;
   }
 
-  /* 去掉 list-group-item 默认白底块 + 强制撑满整行宽度（防止右侧日期无法贴边） */
-  .list-group-item,
-  .list-group-flush > .list-group-item{
-    display: block !important;
-    width: 100% !important;
-    background: transparent !important;
-  }
-
-  /* 标题行 */
-  .talk-header{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: .75rem;
-  }
   .talk-title{
-    margin: 0;
-    color: var(--ink);
+    margin: 0 0 .55rem 0;
+    font-weight: 600;
     letter-spacing: .1px;
   }
 
-  /* 用 grid 保证右侧日期永远贴紧右边且所有条目对齐 */
-  .talk-item{
-    width: 100% !important;
-    display: grid !important;
-    grid-template-columns: 1fr 9.5rem; /* 右侧日期列固定宽度，统一对齐 */
+  .talk-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(0,0,0,.12);
+  }
+
+  .talk-li{
+    padding: .65rem 0;
+    border-bottom: 1px solid rgba(0,0,0,.10);
+  }
+
+  /* two-column row: left info + right date */
+  .talk-row{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 9.5rem;
     column-gap: 1rem;
     align-items: start;
   }
 
-  .talk-main{
-    min-width: 0;
-  }
+  .talk-left{ min-width: 0; }
 
-  /* 名称 + tags 同一行，tags 紧贴名称右侧 */
   .talk-venue-line{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: baseline;
     gap: .35rem .5rem;
+    line-height: 1.25;
   }
 
-  .talk-item .text-muted{ color: var(--muted) !important; }
-
-  /* tags 紧贴会议名称右侧 */
-  .talk-tags{
-    display: flex;
-    flex-wrap: wrap;
-    gap: .35rem;
-    align-items: center;
-    padding-top: 0;
-  }
-  .talk-tags--inline{
-    justify-content: flex-start;
+  .talk-venue{
+    font-weight: 600;
   }
 
-  /* 右侧日期：贴紧最右 + 右对齐 */
-  .talk-right{
-    width: 9.5rem;
-    justify-self: end;
-    display: flex;
-    justify-content: flex-end;
+  .talk-place{
+    margin-top: .15rem;
+    font-size: .92rem;
+    opacity: .75;
+    line-height: 1.25;
+  }
+
+  .talk-date{
     text-align: right;
-    padding-top: .05rem;
-  }
-
-  /* 统一 tag 视觉 */
-  .tag{
-    border: 1px solid transparent;
-    border-radius: 999px;
-    padding: .35rem .6rem;
-    font-weight: 550;
-    font-size: .78rem;
-    line-height: 1;
-    letter-spacing: .2px;
     white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    opacity: .85;
+    padding-top: .02rem;
   }
 
-  .tag--date   { background: var(--date-bg);   border-color: var(--date-bd);   color: var(--date-tx); }
-  .tag--status { background: var(--status-bg); border-color: var(--status-bd); color: var(--status-tx); }
-  .tag--type   { background: var(--type-bg);   border-color: var(--type-bd);   color: var(--type-tx); }
-  .tag--review { background: var(--review-bg); border-color: var(--review-bd); color: var(--review-tx); }
-  .tag--wip    { background: var(--wip-bg);    border-color: var(--wip-bd);    color: var(--wip-tx); }
+  /* make your existing .tag spans look like classic inline text */
+  .talk-tags{
+    font-size: .92rem;
+    opacity: .75;
+  }
+  .talk-tags::before{ content: "("; }
+  .talk-tags::after{ content: ")"; }
 
-  /* list-group 边线更柔和 */
-  .list-group-item{
-    border-color: rgba(232, 226, 217, .75) !important;
+  .talk-tags .tag{
+    background: transparent !important;
+    border: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    font-weight: 400 !important;
+    font-size: inherit !important;
+    color: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: 0 !important;
+    white-space: normal !important;
   }
 
-  /* 小屏适配：日期换到下一行（不想要可删） */
+  /* separators between tags */
+  .talk-tags .tag + .tag::before{
+    content: "; ";
+  }
+
+  /* mobile: date drops below */
   @media (max-width: 520px){
-    .talk-item{
+    .talk-row{
       grid-template-columns: 1fr;
-      row-gap: .35rem;
+      row-gap: .25rem;
     }
-    .talk-right{
-      width: auto;
-      justify-self: start;
-      justify-content: flex-start;
+    .talk-date{
       text-align: left;
     }
   }
 
-  /* =========================
-     Dark mode（夜间模式优化）
-     ========================= */
-
+  /* dark mode: softer borders */
   @media (prefers-color-scheme: dark){
-    :root{
-      --ink: #e5e7eb;
-      --muted: #9ca3af;
-
-      --paper: #0b1220;
-      --paper-border: #1f2a3a;
-
-      --date-bg: #121a24;
-      --date-bd: #243146;
-      --date-tx: #d1d5db;
-
-      --status-bg: #2a1f10;
-      --status-bd: #7c4a14;
-      --status-tx: #fcd34d;
-
-      --type-bg: #122132;
-      --type-bd: #2c4b66;
-      --type-tx: #93c5fd;
-
-      --review-bg: #10251d;
-      --review-bd: #245743;
-      --review-tx: #86efac;
-
-      --wip-bg: #121827;
-      --wip-bd: #2a3447;
-      --wip-tx: #cbd5e1;
-    }
-
-    .list-group-item{
-      border-color: rgba(255,255,255,.12) !important;
-    }
-
-    .talk-card.shadow-sm{
-      box-shadow: 0 1px 0 rgba(255,255,255,.04) !important;
-    }
+    .talk-list{ border-top-color: rgba(255,255,255,.16); }
+    .talk-li{ border-bottom-color: rgba(255,255,255,.14); }
   }
 
-  /* 兼容手动暗色主题 class */
-  html[data-theme="dark"],
-  html.dark,
-  body.dark,
-  body.theme-dark{
-    --ink: #e5e7eb;
-    --muted: #9ca3af;
-
-    --paper: #0b1220;
-    --paper-border: #1f2a3a;
-
-    --date-bg: #121a24;
-    --date-bd: #243146;
-    --date-tx: #d1d5db;
-
-    --status-bg: #2a1f10;
-    --status-bd: #7c4a14;
-    --status-tx: #fcd34d;
-
-    --type-bg: #122132;
-    --type-bd: #2c4b66;
-    --type-tx: #93c5fd;
-
-    --review-bg: #10251d;
-    --review-bd: #245743;
-    --review-tx: #86efac;
-
-    --wip-bg: #121827;
-    --wip-bd: #2a3447;
-    --wip-tx: #cbd5e1;
+  html[data-theme="dark"] .talk-list,
+  html.dark .talk-list,
+  body.dark .talk-list,
+  body.theme-dark .talk-list{
+    border-top-color: rgba(255,255,255,.16);
   }
 
-  html[data-theme="dark"] .list-group-item,
-  html.dark .list-group-item,
-  body.dark .list-group-item,
-  body.theme-dark .list-group-item{
-    border-color: rgba(255,255,255,.12) !important;
-  }
-
-  html[data-theme="dark"] .talk-card.shadow-sm,
-  html.dark .talk-card.shadow-sm,
-  body.dark .talk-card.shadow-sm,
-  body.theme-dark .talk-card.shadow-sm{
-    box-shadow: 0 1px 0 rgba(255,255,255,.04) !important;
+  html[data-theme="dark"] .talk-li,
+  html.dark .talk-li,
+  body.dark .talk-li,
+  body.theme-dark .talk-li{
+    border-bottom-color: rgba(255,255,255,.14);
   }
 </style>
 
-<div class="container px-0">
+<div class="talks-classic">
 
   <!-- Talk 1 -->
-  <div class="card talk-card shadow-sm mb-4">
-    <div class="card-body">
-      <div class="talk-header">
-        <h2 class="h5 talk-title">“New Object Theory and Illusion”</h2>
-      </div>
-
-      <div class="list-group list-group-flush mt-3">
-        <div class="list-group-item px-0">
-          <div class="talk-item">
-            <div class="talk-main">
-              <div class="talk-venue-line">
-                <div class="fw-semibold">Eastern APA</div>
-                <div class="talk-tags talk-tags--inline">
-                  <span class="tag tag--type">Colloquium</span>
-                  <span class="tag tag--review">paper peer-reviewed</span>
-                </div>
-              </div>
-              <div class="text-muted small">Baltimore, USA</div>
+  <section class="talk-block">
+    <h2 class="talk-title">“New Object Theory and Illusion”</h2>
+    <ul class="talk-list">
+      <li class="talk-li">
+        <div class="talk-row">
+          <div class="talk-left">
+            <div class="talk-venue-line">
+              <span class="talk-venue">Eastern APA</span>
+              <span class="talk-tags">
+                <span class="tag tag--type">Colloquium</span>
+                <span class="tag tag--review">paper peer-reviewed</span>
+              </span>
             </div>
-
-            <div class="talk-right">
-              <span class="tag tag--date">Jan 2026</span>
-            </div>
+            <div class="talk-place">Baltimore, USA</div>
           </div>
+          <div class="talk-date">Jan 2026</div>
         </div>
-      </div>
-
-    </div>
-  </div>
+      </li>
+    </ul>
+  </section>
 
   <!-- Talk 2 -->
-  <div class="card talk-card shadow-sm mb-4">
-    <div class="card-body">
-      <div class="talk-header">
-        <h2 class="h5 talk-title">“Mediated Direct Realism”</h2>
-      </div>
-
-      <div class="list-group list-group-flush mt-3">
-        <div class="list-group-item px-0">
-          <div class="talk-item">
-            <div class="talk-main">
-              <div class="talk-venue-line">
-                <div class="fw-semibold">PKU Philosophy R&amp;W</div>
-                <div class="talk-tags talk-tags--inline"></div>
-              </div>
-              <div class="text-muted small">Beijing, China</div>
+  <section class="talk-block">
+    <h2 class="talk-title">“Mediated Direct Realism”</h2>
+    <ul class="talk-list">
+      <li class="talk-li">
+        <div class="talk-row">
+          <div class="talk-left">
+            <div class="talk-venue-line">
+              <span class="talk-venue">PKU Philosophy R&amp;W</span>
             </div>
-
-            <div class="talk-right">
-              <span class="tag tag--date">Dec 2025</span>
-            </div>
+            <div class="talk-place">Beijing, China</div>
           </div>
+          <div class="talk-date">Dec 2025</div>
         </div>
-      </div>
-
-    </div>
-  </div>
+      </li>
+    </ul>
+  </section>
 
   <!-- Talk 3 -->
-  <div class="card talk-card shadow-sm mb-4">
-    <div class="card-body">
-      <div class="talk-header">
-        <h2 class="h5 talk-title">“Do Semantic Properties Involve the Future?”</h2>
-      </div>
+  <section class="talk-block">
+    <h2 class="talk-title">“Do Semantic Properties Involve the Future?”</h2>
+    <ul class="talk-list">
 
-      <div class="list-group list-group-flush mt-3">
-
-        <div class="list-group-item px-0">
-          <div class="talk-item">
-            <div class="talk-main">
-              <div class="talk-venue-line">
-                <div class="fw-semibold">Pacific APA</div>
-                <div class="talk-tags talk-tags--inline">
-                  <span class="tag tag--type">Colloquium</span>
-                  <span class="tag tag--review">paper peer-reviewed</span>
-                </div>
-              </div>
-              <div class="text-muted small">San Francisco, USA</div>
+      <li class="talk-li">
+        <div class="talk-row">
+          <div class="talk-left">
+            <div class="talk-venue-line">
+              <span class="talk-venue">Pacific APA</span>
+              <span class="talk-tags">
+                <span class="tag tag--type">Colloquium</span>
+                <span class="tag tag--review">paper peer-reviewed</span>
+              </span>
             </div>
-
-            <div class="talk-right">
-              <span class="tag tag--date">Apr 2025</span>
-            </div>
+            <div class="talk-place">San Francisco, USA</div>
           </div>
+          <div class="talk-date">Apr 2025</div>
         </div>
+      </li>
 
-        <div class="list-group-item px-0">
-          <div class="talk-item">
-            <div class="talk-main">
-              <div class="talk-venue-line">
-                <div class="fw-semibold">Eastern APA</div>
-                <div class="talk-tags talk-tags--inline">
-                  <span class="tag tag--wip">W.I.P.</span>
-                </div>
-              </div>
-              <div class="text-muted small">New York, USA</div>
+      <li class="talk-li">
+        <div class="talk-row">
+          <div class="talk-left">
+            <div class="talk-venue-line">
+              <span class="talk-venue">Eastern APA</span>
+              <span class="talk-tags">
+                <span class="tag tag--wip">W.I.P.</span>
+              </span>
             </div>
-
-            <div class="talk-right">
-              <span class="tag tag--date">Jan 2025</span>
-            </div>
+            <div class="talk-place">New York, USA</div>
           </div>
+          <div class="talk-date">Jan 2025</div>
         </div>
+      </li>
 
-        <div class="list-group-item px-0">
-          <div class="talk-item">
-            <div class="talk-main">
-              <div class="talk-venue-line">
-                <div class="fw-semibold">Talk</div>
-                <div class="talk-tags talk-tags--inline"></div>
-              </div>
-              <div class="text-muted small">Beijing, China</div>
+      <li class="talk-li">
+        <div class="talk-row">
+          <div class="talk-left">
+            <div class="talk-venue-line">
+              <span class="talk-venue">Talk</span>
             </div>
-
-            <div class="talk-right">
-              <span class="tag tag--date">2025</span>
-            </div>
+            <div class="talk-place">Beijing, China</div>
           </div>
+          <div class="talk-date">2025</div>
         </div>
+      </li>
 
-      </div>
-    </div>
-  </div>
+    </ul>
+  </section>
 
   <!-- Talk 4 -->
-  <div class="card talk-card shadow-sm mb-4">
-    <div class="card-body">
-      <div class="talk-header">
-        <h2 class="h5 talk-title">“Is Rich Phenomenology Fragmented?”</h2>
-      </div>
-
-      <div class="list-group list-group-flush mt-3">
-        <div class="list-group-item px-0">
-          <div class="talk-item">
-            <div class="talk-main">
-              <div class="talk-venue-line">
-                <div class="fw-semibold">Central APA</div>
-                <div class="talk-tags talk-tags--inline">
-                  <span class="tag tag--type">Colloquium</span>
-                  <span class="tag tag--review">paper peer-reviewed</span>
-                </div>
-              </div>
-              <div class="text-muted small">Online</div>
+  <section class="talk-block">
+    <h2 class="talk-title">“Is Rich Phenomenology Fragmented?”</h2>
+    <ul class="talk-list">
+      <li class="talk-li">
+        <div class="talk-row">
+          <div class="talk-left">
+            <div class="talk-venue-line">
+              <span class="talk-venue">Central APA</span>
+              <span class="talk-tags">
+                <span class="tag tag--type">Colloquium</span>
+                <span class="tag tag--review">paper peer-reviewed</span>
+              </span>
             </div>
-
-            <div class="talk-right">
-              <span class="tag tag--date">Feb/Mar 2025</span>
-            </div>
+            <div class="talk-place">Online</div>
           </div>
+          <div class="talk-date">Feb/Mar 2025</div>
         </div>
-      </div>
-
-    </div>
-  </div>
+      </li>
+    </ul>
+  </section>
 
   <!-- Talk 5 -->
-  <div class="card talk-card shadow-sm mb-4">
-    <div class="card-body">
-      <div class="talk-header">
-        <h2 class="h5 talk-title">“MCICCR”</h2>
-      </div>
+  <section class="talk-block">
+    <h2 class="talk-title">“MCICCR”</h2>
+    <ul class="talk-list">
 
-      <div class="list-group list-group-flush mt-3">
-
-        <div class="list-group-item px-0">
-          <div class="talk-item">
-            <div class="talk-main">
-              <div class="talk-venue-line">
-                <div class="fw-semibold">Annual Conference of the Australasian Association of Philosophy</div>
-                <div class="talk-tags talk-tags--inline">
-                  <span class="tag tag--type">Colloquium</span>
-                </div>
-              </div>
-              <div class="text-muted small">Perth, Australia</div>
+      <li class="talk-li">
+        <div class="talk-row">
+          <div class="talk-left">
+            <div class="talk-venue-line">
+              <span class="talk-venue">Annual Conference of the Australasian Association of Philosophy</span>
+              <span class="talk-tags">
+                <span class="tag tag--type">Colloquium</span>
+              </span>
             </div>
-
-            <div class="talk-right">
-              <span class="tag tag--date">Jul 2024</span>
-            </div>
+            <div class="talk-place">Perth, Australia</div>
           </div>
+          <div class="talk-date">Jul 2024</div>
         </div>
+      </li>
 
-        <div class="list-group-item px-0">
-          <div class="talk-item">
-            <div class="talk-main">
-              <div class="talk-venue-line">
-                <div class="fw-semibold">Workshop for Young Scholars in Science and Philosophy</div>
-                <div class="talk-tags talk-tags--inline">
-                  <span class="tag tag--type">Colloquium</span>
-                  <span class="tag tag--review">paper peer-reviewed</span>
-                </div>
-              </div>
-              <div class="text-muted small">Beijing, China</div>
+      <li class="talk-li">
+        <div class="talk-row">
+          <div class="talk-left">
+            <div class="talk-venue-line">
+              <span class="talk-venue">Workshop for Young Scholars in Science and Philosophy</span>
+              <span class="talk-tags">
+                <span class="tag tag--type">Colloquium</span>
+                <span class="tag tag--review">paper peer-reviewed</span>
+              </span>
             </div>
-
-            <div class="talk-right">
-              <span class="tag tag--date">Apr 2024</span>
-            </div>
+            <div class="talk-place">Beijing, China</div>
           </div>
+          <div class="talk-date">Apr 2024</div>
         </div>
+      </li>
 
-        <div class="list-group-item px-0">
-          <div class="talk-item">
-            <div class="talk-main">
-              <div class="talk-venue-line">
-                <div class="fw-semibold">PKU Philosophy R&amp;W</div>
-                <div class="talk-tags talk-tags--inline"></div>
-              </div>
-              <div class="text-muted small">Beijing, China</div>
+      <li class="talk-li">
+        <div class="talk-row">
+          <div class="talk-left">
+            <div class="talk-venue-line">
+              <span class="talk-venue">PKU Philosophy R&amp;W</span>
             </div>
-
-            <div class="talk-right">
-              <span class="tag tag--date">Mar 2024</span>
-            </div>
+            <div class="talk-place">Beijing, China</div>
           </div>
+          <div class="talk-date">Mar 2024</div>
         </div>
+      </li>
 
-      </div>
-    </div>
-  </div>
+    </ul>
+  </section>
 
 </div>
