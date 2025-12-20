@@ -18,4 +18,14 @@ abs_open: true
 
 {% bibliography %}
 
+{% if page.abs_open %}
+<script>
+  window.addEventListener("load", () => {
+    document.querySelectorAll(".publications a.abstract.btn").forEach((btn) => {
+      if (btn.textContent.trim().toLowerCase() === "abs") btn.click();
+    });
+  });
+</script>
+{% endif %}
+
 </div>
