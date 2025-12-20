@@ -6,7 +6,7 @@ description: Talks and presentations.
 nav: true
 nav_order: 3
 
-# ✅ 给首页读取用：selected=true 的会显示在首页（你可自行改 true/false）
+# ✅ 同一个 title 可以重复出现；每条 talk 只放一个会议（items 里只有 1 条）
 talks:
   - title: "New Object Theory and Illusion"
     selected: true
@@ -28,7 +28,7 @@ talks:
       - venue: "Pacific APA"
         place: "San Francisco, USA"
         date: "Apr 2025"
-        
+
   - title: "Do Semantic Properties Involve the Future?"
     selected: true
     items:
@@ -36,9 +36,9 @@ talks:
         place: "New York, USA"
         date: "Jan 2025"
 
- - title: "Do Semantic Properties Involve the Future?"
+  - title: "Do Semantic Properties Involve the Future?"
     selected: false
-    items:    
+    items:
       - venue: "Talk"
         place: "Beijing, China"
         date: "2025"
@@ -56,9 +56,17 @@ talks:
       - venue: "Annual Conference of the Australasian Association of Philosophy"
         place: "Perth, Australia"
         date: "Jul 2024"
+
+  - title: "MCICCR"
+    selected: false
+    items:
       - venue: "Workshop for Young Scholars in Science and Philosophy"
         place: "Beijing, China"
         date: "Apr 2024"
+
+  - title: "MCICCR"
+    selected: false
+    items:
       - venue: "PKU Philosophy R&W"
         place: "Beijing, China"
         date: "Mar 2024"
@@ -247,6 +255,7 @@ talks:
     }
   }
 
+  /* 兼容手动暗色主题 class */
   html[data-theme="dark"],
   html.dark,
   body.dark,
@@ -295,7 +304,7 @@ talks:
 
 <div class="container px-0">
 
-<!-- Talk 1 -->
+  <!-- Talk 1 -->
   <div class="card talk-card shadow-sm mb-4">
     <div class="card-body">
       <div class="talk-header">
