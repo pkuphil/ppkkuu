@@ -6,7 +6,7 @@ subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: Weixin Image_2025-12-20_132750_780.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>555 your office number</p>
