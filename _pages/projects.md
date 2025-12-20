@@ -5,6 +5,55 @@ permalink: /talks/
 description: Talks and presentations.
 nav: true
 nav_order: 3
+
+# ✅ 给首页读取用：selected=true 的会显示在首页（你可自行改 true/false）
+talks:
+  - title: "New Object Theory and Illusion"
+    selected: true
+    items:
+      - venue: "Eastern APA"
+        place: "Baltimore, USA"
+        date: "Jan 2026"
+
+  - title: "Mediated Direct Realism"
+    selected: true
+    items:
+      - venue: "PKU Philosophy R&W"
+        place: "Beijing, China"
+        date: "Dec 2025"
+
+  - title: "Do Semantic Properties Involve the Future?"
+    selected: false
+    items:
+      - venue: "Pacific APA"
+        place: "San Francisco, USA"
+        date: "Apr 2025"
+      - venue: "Eastern APA"
+        place: "New York, USA"
+        date: "Jan 2025"
+      - venue: "Talk"
+        place: "Beijing, China"
+        date: "2025"
+
+  - title: "Is Rich Phenomenology Fragmented?"
+    selected: false
+    items:
+      - venue: "Central APA"
+        place: "Online"
+        date: "Feb/Mar 2025"
+
+  - title: "MCICCR"
+    selected: false
+    items:
+      - venue: "Annual Conference of the Australasian Association of Philosophy"
+        place: "Perth, Australia"
+        date: "Jul 2024"
+      - venue: "Workshop for Young Scholars in Science and Philosophy"
+        place: "Beijing, China"
+        date: "Apr 2024"
+      - venue: "PKU Philosophy R&W"
+        place: "Beijing, China"
+        date: "Mar 2024"
 ---
 
 <style>
@@ -150,58 +199,46 @@ nav_order: 3
 
   /* =========================
      Dark mode（夜间模式优化）
-     - 自动：prefers-color-scheme: dark
-     - 兼容：html[data-theme="dark"] / html.dark / body.dark / body.theme-dark
      ========================= */
 
-  /* 1) 自动跟随系统夜间模式 */
   @media (prefers-color-scheme: dark){
     :root{
       --ink: #e5e7eb;
       --muted: #9ca3af;
 
-      /* 卡片像“深色纸张”而不是纯黑 */
       --paper: #0b1220;
       --paper-border: #1f2a3a;
 
-      /* 日期 */
       --date-bg: #121a24;
       --date-bd: #243146;
       --date-tx: #d1d5db;
 
-      /* forthcoming */
       --status-bg: #2a1f10;
       --status-bd: #7c4a14;
       --status-tx: #fcd34d;
 
-      /* colloquium */
       --type-bg: #122132;
       --type-bd: #2c4b66;
       --type-tx: #93c5fd;
 
-      /* peer-reviewed */
       --review-bg: #10251d;
       --review-bd: #245743;
       --review-tx: #86efac;
 
-      /* W.I.P. */
       --wip-bg: #121827;
       --wip-bd: #2a3447;
       --wip-tx: #cbd5e1;
     }
 
-    /* 分隔线在深色下别太亮 */
     .list-group-item{
       border-color: rgba(255,255,255,.12) !important;
     }
 
-    /* 深色下 shadow 克制一点 */
     .talk-card.shadow-sm{
       box-shadow: 0 1px 0 rgba(255,255,255,.04) !important;
     }
   }
 
-  /* 2) 兼容“站点按钮切换暗色”的情况（不一定触发 prefers-color-scheme） */
   html[data-theme="dark"],
   html.dark,
   body.dark,
