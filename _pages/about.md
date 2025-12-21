@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://www.pku.edu.cn'>Peking University</a>. allenminesky@gmail.com.
+subtitle: allenminesky@gmail.com.
 
 profile:
   align: right
