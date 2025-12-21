@@ -3,7 +3,7 @@ layout: page
 permalink: /zhiweitalks/
 title: zhiweitalks
 description:
-nav: true
+nav: false
 nav_order: 3
 abs_open: true
 ---
