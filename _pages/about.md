@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: allenminesky@gmail.com.
+subtitle: "allenminesky ⟡ gmail · com"
 
 profile:
   align: right
