@@ -1,7 +1,8 @@
 ---
 layout: page
 permalink: /WIP/
-nav_title: w.i.p.
+title: w.i.p. 
+
 nav: true
 nav_order: 3
 abs_open: true
