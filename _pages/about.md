@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: hi!
 permalink: /
 subtitle: "allenminesky ⟡ gmail · com"
 
