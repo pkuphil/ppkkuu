@@ -16,8 +16,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/ppkkuu/publications/";
           },
-        },{id: "nav-",
-          title: "",
+        },{id: "nav-w-i-p",
+          title: "w.i.p.",
           description: "",
           section: "Navigation",
           handler: () => {
