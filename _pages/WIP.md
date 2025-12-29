@@ -1,14 +1,12 @@
 ---
 layout: page
 permalink: /WIP/
-title: w.i.p. 
-
+title: Work in Progress
+nav_title: w.i.p.
 nav: true
 nav_order: 3
 abs_open: true
 ---
-
-# Work in Progress
 
 
 <!-- _pages/publications.md -->
