@@ -1,9 +1,10 @@
 ---
 layout: page
 permalink: /WIP/
-title: W.I.P.
+title: Work in Progress
+nav_title: w.i.p.
 nav: true
-nav_order: 5
+nav_order: 3
 abs_open: true
 ---
 
