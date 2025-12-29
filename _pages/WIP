@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /WIP/
-title: publications
-description:
+title: Work in Progress
+nav_title: W.I.P.
 nav: true
 nav_order: 2
 abs_open: true
