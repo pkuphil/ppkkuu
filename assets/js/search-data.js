@@ -17,7 +17,7 @@ ninja.data = [{
             window.location.href = "/ppkkuu/publications/";
           },
         },{id: "nav-work-in-progress",
-          title: "Work in Progress",
+          title: "work in progress",
           description: "",
           section: "Navigation",
           handler: () => {
