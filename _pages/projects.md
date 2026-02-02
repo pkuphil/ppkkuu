@@ -11,7 +11,7 @@ talks:
   - title: "New Object Theory and Illusion"
     selected: true
     items:
-      - venue: "Eastern APA"
+      - venue: "APA Eastern Division Meeting (122nd)"
         place: "Baltimore, USA"
         date: "Jan 2026"
 
