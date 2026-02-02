@@ -53,7 +53,7 @@ talks:
   - title: "MCICCR"
     selected: false
     items:
-      - venue: "Annual Conference of the Australasian Association of Philosophy"
+      - venue: "Australasian Association of Philosophy (AAP) Conference 2024"
         place: "Perth, Australia"
         date: "Jul 2024"
 
@@ -93,7 +93,7 @@ talks:
     --type-bd: #cfe3f1;
     --type-tx: #235a7a;
 
-    --review-bg: #eaf6f1;   /* peer-reviewed */
+    --review-bg: #eaf6f1;   /* refereed */
     --review-bd: #caead9;
     --review-tx: #1f5c43;
 
@@ -367,7 +367,7 @@ talks:
                 <div class="fw-semibold">Eastern APA</div>
                 <div class="talk-tags talk-tags--inline">
                   <span class="tag tag--type">Colloquium</span>
-                  <span class="tag tag--review">paper peer-reviewed</span>
+                  <span class="tag tag--review">refereed</span>
                 </div>
               </div>
               <div class="text-muted small">Baltimore, USA</div>
@@ -427,7 +427,7 @@ talks:
                 <div class="fw-semibold">Pacific APA</div>
                 <div class="talk-tags talk-tags--inline">
                   <span class="tag tag--type">Colloquium</span>
-                  <span class="tag tag--review">paper peer-reviewed</span>
+                  <span class="tag tag--review">refereed</span>
                 </div>
               </div>
               <div class="text-muted small">San Francisco, USA</div>
@@ -492,7 +492,7 @@ talks:
                 <div class="fw-semibold">Central APA</div>
                 <div class="talk-tags talk-tags--inline">
                   <span class="tag tag--type">Colloquium</span>
-                  <span class="tag tag--review">paper peer-reviewed</span>
+                  <span class="tag tag--review">refereed</span>
                 </div>
               </div>
               <div class="text-muted small">Online</div>
@@ -542,7 +542,7 @@ talks:
                 <div class="fw-semibold">Workshop for Young Scholars in Science and Philosophy</div>
                 <div class="talk-tags talk-tags--inline">
                   <span class="tag tag--type">Colloquium</span>
-                  <span class="tag tag--review">paper peer-reviewed</span>
+                  <span class="tag tag--review">refereed</span>
                 </div>
               </div>
               <div class="text-muted small">Beijing, China</div>
