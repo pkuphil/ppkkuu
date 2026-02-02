@@ -25,14 +25,14 @@ talks:
   - title: "Do Semantic Properties Involve the Future?"
     selected: true
     items:
-      - venue: "Pacific APA"
+      - venue: "APA Pacific Division Meeting (98th)"
         place: "San Francisco, USA"
         date: "Apr 2025"
 
   - title: "Do Semantic Properties Involve the Future?"
     selected: true
     items:
-      - venue: "Eastern APA"
+      - venue: "APA Eastern Division Meeting (121st)"
         place: "New York, USA"
         date: "Jan 2025"
 
@@ -46,7 +46,7 @@ talks:
   - title: "Is Rich Phenomenology Fragmented?"
     selected: true
     items:
-      - venue: "Central APA"
+      - venue: "APA Central Division Meeting (122nd)"
         place: "Online"
         date: "Feb/Mar 2025"
 
