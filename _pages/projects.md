@@ -20,7 +20,7 @@ talks:
     items:
       - venue: "PKU Philosophy R&W"
         place: "Beijing, China"
-        date: "Dec 2025"
+        date: "Dec 2025" 
 
   - title: "Do Semantic Properties Involve the Future?"
     selected: true
