@@ -30,13 +30,6 @@ talks:
         date: "Apr 2025"
 
   - title: "Do Semantic Properties Involve the Future?"
-    selected: true
-    items:
-      - venue: "APA Eastern Division Meeting (121st)"
-        place: "New York, USA"
-        date: "Jan 2025"
-
-  - title: "Do Semantic Properties Involve the Future?"
     selected: false
     items:
       - venue: "Talk"
@@ -49,6 +42,13 @@ talks:
       - venue: "APA Central Division Meeting (122nd)"
         place: "Online"
         date: "Feb/Mar 2025"
+
+- title: "Do Semantic Properties Involve the Future?"
+    selected: true
+    items:
+      - venue: "APA Eastern Division Meeting (121st)"
+        place: "New York, USA"
+        date: "Jan 2025"
 
   - title: "MCICCR"
     selected: false
