@@ -1496,3 +1496,8 @@ figure.cover {
 mjx-container[jax="CHTML"][display="true"] {
   overflow-x: auto;
 }
+
+html[data-theme="dark"] .publications .periodical,
+html[data-theme="dark"] .publications .periodical em {
+  color: var(--global-theme-color);
+}
