@@ -11,9 +11,9 @@ talks:
   - title: "Situated Object and Illusion"
     selected: true
     items:
-      - venue: "2026 Society for Exact Philosophy Meeting"
+      - venue: "Society for Exact Philosophy Meeting"
         place: "Vancouver, Canada"
-        date: "May 2026"
+        date: "May 2026 (forthcoming)"
         
   - title: "Situated Object and Illusion"
     selected: true
