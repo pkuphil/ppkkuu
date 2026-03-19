@@ -11,6 +11,13 @@ talks:
   - title: "New Object Theory and Illusion"
     selected: true
     items:
+      - venue: "2026 Society for Exact Philosophy Meeting"
+        place: "Vancouver, Canada"
+        date: "May 2026"
+        
+  - title: "New Object Theory and Illusion"
+    selected: true
+    items:
       - venue: "APA Eastern Division Meeting (122nd)"
         place: "Baltimore, USA"
         date: "Jan 2026"
