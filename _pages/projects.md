@@ -8,14 +8,14 @@ nav_order: 5
 
 # ✅ 同一个 title 可以重复出现；每条 talk 只放一个会议（items 里只有 1 条）
 talks:
-  - title: "New Object Theory and Illusion"
+  - title: "Situated Object and Illusion"
     selected: true
     items:
       - venue: "2026 Society for Exact Philosophy Meeting"
         place: "Vancouver, Canada"
         date: "May 2026"
         
-  - title: "New Object Theory and Illusion"
+  - title: "Situated Object and Illusion"
     selected: true
     items:
       - venue: "APA Eastern Division Meeting (122nd)"
