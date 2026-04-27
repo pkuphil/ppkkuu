@@ -374,7 +374,7 @@ talks:
                 <div class="fw-semibold">Eastern APA</div>
                 <div class="talk-tags talk-tags--inline">
                   <span class="tag tag--type">Colloquium</span>
-                  <span class="tag tag--review">refereed</span>
+                  <span class="tag tag--review">Paper Peer Reviewed</span>
                 </div>
               </div>
               <div class="text-muted small">Baltimore, USA</div>
@@ -434,7 +434,7 @@ talks:
                 <div class="fw-semibold">Pacific APA</div>
                 <div class="talk-tags talk-tags--inline">
                   <span class="tag tag--type">Colloquium</span>
-                  <span class="tag tag--review">refereed</span>
+                  <span class="tag tag--review">Paper Peer Reviewed</span>
                 </div>
               </div>
               <div class="text-muted small">San Francisco, USA</div>
@@ -499,7 +499,7 @@ talks:
                 <div class="fw-semibold">Central APA</div>
                 <div class="talk-tags talk-tags--inline">
                   <span class="tag tag--type">Colloquium</span>
-                  <span class="tag tag--review">refereed</span>
+                  <span class="tag tag--review">Paper Peer Reviewed</span>
                 </div>
               </div>
               <div class="text-muted small">Online</div>
@@ -531,6 +531,7 @@ talks:
                 <div class="fw-semibold">Annual Conference of the Australasian Association of Philosophy</div>
                 <div class="talk-tags talk-tags--inline">
                   <span class="tag tag--type">Colloquium</span>
+                  <span class="tag tag--review">Abstract Peer Reviewed</span>
                 </div>
               </div>
               <div class="text-muted small">Perth, Australia</div>
@@ -549,7 +550,7 @@ talks:
                 <div class="fw-semibold">Workshop for Young Scholars in Science and Philosophy</div>
                 <div class="talk-tags talk-tags--inline">
                   <span class="tag tag--type">Colloquium</span>
-                  <span class="tag tag--review">refereed</span>
+                  <span class="tag tag--review">Paper Peer Reviewed</span>
                 </div>
               </div>
               <div class="text-muted small">Beijing, China</div>
