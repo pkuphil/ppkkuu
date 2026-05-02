@@ -8,13 +8,7 @@ nav_order: 5
 
 # ✅ 同一个 title 可以重复出现；每条 talk 只放一个会议（items 里只有 1 条）
 talks:
-  - title: "Situated Object and Illusion"
-    selected: true
-    items:
-      - venue: "Society for Exact Philosophy Meeting"
-        place: "Vancouver, Canada"
-        date: "May 2026 (forthcoming)"
-        
+  
   - title: "Situated Object and Illusion"
     selected: true
     items:
