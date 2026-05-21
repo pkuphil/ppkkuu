@@ -1501,3 +1501,12 @@ html[data-theme="dark"] .publications .periodical,
 html[data-theme="dark"] .publications .periodical em {
   color: var(--global-theme-color);
 }
+
+.publications .periodical {
+  color: #777777;
+}
+
+.publications .periodical em {
+  color: #00a65a;
+  font-style: italic;
+}
