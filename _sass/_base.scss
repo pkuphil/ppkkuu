@@ -1520,3 +1520,13 @@ html[data-theme="dark"] .publications .periodical em {
 .publications h2.bibliography {
   display: none;
 }
+
+/* show abstracts by default on homepage latest publications */
+body.post .publications div.abstract.hidden,
+body.page .publications div.abstract.hidden,
+.publications div.abstract.hidden {
+  display: block !important;
+  border: 1px dashed var(--global-text-color);
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+}
