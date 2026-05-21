@@ -8,7 +8,7 @@ nav_order: 2
 abs_open: true
 
 scholar:
-  sort_by: year,month
+  sort_by: year
   order: descending
 ---
 
