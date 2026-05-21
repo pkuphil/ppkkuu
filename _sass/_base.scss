@@ -1510,3 +1510,9 @@ html[data-theme="dark"] .publications .periodical em {
   color: var(--global-theme-color);
   font-style: italic;
 }
+
+.publications ol.bibliography li + li {
+  border-top: 1px solid var(--global-divider-color);
+  padding-top: 1.4rem;
+  margin-top: 1.4rem;
+}
