@@ -1507,6 +1507,6 @@ html[data-theme="dark"] .publications .periodical em {
 }
 
 .publications .periodical em {
-  color: #00a65a;
+  color: var(--global-theme-color);
   font-style: italic;
 }
