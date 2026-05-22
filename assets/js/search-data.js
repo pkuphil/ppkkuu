@@ -37,19 +37,19 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/ppkkuu/404.html";
               },
-            },{id: "dropdown-philpeople",
-              title: "PhilPeople",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "https://philpeople.org/profiles/zhiwei-yang?preview=true";
-              },
             },{id: "dropdown-my-philpeople-profile",
               title: "my PhilPeople profile",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "https://philpeople.org/profiles/zhiwei-yang?preview=true";
+              },
+            },{id: "dropdown-my-apa-interview",
+              title: "my APA interview",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "https://blog.apaonline.org/2025/03/28/apa-member-interview-zhiwei-yang/";
               },
             },{id: "post-a-post-with-plotly-js",
         
