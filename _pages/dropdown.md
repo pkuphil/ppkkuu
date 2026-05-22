@@ -12,7 +12,7 @@ children:
     permalink: https://philpeople.org/profiles/zhiwei-yang?preview=true
     external: true
 
-  - title: my APA interview
-    permalink: https://blog.apaonline.org/2025/03/28/apa-member-interview-zhiwei-yang/
+  - title: my PhilPeople profile
+    permalink: https://philpeople.org/profiles/zhiwei-yang?preview=true
     external: true
 ---
