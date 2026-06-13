@@ -13,14 +13,6 @@ nav_order: 3
   margin-top: 2.2rem;
 }
 
-.wip-intro {
-  max-width: 690px;
-  margin-bottom: 2.4rem;
-  font-size: 0.98rem;
-  line-height: 1.75;
-  color: var(--global-text-color-light);
-}
-
 .wip-list {
   display: flex;
   flex-direction: column;
@@ -137,10 +129,6 @@ nav_order: 3
 
 <div class="wip-container">
 
-  <p class="wip-intro">
-    This page lists selected research projects currently in progress. The descriptions are intentionally brief and non-technical, highlighting the broad questions behind each project.
-  </p>
-
   <div class="wip-list">
 
     <article class="wip-item">
@@ -153,7 +141,7 @@ nav_order: 3
         </div>
 
         <p class="wip-description">
-          This paper asks why certain social labels, roles, and credentials can shape our emotional responses to people so powerfully. 
+          This paper asks why certain social labels, roles, and credentials can shape our emotional responses to people so powerfully.
           It develops a framework for understanding how emotions may track institutionally constituted forms of status, while also asking when such responses are genuinely fitting and when they become normatively questionable.
         </p>
 
@@ -175,7 +163,7 @@ nav_order: 3
         </div>
 
         <p class="wip-description">
-          This paper revisits the contrast between direct and indirect realism in the philosophy of perception. 
+          This paper revisits the contrast between direct and indirect realism in the philosophy of perception.
           It argues that mediation need not block direct awareness of ordinary objects, and explores a model on which perceptual experience can involve a mediating element without placing the world behind a veil.
         </p>
 
@@ -197,7 +185,7 @@ nav_order: 3
         </div>
 
         <p class="wip-description">
-          This paper examines how a community's existing linguistic practice can help determine what its words refer to, even when several possible extensions initially look equally compatible with use. 
+          This paper examines how a community's existing linguistic practice can help determine what its words refer to, even when several possible extensions initially look equally compatible with use.
           It offers a practice-based account of how patterns of judgment, correction, and projection can already favor one interpretation over others.
         </p>
 
@@ -210,4 +198,5 @@ nav_order: 3
     </article>
 
   </div>
+
 </div>
