@@ -75,30 +75,30 @@ talks:
 
 <style>
 .talks-refined {
-  max-width: 900px;
-  margin-top: 1.7rem;
+  max-width: 920px;
+  margin-top: 1.8rem;
 }
 
 .talk-entry {
   position: relative;
   display: grid;
-  grid-template-columns: 6.5rem 1fr;
-  gap: 1.6rem;
-  padding: 1.15rem 0;
+  grid-template-columns: 8rem 1fr;
+  gap: 1.8rem;
+  padding: 1.12rem 0;
 }
 
 .talk-entry::before {
   content: "";
   position: absolute;
-  left: 6.5rem;
+  left: 8rem;
   top: 0;
   bottom: 0;
   width: 1px;
   background: linear-gradient(
     to bottom,
     transparent,
-    var(--global-divider-color) 18%,
-    var(--global-divider-color) 82%,
+    var(--global-divider-color) 16%,
+    var(--global-divider-color) 84%,
     transparent
   );
 }
@@ -106,17 +106,18 @@ talks:
 .talk-entry::after {
   content: "";
   position: absolute;
-  left: calc(6.5rem - 4px);
-  top: 1.55rem;
-  width: 9px;
-  height: 9px;
+  left: calc(8rem - 3.5px);
+  top: 1.48rem;
+  width: 7px;
+  height: 7px;
   border-radius: 999px;
   background: var(--global-theme-color);
-  box-shadow: 0 0 0 5px color-mix(in srgb, var(--global-theme-color) 12%, transparent);
+  box-shadow: 0 0 0 3.5px color-mix(in srgb, var(--global-theme-color) 12%, transparent);
 }
 
 .talk-date {
-  padding-top: 0.16rem;
+  padding-top: 0.14rem;
+  padding-right: 1.65rem;
   font-size: 0.82rem;
   line-height: 1.28;
   color: var(--global-text-color-light);
@@ -126,13 +127,13 @@ talks:
 
 .talk-date strong {
   display: block;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: var(--global-text-color);
 }
 
 .talk-body {
-  padding-left: 0.25rem;
+  padding-left: 0.3rem;
 }
 
 .talk-title {
@@ -199,6 +200,14 @@ talks:
   color: #34537a;
   background: #edf4fc;
   border-color: #c7d9ee;
+}
+
+.talk-note-muted {
+  margin-top: 0.42rem;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: var(--global-text-color-light);
+  font-style: italic;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -278,6 +287,7 @@ body.theme-dark .talk-tag.workshop {
   .talk-date {
     text-align: left;
     padding-top: 0;
+    padding-right: 0;
   }
 
   .talk-date strong {
@@ -302,12 +312,46 @@ body.theme-dark .talk-tag.workshop {
 
   <article class="talk-entry">
     <div class="talk-date">
+      <strong>May</strong>
+      2026
+    </div>
+
+    <div class="talk-body">
+      <h2 class="talk-title">“Situated Objects and Illusion”</h2>
+      <div class="talk-meta">
+        <span class="talk-venue">Society for Exact Philosophy Annual Meeting</span>
+        <span class="talk-place">Vancouver, Canada</span>
+      </div>
+      <div class="talk-tags">
+        <span class="talk-tag peer">Paper peer reviewed</span>
+      </div>
+      <div class="talk-note-muted">Cancelled due to dissertation defense.</div>
+    </div>
+  </article>
+
+  <article class="talk-entry">
+    <div class="talk-date">
+      <strong>Apr</strong>
+      2026
+    </div>
+
+    <div class="talk-body">
+      <h2 class="talk-title">“Mediated Direct Realism”</h2>
+      <div class="talk-meta">
+        <span class="talk-venue">Institute of Philosophy, Chinese Academy of Sciences</span>
+        <span class="talk-place">Beijing, China</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="talk-entry">
+    <div class="talk-date">
       <strong>Jan</strong>
       2026
     </div>
 
     <div class="talk-body">
-      <h2 class="talk-title">“New Object Theory and Illusion”</h2>
+      <h2 class="talk-title">“Situated Object and Illusion”</h2>
       <div class="talk-meta">
         <span class="talk-venue">Eastern APA</span>
         <span class="talk-place">Baltimore, USA</span>
@@ -353,6 +397,24 @@ body.theme-dark .talk-tag.workshop {
 
   <article class="talk-entry">
     <div class="talk-date">
+      <strong>Feb/Mar</strong>
+      2025
+    </div>
+
+    <div class="talk-body">
+      <h2 class="talk-title">“Is Rich Phenomenology Fragmented?”</h2>
+      <div class="talk-meta">
+        <span class="talk-venue">Central APA</span>
+        <span class="talk-place">Online</span>
+      </div>
+      <div class="talk-tags">
+        <span class="talk-tag peer">Paper peer reviewed</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="talk-entry">
+    <div class="talk-date">
       <strong>Jan</strong>
       2025
     </div>
@@ -379,24 +441,6 @@ body.theme-dark .talk-tag.workshop {
       <div class="talk-meta">
         <span class="talk-venue">Talk</span>
         <span class="talk-place">Beijing, China</span>
-      </div>
-    </div>
-  </article>
-
-  <article class="talk-entry">
-    <div class="talk-date">
-      <strong>Feb/Mar</strong>
-      2025
-    </div>
-
-    <div class="talk-body">
-      <h2 class="talk-title">“Is Rich Phenomenology Fragmented?”</h2>
-      <div class="talk-meta">
-        <span class="talk-venue">Central APA</span>
-        <span class="talk-place">Online</span>
-      </div>
-      <div class="talk-tags">
-        <span class="talk-tag peer">Paper peer reviewed</span>
       </div>
     </div>
   </article>
