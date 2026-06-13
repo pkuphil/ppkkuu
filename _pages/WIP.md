@@ -14,7 +14,7 @@ nav_order: 3
 }
 
 .wip-intro {
-  max-width: 680px;
+  max-width: 690px;
   margin-bottom: 2.4rem;
   font-size: 0.98rem;
   line-height: 1.75;
@@ -34,13 +34,7 @@ nav_order: 3
   padding: 1.45rem 1.55rem;
   border: 1px solid var(--global-divider-color);
   border-radius: 18px;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.04),
-      rgba(255, 255, 255, 0)
-    ),
-    var(--global-card-bg-color);
+  background: var(--global-card-bg-color);
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
@@ -144,7 +138,7 @@ nav_order: 3
 <div class="wip-container">
 
   <p class="wip-intro">
-    This page lists selected research projects currently in progress, including manuscripts under review, revise-and-resubmit projects, and early-stage work.
+    This page lists selected research projects currently in progress. The descriptions are intentionally brief and non-technical, highlighting the broad questions behind each project.
   </p>
 
   <div class="wip-list">
@@ -154,20 +148,19 @@ nav_order: 3
 
       <div class="wip-content">
         <div class="wip-topline">
-          <h2 class="wip-title">你的第一个研究主题标题</h2>
-          <span class="wip-status">R&amp;R at Journal Name</span>
+          <h2 class="wip-title">A paper about institutional status and social emotions</h2>
+          <span class="wip-status">R&amp;R at Philosophical Quarterly</span>
         </div>
 
         <p class="wip-description">
-          This project examines how local political incentives shape development outcomes. 
-          It studies the conditions under which officials prioritize long-term growth, public goods provision, 
-          and institutional reform.
+          This paper asks why certain social labels, roles, and credentials can shape our emotional responses to people so powerfully. 
+          It develops a framework for understanding how emotions may track institutionally constituted forms of status, while also asking when such responses are genuinely fitting and when they become normatively questionable.
         </p>
 
         <div class="wip-meta">
-          <span class="wip-tag">political economy</span>
-          <span class="wip-tag">local governance</span>
-          <span class="wip-tag">development</span>
+          <span class="wip-tag">philosophy of emotion</span>
+          <span class="wip-tag">social ontology</span>
+          <span class="wip-tag">fittingness</span>
         </div>
       </div>
     </article>
@@ -177,19 +170,19 @@ nav_order: 3
 
       <div class="wip-content">
         <div class="wip-topline">
-          <h2 class="wip-title">你的第二个研究主题标题</h2>
-          <span class="wip-status subtle">working paper</span>
+          <h2 class="wip-title">A paper about perception and mediation</h2>
+          <span class="wip-status subtle">manuscript</span>
         </div>
 
         <p class="wip-description">
-          This paper investigates how bureaucratic capacity affects policy implementation across regions. 
-          It combines administrative data with institutional analysis to explain variation in policy outcomes.
+          This paper revisits the contrast between direct and indirect realism in the philosophy of perception. 
+          It argues that mediation need not block direct awareness of ordinary objects, and explores a model on which perceptual experience can involve a mediating element without placing the world behind a veil.
         </p>
 
         <div class="wip-meta">
-          <span class="wip-tag">bureaucracy</span>
-          <span class="wip-tag">institutions</span>
-          <span class="wip-tag">policy implementation</span>
+          <span class="wip-tag">philosophy of perception</span>
+          <span class="wip-tag">direct realism</span>
+          <span class="wip-tag">hallucination</span>
         </div>
       </div>
     </article>
@@ -199,19 +192,19 @@ nav_order: 3
 
       <div class="wip-content">
         <div class="wip-topline">
-          <h2 class="wip-title">你的第三个研究主题标题</h2>
-          <span class="wip-status subtle">early stage</span>
+          <h2 class="wip-title">A paper about reference and linguistic practice</h2>
+          <span class="wip-status subtle">manuscript</span>
         </div>
 
         <p class="wip-description">
-          This project explores how information flows shape accountability and public service delivery. 
-          It focuses on how citizens, officials, and intermediaries respond to new forms of political information.
+          This paper examines how a community's existing linguistic practice can help determine what its words refer to, even when several possible extensions initially look equally compatible with use. 
+          It offers a practice-based account of how patterns of judgment, correction, and projection can already favor one interpretation over others.
         </p>
 
         <div class="wip-meta">
-          <span class="wip-tag">accountability</span>
-          <span class="wip-tag">information</span>
-          <span class="wip-tag">public services</span>
+          <span class="wip-tag">philosophy of language</span>
+          <span class="wip-tag">reference</span>
+          <span class="wip-tag">metasemantics</span>
         </div>
       </div>
     </article>
