@@ -16,7 +16,7 @@ scholar:
 
 {% include bib_search.liquid %}
 
-<div class="publications publications-page">
+<div id="publications-page" class="publications">
 
 {% bibliography %}
 
