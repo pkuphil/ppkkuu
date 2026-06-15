@@ -2,19 +2,36 @@
 layout: page
 title: talks
 permalink: /talks/
-description: 
+description:
 nav: true
 nav_order: 5
 
-# ✅ 同一个 title 可以重复出现；每条 talk 只放一个会议（items 里只有 1 条）
 talks:
-  
+  - title: "Situated Objects and Illusion"
+    selected: false
+    items:
+      - venue: "Society for Exact Philosophy Annual Meeting"
+        place: "Vancouver, Canada"
+        date: "May 2026"
+        tag: "peer"
+        tag_label: "Paper peer reviewed"
+        note: "Cancelled due to dissertation defense."
+
+  - title: "Mediated Direct Realism"
+    selected: false
+    items:
+      - venue: "Institute of Philosophy, Chinese Academy of Sciences"
+        place: "Beijing, China"
+        date: "Apr 2026"
+
   - title: "Situated Object and Illusion"
     selected: true
     items:
       - venue: "APA Eastern Division Meeting (122nd)"
         place: "Baltimore, USA"
         date: "Jan 2026"
+        tag: "peer"
+        tag_label: "Paper peer reviewed"
 
   - title: "Mediated Direct Realism"
     selected: true
@@ -29,6 +46,26 @@ talks:
       - venue: "APA Pacific Division Meeting (98th)"
         place: "San Francisco, USA"
         date: "Apr 2025"
+        tag: "peer"
+        tag_label: "Paper peer reviewed"
+
+  - title: "Is Rich Phenomenology Fragmented?"
+    selected: true
+    items:
+      - venue: "APA Central Division Meeting (122nd)"
+        place: "Online"
+        date: "Feb/Mar 2025"
+        tag: "peer"
+        tag_label: "Paper peer reviewed"
+
+  - title: "Do Semantic Properties Involve the Future?"
+    selected: true
+    items:
+      - venue: "APA Eastern Division Meeting (121st)"
+        place: "New York, USA"
+        date: "Jan 2025"
+        tag: "wip"
+        tag_label: "W.I.P."
 
   - title: "Do Semantic Properties Involve the Future?"
     selected: false
@@ -37,26 +74,14 @@ talks:
         place: "Beijing, China"
         date: "2025"
 
-  - title: "Is Rich Phenomenology Fragmented?"
-    selected: true
-    items:
-      - venue: "APA Central Division Meeting (122nd)"
-        place: "Online"
-        date: "Feb/Mar 2025"
-
-  - title: "Do Semantic Properties Involve the Future?"
-    selected: true
-    items:
-      - venue: "APA Eastern Division Meeting (121st)"
-        place: "New York, USA"
-        date: "Jan 2025"
-
   - title: "MCICCR"
     selected: false
     items:
-      - venue: "Australasian Association of Philosophy (AAP) Conference 2024"
+      - venue: "Australasian Association of Philosophy Conference"
         place: "Perth, Australia"
         date: "Jul 2024"
+        tag: "abstract"
+        tag_label: "Abstract peer reviewed"
 
   - title: "MCICCR"
     selected: false
@@ -64,6 +89,8 @@ talks:
       - venue: "Workshop for Young Scholars in Science and Philosophy"
         place: "Beijing, China"
         date: "Apr 2024"
+        tag: "peer"
+        tag_label: "Paper peer reviewed"
 
   - title: "MCICCR"
     selected: false
@@ -74,89 +101,66 @@ talks:
 ---
 
 <style>
-.talks-refined {
+.talks-list {
   max-width: 920px;
-  margin-top: 1.8rem;
+  margin-top: 2.2rem;
+  counter-reset: talk-counter;
 }
 
 .talk-entry {
   position: relative;
-  display: grid;
-  grid-template-columns: 8rem 1fr;
-  gap: 1.8rem;
-  padding: 1.12rem 0;
+  counter-increment: talk-counter;
+  padding-left: 3.05rem;
+  padding-bottom: 1.15rem;
+  margin-bottom: 1.15rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.talk-entry:last-child {
+  border-bottom: none;
 }
 
 .talk-entry::before {
-  content: "";
+  content: counter(talk-counter);
   position: absolute;
-  left: 8rem;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    var(--global-divider-color) 16%,
-    var(--global-divider-color) 84%,
-    transparent
-  );
-}
-
-.talk-entry::after {
-  content: "";
-  position: absolute;
-  left: calc(8rem - 3.5px);
-  top: 1.48rem;
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: var(--global-theme-color);
-  box-shadow: 0 0 0 3.5px color-mix(in srgb, var(--global-theme-color) 12%, transparent);
-}
-
-.talk-date {
-  padding-top: 0.14rem;
-  padding-right: 1.65rem;
-  font-size: 0.82rem;
-  line-height: 1.28;
-  color: var(--global-text-color-light);
+  left: 0;
+  top: 0.03rem;
+  width: 1.6rem;
   text-align: right;
-  letter-spacing: 0.02em;
-}
-
-.talk-date strong {
-  display: block;
-  font-size: 0.9rem;
+  color: var(--global-theme-color);
   font-weight: 500;
-  color: var(--global-text-color);
-}
-
-.talk-body {
-  padding-left: 0.3rem;
+  letter-spacing: 0.04em;
 }
 
 .talk-title {
   margin: 0;
-  font-size: 1.02rem;
-  font-weight: 500;
-  line-height: 1.42;
-  letter-spacing: -0.01em;
+  font-size: inherit;
+  font-weight: bolder;
+  line-height: inherit;
   color: var(--global-text-color);
 }
 
 .talk-meta {
   margin-top: 0.28rem;
-  font-size: 0.9rem;
-  line-height: 1.55;
   color: var(--global-text-color-light);
+  line-height: 1.45;
 }
 
 .talk-venue {
-  color: var(--global-text-color);
+  color: var(--global-theme-color);
+  font-family: "Cormorant Garamond", "EB Garamond", "Georgia", serif;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.015em;
+  text-decoration: none !important;
 }
 
-.talk-place::before {
+.talk-date {
+  color: var(--global-text-color-light);
+}
+
+.talk-place::before,
+.talk-date::before {
   content: " · ";
   color: var(--global-text-color-light);
 }
@@ -196,44 +200,11 @@ talks:
   border-color: #c9e4d0;
 }
 
-.talk-tag.workshop {
-  color: #34537a;
-  background: #edf4fc;
-  border-color: #c7d9ee;
-}
-
 .talk-note-muted {
   margin-top: 0.42rem;
-  font-size: 0.72rem;
-  line-height: 1.4;
   color: var(--global-text-color-light);
   font-style: italic;
-}
-
-@media (prefers-color-scheme: dark) {
-  .talk-tag.peer {
-    color: #f3d37a;
-    background: rgba(126, 91, 12, 0.22);
-    border-color: rgba(243, 211, 122, 0.32);
-  }
-
-  .talk-tag.abstract {
-    color: #f0b084;
-    background: rgba(128, 68, 29, 0.22);
-    border-color: rgba(240, 176, 132, 0.32);
-  }
-
-  .talk-tag.wip {
-    color: #a8d8b4;
-    background: rgba(46, 99, 61, 0.22);
-    border-color: rgba(168, 216, 180, 0.32);
-  }
-
-  .talk-tag.workshop {
-    color: #a9c7ef;
-    background: rgba(47, 83, 129, 0.22);
-    border-color: rgba(169, 199, 239, 0.32);
-  }
+  font-size: 0.875rem;
 }
 
 html[data-theme="dark"] .talk-tag.peer,
@@ -263,237 +234,55 @@ body.theme-dark .talk-tag.wip {
   border-color: rgba(168, 216, 180, 0.32);
 }
 
-html[data-theme="dark"] .talk-tag.workshop,
-html.dark .talk-tag.workshop,
-body.dark .talk-tag.workshop,
-body.theme-dark .talk-tag.workshop {
-  color: #a9c7ef;
-  background: rgba(47, 83, 129, 0.22);
-  border-color: rgba(169, 199, 239, 0.32);
-}
-
-@media (max-width: 650px) {
+@media (max-width: 576px) {
   .talk-entry {
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
-    padding: 1.05rem 0;
+    padding-left: 2.35rem;
+    margin-bottom: 1.05rem;
+    padding-bottom: 1.05rem;
   }
 
-  .talk-entry::before,
-  .talk-entry::after {
-    display: none;
+  .talk-entry::before {
+    width: 1.35rem;
   }
 
+  .talk-place,
   .talk-date {
-    text-align: left;
-    padding-top: 0;
-    padding-right: 0;
-  }
-
-  .talk-date strong {
-    display: inline;
-  }
-
-  .talk-body {
-    padding-left: 0;
-  }
-
-  .talk-place::before {
-    content: "";
-  }
-
-  .talk-place {
     display: block;
+  }
+
+  .talk-place::before,
+  .talk-date::before {
+    content: "";
   }
 }
 </style>
 
-<div class="talks-refined">
+<div class="talks-list">
+  {% for talk in page.talks %}
+    {% assign item = talk.items | first %}
 
-  <article class="talk-entry">
-    <div class="talk-date">
-      <strong>May</strong>
-      2026
-    </div>
+    <article class="talk-entry">
+      <h2 class="talk-title">“{{ talk.title }}”</h2>
 
-    <div class="talk-body">
-      <h2 class="talk-title">“Situated Objects and Illusion”</h2>
       <div class="talk-meta">
-        <span class="talk-venue">Society for Exact Philosophy Annual Meeting</span>
-        <span class="talk-place">Vancouver, Canada</span>
+        <span class="talk-venue">{{ item.venue }}</span>
+        {% if item.place %}
+          <span class="talk-place">{{ item.place }}</span>
+        {% endif %}
+        {% if item.date %}
+          <span class="talk-date">{{ item.date }}</span>
+        {% endif %}
       </div>
-      <div class="talk-tags">
-        <span class="talk-tag peer">Paper peer reviewed</span>
-      </div>
-      <div class="talk-note-muted">Cancelled due to dissertation defense.</div>
-    </div>
-  </article>
 
-  <article class="talk-entry">
-    <div class="talk-date">
-      <strong>Apr</strong>
-      2026
-    </div>
+      {% if item.tag_label %}
+        <div class="talk-tags">
+          <span class="talk-tag {{ item.tag }}">{{ item.tag_label }}</span>
+        </div>
+      {% endif %}
 
-    <div class="talk-body">
-      <h2 class="talk-title">“Mediated Direct Realism”</h2>
-      <div class="talk-meta">
-        <span class="talk-venue">Institute of Philosophy, Chinese Academy of Sciences</span>
-        <span class="talk-place">Beijing, China</span>
-      </div>
-    </div>
-  </article>
-
-  <article class="talk-entry">
-    <div class="talk-date">
-      <strong>Jan</strong>
-      2026
-    </div>
-
-    <div class="talk-body">
-      <h2 class="talk-title">“Situated Object and Illusion”</h2>
-      <div class="talk-meta">
-        <span class="talk-venue">Eastern APA</span>
-        <span class="talk-place">Baltimore, USA</span>
-      </div>
-      <div class="talk-tags">
-        <span class="talk-tag peer">Paper peer reviewed</span>
-      </div>
-    </div>
-  </article>
-
-  <article class="talk-entry">
-    <div class="talk-date">
-      <strong>Dec</strong>
-      2025
-    </div>
-
-    <div class="talk-body">
-      <h2 class="talk-title">“Mediated Direct Realism”</h2>
-      <div class="talk-meta">
-        <span class="talk-venue">PKU Philosophy R&amp;W</span>
-        <span class="talk-place">Beijing, China</span>
-      </div>
-    </div>
-  </article>
-
-  <article class="talk-entry">
-    <div class="talk-date">
-      <strong>Apr</strong>
-      2025
-    </div>
-
-    <div class="talk-body">
-      <h2 class="talk-title">“Do Semantic Properties Involve the Future?”</h2>
-      <div class="talk-meta">
-        <span class="talk-venue">Pacific APA</span>
-        <span class="talk-place">San Francisco, USA</span>
-      </div>
-      <div class="talk-tags">
-        <span class="talk-tag peer">Paper peer reviewed</span>
-      </div>
-    </div>
-  </article>
-
-  <article class="talk-entry">
-    <div class="talk-date">
-      <strong>Feb/Mar</strong>
-      2025
-    </div>
-
-    <div class="talk-body">
-      <h2 class="talk-title">“Is Rich Phenomenology Fragmented?”</h2>
-      <div class="talk-meta">
-        <span class="talk-venue">Central APA</span>
-        <span class="talk-place">Online</span>
-      </div>
-      <div class="talk-tags">
-        <span class="talk-tag peer">Paper peer reviewed</span>
-      </div>
-    </div>
-  </article>
-
-  <article class="talk-entry">
-    <div class="talk-date">
-      <strong>Jan</strong>
-      2025
-    </div>
-
-    <div class="talk-body">
-      <h2 class="talk-title">“Do Semantic Properties Involve the Future?”</h2>
-      <div class="talk-meta">
-        <span class="talk-venue">Eastern APA</span>
-        <span class="talk-place">New York, USA</span>
-      </div>
-      <div class="talk-tags">
-        <span class="talk-tag wip">W.I.P.</span>
-      </div>
-    </div>
-  </article>
-
-  <article class="talk-entry">
-    <div class="talk-date">
-      <strong>2025</strong>
-    </div>
-
-    <div class="talk-body">
-      <h2 class="talk-title">“Do Semantic Properties Involve the Future?”</h2>
-      <div class="talk-meta">
-        <span class="talk-venue">Talk</span>
-        <span class="talk-place">Beijing, China</span>
-      </div>
-    </div>
-  </article>
-
-  <article class="talk-entry">
-    <div class="talk-date">
-      <strong>Jul</strong>
-      2024
-    </div>
-
-    <div class="talk-body">
-      <h2 class="talk-title">“MCICCR”</h2>
-      <div class="talk-meta">
-        <span class="talk-venue">Annual Conference of the Australasian Association of Philosophy</span>
-        <span class="talk-place">Perth, Australia</span>
-      </div>
-      <div class="talk-tags">
-        <span class="talk-tag abstract">Abstract peer reviewed</span>
-      </div>
-    </div>
-  </article>
-
-  <article class="talk-entry">
-    <div class="talk-date">
-      <strong>Apr</strong>
-      2024
-    </div>
-
-    <div class="talk-body">
-      <h2 class="talk-title">“MCICCR”</h2>
-      <div class="talk-meta">
-        <span class="talk-venue">Workshop for Young Scholars in Science and Philosophy</span>
-        <span class="talk-place">Beijing, China</span>
-      </div>
-      <div class="talk-tags">
-        <span class="talk-tag peer">Paper peer reviewed</span>
-      </div>
-    </div>
-  </article>
-
-  <article class="talk-entry">
-    <div class="talk-date">
-      <strong>Mar</strong>
-      2024
-    </div>
-
-    <div class="talk-body">
-      <h2 class="talk-title">“MCICCR”</h2>
-      <div class="talk-meta">
-        <span class="talk-venue">PKU Philosophy R&amp;W</span>
-        <span class="talk-place">Beijing, China</span>
-      </div>
-    </div>
-  </article>
-
+      {% if item.note %}
+        <div class="talk-note-muted">{{ item.note }}</div>
+      {% endif %}
+    </article>
+  {% endfor %}
 </div>
