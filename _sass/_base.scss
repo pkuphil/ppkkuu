@@ -1678,3 +1678,25 @@ figure.cover {
 mjx-container[jax="CHTML"][display="true"] {
   overflow-x: auto;
 }
+
+/*******************************************************************************
+ * Homepage latest publications venue color.
+ * Keep journal names in theme color without affecting the new /publications/ layout.
+ ******************************************************************************/
+
+.publications:not(#publications-page) .periodical {
+  color: var(--global-text-color-light);
+}
+
+.publications:not(#publications-page) .periodical em {
+  color: var(--global-theme-color) !important;
+  font-style: italic;
+}
+
+html[data-theme="dark"] .publications:not(#publications-page) .periodical {
+  color: var(--global-text-color-light);
+}
+
+html[data-theme="dark"] .publications:not(#publications-page) .periodical em {
+  color: var(--global-theme-color) !important;
+}
