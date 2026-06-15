@@ -110,8 +110,8 @@ nav_order: 3
         </div>
 
         <p class="wip-description">
-          This paper asks why certain social labels, roles, and credentials can shape our emotional responses to people so powerfully.
-          It develops a framework for understanding how emotions may track institutionally constituted forms of status, while also asking when such responses are genuinely fitting and when they become normatively questionable.
+          I ask why certain social labels, roles, and credentials can shape our emotional responses to people so powerfully.
+          I develop a framework for understanding how emotions may track institutionally constituted forms of status, while also asking when such responses are genuinely fitting and when they become normatively questionable.
         </p>
       </div>
     </article>
@@ -124,8 +124,8 @@ nav_order: 3
         </div>
 
         <p class="wip-description">
-          This paper revisits the contrast between direct and indirect realism in the philosophy of perception.
-          It argues that mediation need not block direct awareness of ordinary objects, and explores a model on which perceptual experience can involve a mediating element without placing the world behind a veil.
+          I revisit the contrast between direct and indirect realism in the philosophy of perception.
+          I argue that mediation need not block direct awareness of ordinary objects, and explore a model on which perceptual experience can involve a mediating element without placing the world behind a veil.
         </p>
       </div>
     </article>
@@ -138,8 +138,8 @@ nav_order: 3
         </div>
 
         <p class="wip-description">
-          This paper examines how a community's existing linguistic practice can help determine what its words refer to, even when several possible extensions initially look equally compatible with use.
-          It offers a practice-based account of how patterns of judgment, correction, and projection can already favor one interpretation over others.
+          I examine how a community's existing linguistic practice can help determine what its words refer to, even when several possible extensions initially look equally compatible with use.
+          I offer a practice-based account of how patterns of judgment, correction, and projection can already favor one interpretation over others.
         </p>
       </div>
     </article>
