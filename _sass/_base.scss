@@ -896,9 +896,39 @@ footer.sticky-bottom {
   }
 }
 
+
+/*******************************************************************************
+ * Homepage/latest publications venue color.
+ * This keeps journal names in theme color on homepage without affecting
+ * the dedicated /publications/ page styling.
+ ******************************************************************************/
+
+.publications:not(#publications-page) .periodical {
+  color: var(--global-text-color-light);
+}
+
+.publications:not(#publications-page) .periodical em {
+  color: var(--global-theme-color) !important;
+  font-style: italic;
+}
+
+html[data-theme="dark"] .publications:not(#publications-page) .periodical {
+  color: var(--global-text-color-light);
+}
+
+html[data-theme="dark"] .publications:not(#publications-page) .periodical em {
+  color: var(--global-theme-color) !important;
+}
+
 /*******************************************************************************
  * Publications page only.
  * This does NOT affect homepage latest publications.
+ * Keeps the theme's original publication font sizes, while adding:
+ * - numbering
+ * - no preview images
+ * - compact spacing
+ * - collapsed abstracts by default
+ * - a slightly more distinctive journal name style
  ******************************************************************************/
 
 #publications-page {
@@ -915,20 +945,19 @@ footer.sticky-bottom {
     max-width: 390px;
     border-radius: 6px;
     padding: 0.62rem 0.9rem;
-    font-size: 0.95rem;
   }
 
   ol.bibliography {
     padding-left: 0;
-    margin-top: 1.9rem;
+    margin-top: 1.65rem;
     counter-reset: pub-counter;
 
     > li {
       list-style: none;
       position: relative;
       counter-increment: pub-counter;
-      margin-bottom: 1.35rem !important;
-      padding-bottom: 1.35rem;
+      margin-bottom: 1.15rem !important;
+      padding-bottom: 1.15rem;
       padding-left: 3.05rem;
       border-bottom: 1px solid var(--global-divider-color);
       border-top: none !important;
@@ -941,14 +970,12 @@ footer.sticky-bottom {
         content: counter(pub-counter);
         position: absolute;
         left: 0;
-        top: 0.04rem;
+        top: 0.03rem;
         width: 1.6rem;
         text-align: right;
-        font-size: 0.95rem;
-        line-height: 1.35;
-        letter-spacing: 0.04em;
         color: var(--global-theme-color);
         font-weight: 500;
+        letter-spacing: 0.04em;
       }
 
       .preview,
@@ -970,50 +997,31 @@ footer.sticky-bottom {
         padding-right: 0;
       }
 
-      .title {
-        font-size: 1.2rem;
-        font-weight: 500 !important;
-        line-height: 1.38;
-        letter-spacing: -0.018em;
-        margin-bottom: 0.16rem;
-      }
-
       .periodical {
-        font-size: 1rem;
-        line-height: 1.42;
         color: var(--global-text-color-light) !important;
         margin-bottom: 0.48rem;
 
         em {
           color: var(--global-theme-color) !important;
           font-style: italic;
+          font-weight: 500;
+          letter-spacing: 0.01em;
+          text-decoration: underline;
+          text-decoration-thickness: 0.045em;
+          text-underline-offset: 0.16em;
+          text-decoration-color: var(--global-theme-color);
         }
       }
 
       .links {
         margin-top: 0.32rem;
-
-        a.btn {
-          border-radius: 3px;
-          padding: 0.21rem 0.72rem !important;
-          font-size: 0.68rem;
-          letter-spacing: 0.055em;
-          text-transform: uppercase;
-          line-height: 1.35;
-        }
       }
 
       .hidden {
-        font-size: 0.95rem;
         max-height: 0;
         overflow: hidden;
-        text-align: left;
+        text-align: justify;
         transition: all 0.15s ease;
-
-        p {
-          line-height: 1.62;
-          margin: 0;
-        }
       }
 
       .hidden.open {
@@ -1035,11 +1043,6 @@ footer.sticky-bottom {
         padding: 0.1rem 0 0.1rem 1rem !important;
         color: var(--global-text-color);
       }
-
-      div.abstract.hidden.open p {
-        line-height: 1.62;
-        margin: 0;
-      }
     }
   }
 }
@@ -1050,24 +1053,11 @@ footer.sticky-bottom {
 
     ol.bibliography > li {
       padding-left: 2.35rem;
-      margin-bottom: 1.2rem !important;
-      padding-bottom: 1.2rem;
+      margin-bottom: 1.05rem !important;
+      padding-bottom: 1.05rem;
 
       &::before {
         width: 1.35rem;
-        font-size: 0.85rem;
-      }
-
-      .title {
-        font-size: 1.08rem;
-      }
-
-      .periodical {
-        font-size: 0.96rem;
-      }
-
-      div.abstract.hidden.open {
-        font-size: 0.92rem;
       }
     }
   }
@@ -1677,26 +1667,4 @@ figure.cover {
 
 mjx-container[jax="CHTML"][display="true"] {
   overflow-x: auto;
-}
-
-/*******************************************************************************
- * Homepage latest publications venue color.
- * Keep journal names in theme color without affecting the new /publications/ layout.
- ******************************************************************************/
-
-.publications:not(#publications-page) .periodical {
-  color: var(--global-text-color-light);
-}
-
-.publications:not(#publications-page) .periodical em {
-  color: var(--global-theme-color) !important;
-  font-style: italic;
-}
-
-html[data-theme="dark"] .publications:not(#publications-page) .periodical {
-  color: var(--global-text-color-light);
-}
-
-html[data-theme="dark"] .publications:not(#publications-page) .periodical em {
-  color: var(--global-theme-color) !important;
 }
