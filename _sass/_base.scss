@@ -1669,3 +1669,26 @@ figure.cover {
 mjx-container[jax="CHTML"][display="true"] {
   overflow-x: auto;
 }
+
+/*******************************************************************************
+ * Fix publication numbering across multiple bibliography groups.
+ * Put this at the VERY END of _base.scss.
+ ******************************************************************************/
+
+#publications-page {
+  counter-reset: pub-counter !important;
+}
+
+/* Do NOT reset numbering inside each year/status group */
+#publications-page ol.bibliography {
+  counter-reset: none !important;
+}
+
+/* Count every publication item globally across the whole page */
+#publications-page ol.bibliography > li {
+  counter-increment: pub-counter !important;
+}
+
+#publications-page ol.bibliography > li::before {
+  content: counter(pub-counter) !important;
+}
