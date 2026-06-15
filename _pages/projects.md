@@ -9,7 +9,7 @@ nav_order: 5
 talks:
   - title: "Situated Objects and Illusion"
     selected: false
-    type: "peer reviewed"
+    type: "peer-reviewed colloquium"
     items:
       - venue: "Society for Exact Philosophy Annual Meeting"
         place: "Vancouver, Canada"
@@ -26,7 +26,7 @@ talks:
 
   - title: "Situated Object and Illusion"
     selected: true
-    type: "peer reviewed"
+    type: "peer-reviewed colloquium"
     items:
       - venue: "APA Eastern Division Meeting (122nd)"
         place: "Baltimore, USA"
@@ -42,7 +42,7 @@ talks:
 
   - title: "Do Semantic Properties Involve the Future?"
     selected: true
-    type: "peer reviewed"
+    type: "peer-reviewed colloquium"
     items:
       - venue: "APA Pacific Division Meeting (98th)"
         place: "San Francisco, USA"
@@ -50,7 +50,7 @@ talks:
 
   - title: "Is Rich Phenomenology Fragmented?"
     selected: true
-    type: "peer reviewed"
+    type: "peer-reviewed colloquium"
     items:
       - venue: "APA Central Division Meeting (122nd)"
         place: "Online"
@@ -74,7 +74,7 @@ talks:
 
   - title: "MCICCR"
     selected: false
-    type: "abstract reviewed"
+    type: "peer-reviewed colloquium"
     items:
       - venue: "Australasian Association of Philosophy Conference"
         place: "Perth, Australia"
@@ -82,7 +82,7 @@ talks:
 
   - title: "MCICCR"
     selected: false
-    type: "workshop"
+    type: "peer-reviewed colloquium"
     items:
       - venue: "Workshop for Young Scholars in Science and Philosophy"
         place: "Beijing, China"
@@ -167,22 +167,6 @@ talks:
   letter-spacing: 0.055em;
   text-transform: uppercase;
   white-space: nowrap;
-}
-
-.talk-kind.peer-reviewed {
-  color: var(--global-theme-color);
-  border-color: color-mix(in srgb, var(--global-theme-color) 38%, var(--global-divider-color));
-  background: color-mix(in srgb, var(--global-theme-color) 7%, transparent);
-}
-
-.talk-kind.colloquium {
-  color: var(--global-text-color-light);
-}
-
-.talk-kind.workshop,
-.talk-kind.wip,
-.talk-kind.abstract-reviewed {
-  color: var(--global-text-color-light);
 }
 
 .talk-meta {
