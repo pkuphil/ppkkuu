@@ -934,6 +934,7 @@ html[data-theme="dark"] .publications:not(#publications-page) .periodical em {
 #publications-page {
   max-width: 920px;
   margin-top: 2.2rem;
+  counter-reset: pub-counter;
 
   h2.bibliography {
     display: none !important;
