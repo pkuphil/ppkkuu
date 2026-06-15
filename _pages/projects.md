@@ -18,7 +18,6 @@ talks:
 
   - title: "Mediated Direct Realism"
     selected: false
-    type: "colloquium"
     items:
       - venue: "Institute of Philosophy, Chinese Academy of Sciences"
         place: "Beijing, China"
@@ -34,7 +33,6 @@ talks:
 
   - title: "Mediated Direct Realism"
     selected: true
-    type: "colloquium"
     items:
       - venue: "PKU Philosophy R&W"
         place: "Beijing, China"
@@ -66,7 +64,6 @@ talks:
 
   - title: "Do Semantic Properties Involve the Future?"
     selected: false
-    type: "colloquium"
     items:
       - venue: "Talk"
         place: "Beijing, China"
@@ -74,7 +71,7 @@ talks:
 
   - title: "MCICCR"
     selected: false
-    type: "peer-reviewed colloquium"
+    type: "abstract peer-reviewed colloquium"
     items:
       - venue: "Australasian Association of Philosophy Conference"
         place: "Perth, Australia"
@@ -90,7 +87,6 @@ talks:
 
   - title: "MCICCR"
     selected: false
-    type: "colloquium"
     items:
       - venue: "PKU Philosophy R&W"
         place: "Beijing, China"
