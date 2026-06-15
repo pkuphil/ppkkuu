@@ -82,25 +82,6 @@ nav_order: 3
   line-height: 1.62;
 }
 
-.wip-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.38rem;
-  margin-top: 0.15rem;
-}
-
-.wip-tag {
-  font-size: 0.68rem;
-  line-height: 1;
-  letter-spacing: 0.035em;
-  text-transform: lowercase;
-  color: var(--global-text-color-light);
-  padding: 0.2rem 0.52rem;
-  border-radius: 999px;
-  border: 1px solid var(--global-divider-color);
-  background: transparent;
-}
-
 @media (max-width: 576px) {
   .wip-container {
     max-width: 100%;
@@ -132,12 +113,6 @@ nav_order: 3
           This paper asks why certain social labels, roles, and credentials can shape our emotional responses to people so powerfully.
           It develops a framework for understanding how emotions may track institutionally constituted forms of status, while also asking when such responses are genuinely fitting and when they become normatively questionable.
         </p>
-
-        <div class="wip-meta">
-          <span class="wip-tag">philosophy of emotion</span>
-          <span class="wip-tag">social ontology</span>
-          <span class="wip-tag">fittingness</span>
-        </div>
       </div>
     </article>
 
@@ -152,12 +127,6 @@ nav_order: 3
           This paper revisits the contrast between direct and indirect realism in the philosophy of perception.
           It argues that mediation need not block direct awareness of ordinary objects, and explores a model on which perceptual experience can involve a mediating element without placing the world behind a veil.
         </p>
-
-        <div class="wip-meta">
-          <span class="wip-tag">philosophy of perception</span>
-          <span class="wip-tag">direct realism</span>
-          <span class="wip-tag">hallucination</span>
-        </div>
       </div>
     </article>
 
@@ -172,12 +141,6 @@ nav_order: 3
           This paper examines how a community's existing linguistic practice can help determine what its words refer to, even when several possible extensions initially look equally compatible with use.
           It offers a practice-based account of how patterns of judgment, correction, and projection can already favor one interpretation over others.
         </p>
-
-        <div class="wip-meta">
-          <span class="wip-tag">philosophy of language</span>
-          <span class="wip-tag">reference</span>
-          <span class="wip-tag">metasemantics</span>
-        </div>
       </div>
     </article>
 
