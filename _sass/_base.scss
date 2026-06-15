@@ -715,7 +715,8 @@ footer.sticky-bottom {
 // Publications
 
 .publications {
-  margin-top: 2rem;
+  max-width: 920px;
+  margin-top: 2.2rem;
 
   h1 {
     color: var(--global-theme-color);
@@ -734,50 +735,77 @@ footer.sticky-bottom {
   }
 
   h2.bibliography {
-    color: var(--global-divider-color);
-    border-top: 1px solid var(--global-divider-color);
-    padding-top: 1rem;
-    margin-top: 2rem;
-    text-align: right;
+    display: none !important;
+  }
+
+  .bibsearch-form-input,
+  input[type="search"],
+  input[type="text"] {
+    max-width: 390px;
+    border-radius: 6px;
+    padding: 0.62rem 0.9rem;
+    font-size: 0.95rem;
   }
 
   ol.bibliography {
     list-style: none;
     padding: 0;
-    margin-top: 0;
+    margin-top: 1.9rem;
+    counter-reset: pub-counter;
 
-    li {
-      margin-bottom: 1rem;
+    > li {
+      list-style: none;
+      position: relative;
+      counter-increment: pub-counter;
+      margin-bottom: 1.45rem !important;
+      padding-bottom: 1.45rem;
+      padding-left: 3rem;
+      border-bottom: 1px solid var(--global-divider-color);
+      border-top: none !important;
 
-      .preview {
+      &:last-child {
+        border-bottom: none;
       }
 
+      &::before {
+        content: counter(pub-counter);
+        position: absolute;
+        left: 0;
+        top: 0.05rem;
+        width: 1.6rem;
+        text-align: right;
+        font-size: 0.95rem;
+        line-height: 1.35;
+        letter-spacing: 0.04em;
+        color: var(--global-theme-color);
+        font-weight: 500;
+      }
+
+      .preview,
       .abbr {
-        margin-bottom: 0.5rem;
+        display: none !important;
+      }
 
-        abbr {
-          display: inline-block;
-          background-color: var(--global-theme-color);
-          margin-bottom: 0.5rem;
-          color: var(--global-card-bg-color) !important;
+      .row {
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+      }
 
-          a {
-            color: white;
-
-            &:hover {
-              text-decoration: none;
-            }
-          }
-        }
-
-        .award {
-          color: var(--global-theme-color) !important;
-          border: 1px solid var(--global-theme-color);
-        }
+      .row > div {
+        max-width: 100%;
+        width: 100%;
+        flex: 0 0 100%;
+        padding-left: 0;
+        padding-right: 0;
       }
 
       .title {
-        font-weight: bolder;
+        font-size: 1.22rem;
+        font-weight: 500 !important;
+        line-height: 1.38;
+        letter-spacing: -0.018em;
+        margin-bottom: 0.18rem;
       }
 
       .author {
@@ -807,21 +835,39 @@ footer.sticky-bottom {
         }
       }
 
+      .periodical {
+        font-size: 1.02rem;
+        line-height: 1.42;
+        color: var(--global-text-color-light) !important;
+        margin-bottom: 0.55rem;
+
+        em {
+          color: var(--global-theme-color) !important;
+          font-style: italic;
+        }
+      }
+
       .links {
+        margin-top: 0.35rem;
+
         a.btn {
           color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
-          padding-top: 0.25rem;
-          padding-bottom: 0.25rem;
+          border-radius: 3px;
+          padding: 0.22rem 0.72rem !important;
           margin-left: 0;
+          font-size: 0.68rem;
+          letter-spacing: 0.055em;
+          text-transform: uppercase;
+          line-height: 1.35;
 
           &:hover {
             color: var(--global-theme-color);
             border-color: var(--global-theme-color);
+            text-decoration: none;
           }
         }
+
         a.award.btn {
           border-color: var(--global-highlight-color);
         }
@@ -829,6 +875,7 @@ footer.sticky-bottom {
 
       .badges {
         padding-bottom: 0.5rem;
+
         span {
           display: inline-block;
           color: $black-color;
@@ -843,19 +890,15 @@ footer.sticky-bottom {
       }
 
       .hidden {
-        font-size: 0.875rem;
-        max-height: 0px;
+        font-size: 0.95rem;
+        max-height: 0;
         overflow: hidden;
-        text-align: justify;
-        transition-property: 0.15s ease;
-        -moz-transition: 0.15s ease;
-        -ms-transition: 0.15s ease;
-        -o-transition: 0.15s ease;
+        text-align: left;
         transition: all 0.15s ease;
 
         p {
-          line-height: 1.4em;
-          margin: 10px;
+          line-height: 1.62;
+          margin: 0;
         }
 
         pre {
@@ -867,26 +910,65 @@ footer.sticky-bottom {
 
       .hidden.open {
         max-height: 100em;
-        transition-property: 0.15s ease;
-        -moz-transition: 0.15s ease;
-        -ms-transition: 0.15s ease;
-        -o-transition: 0.15s ease;
         transition: all 0.15s ease;
       }
 
       div.abstract.hidden {
-        border: dashed 1px var(--global-bg-color);
+        border: none !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
       }
 
       div.abstract.hidden.open {
-        border-color: var(--global-text-color);
+        max-width: 760px;
+        margin-top: 0.85rem !important;
+        border: none !important;
+        border-left: 2px solid var(--global-divider-color) !important;
+        padding: 0.1rem 0 0.1rem 1rem !important;
+        color: var(--global-text-color);
+      }
+
+      div.abstract.hidden.open p {
+        line-height: 1.62;
+        margin: 0;
       }
     }
+
     div.award.hidden {
       border: dashed 1px var(--global-bg-color);
     }
+
     div.award.hidden.open {
       border-color: var(--global-highlight-color);
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .publications {
+    max-width: 100%;
+
+    ol.bibliography > li {
+      padding-left: 2.35rem;
+      margin-bottom: 1.25rem !important;
+      padding-bottom: 1.25rem;
+
+      &::before {
+        width: 1.35rem;
+        font-size: 0.85rem;
+      }
+
+      .title {
+        font-size: 1.08rem;
+      }
+
+      .periodical {
+        font-size: 0.96rem;
+      }
+
+      div.abstract.hidden.open {
+        font-size: 0.92rem;
+      }
     }
   }
 }
@@ -1495,172 +1577,4 @@ figure.cover {
 
 mjx-container[jax="CHTML"][display="true"] {
   overflow-x: auto;
-}
-
-html[data-theme="dark"] .publications .periodical,
-html[data-theme="dark"] .publications .periodical em {
-  color: var(--global-theme-color);
-}
-
-.publications .periodical {
-  color: #777777;
-}
-
-.publications .periodical em {
-  color: var(--global-theme-color);
-  font-style: italic;
-}
-
-.publications ol.bibliography li + li {
-  border-top: 1px solid var(--global-divider-color);
-  padding-top: 1.4rem;
-  margin-top: 1.4rem;
-}
-
-.publications h2.bibliography {
-  display: none;
-}
-
-/* show abstracts by default on homepage latest publications */
-body.post .publications div.abstract.hidden,
-body.page .publications div.abstract.hidden,
-.publications div.abstract.hidden {
-  display: block !important;
-  border: 1px dashed var(--global-text-color);
-  padding: 0.75rem 1rem;
-  margin-top: 0.5rem;
-}
-/* Refined publications page: text-only, elegant academic list */
-
-.publications {
-  max-width: 880px;
-  margin-top: 2.5rem;
-}
-
-/* Search box */
-.publications .bibsearch-form-input,
-.publications input[type="search"],
-.publications input[type="text"] {
-  max-width: 420px;
-  border-radius: 7px;
-  padding: 0.65rem 0.9rem;
-  font-size: 0.95rem;
-}
-
-/* Main list */
-.publications ol.bibliography {
-  padding-left: 0;
-  margin-top: 2.2rem;
-}
-
-/* Each publication */
-.publications ol.bibliography > li {
-  list-style: none;
-  margin-bottom: 2.4rem !important;
-  padding-bottom: 2.4rem;
-  border-bottom: 1px solid var(--global-divider-color);
-  border-top: none !important;
-}
-
-/* Remove bottom border on last item */
-.publications ol.bibliography > li:last-child {
-  border-bottom: none;
-}
-
-/* Hide preview image / abbreviation column */
-.publications ol.bibliography > li .preview,
-.publications ol.bibliography > li .abbr {
-  display: none !important;
-}
-
-/* Make text use the full width */
-.publications ol.bibliography > li .row {
-  display: block;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.publications ol.bibliography > li .row > div {
-  max-width: 100%;
-  width: 100%;
-  flex: 0 0 100%;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* Title */
-.publications .title {
-  font-size: 1.12rem;
-  font-weight: 500 !important;
-  line-height: 1.45;
-  margin-bottom: 0.25rem;
-  letter-spacing: -0.01em;
-}
-
-/* Venue line */
-.publications .periodical {
-  font-size: 1rem;
-  line-height: 1.45;
-  color: var(--global-text-color-light) !important;
-  margin-bottom: 0.65rem;
-}
-
-.publications .periodical em {
-  color: var(--global-theme-color) !important;
-  font-style: italic;
-}
-
-/* Buttons */
-.publications .links {
-  margin-top: 0.45rem;
-}
-
-.publications .links a.btn {
-  border-radius: 3px;
-  padding: 0.24rem 0.78rem !important;
-  font-size: 0.72rem;
-  letter-spacing: 0.045em;
-  text-transform: uppercase;
-  line-height: 1.4;
-}
-
-/* Abstract */
-.publications div.abstract.hidden,
-.publications div.abstract.hidden.open {
-  margin-top: 0.9rem;
-  max-width: 760px;
-  border: none !important;
-  border-left: 2px solid var(--global-divider-color) !important;
-  padding: 0.15rem 0 0.15rem 1rem !important;
-  font-size: 0.95rem;
-  line-height: 1.68;
-  color: var(--global-text-color);
-  text-align: left !important;
-}
-
-.publications div.abstract.hidden p,
-.publications div.abstract.hidden.open p {
-  margin: 0;
-  line-height: 1.68;
-}
-
-/* Hide year-group heading if generated by jekyll-scholar */
-.publications h2.bibliography {
-  display: none !important;
-}
-
-/* Mobile */
-@media (max-width: 576px) {
-  .publications {
-    max-width: 100%;
-  }
-
-  .publications .title {
-    font-size: 1.05rem;
-  }
-
-  .publications div.abstract.hidden,
-  .publications div.abstract.hidden.open {
-    font-size: 0.92rem;
-  }
 }
