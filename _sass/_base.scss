@@ -715,8 +715,7 @@ footer.sticky-bottom {
 // Publications
 
 .publications {
-  max-width: 920px;
-  margin-top: 2.2rem;
+  margin-top: 2rem;
 
   h1 {
     color: var(--global-theme-color);
@@ -735,77 +734,50 @@ footer.sticky-bottom {
   }
 
   h2.bibliography {
-    display: none !important;
-  }
-
-  .bibsearch-form-input,
-  input[type="search"],
-  input[type="text"] {
-    max-width: 390px;
-    border-radius: 6px;
-    padding: 0.62rem 0.9rem;
-    font-size: 0.95rem;
+    color: var(--global-divider-color);
+    border-top: 1px solid var(--global-divider-color);
+    padding-top: 1rem;
+    margin-top: 2rem;
+    text-align: right;
   }
 
   ol.bibliography {
     list-style: none;
     padding: 0;
-    margin-top: 1.9rem;
-    counter-reset: pub-counter;
+    margin-top: 0;
 
-    > li {
-      list-style: none;
-      position: relative;
-      counter-increment: pub-counter;
-      margin-bottom: 1.45rem !important;
-      padding-bottom: 1.45rem;
-      padding-left: 3rem;
-      border-bottom: 1px solid var(--global-divider-color);
-      border-top: none !important;
+    li {
+      margin-bottom: 1rem;
 
-      &:last-child {
-        border-bottom: none;
+      .preview {
       }
 
-      &::before {
-        content: counter(pub-counter);
-        position: absolute;
-        left: 0;
-        top: 0.05rem;
-        width: 1.6rem;
-        text-align: right;
-        font-size: 0.95rem;
-        line-height: 1.35;
-        letter-spacing: 0.04em;
-        color: var(--global-theme-color);
-        font-weight: 500;
-      }
-
-      .preview,
       .abbr {
-        display: none !important;
-      }
+        margin-bottom: 0.5rem;
 
-      .row {
-        display: block;
-        margin-left: 0;
-        margin-right: 0;
-      }
+        abbr {
+          display: inline-block;
+          background-color: var(--global-theme-color);
+          margin-bottom: 0.5rem;
+          color: var(--global-card-bg-color) !important;
 
-      .row > div {
-        max-width: 100%;
-        width: 100%;
-        flex: 0 0 100%;
-        padding-left: 0;
-        padding-right: 0;
+          a {
+            color: white;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+
+        .award {
+          color: var(--global-theme-color) !important;
+          border: 1px solid var(--global-theme-color);
+        }
       }
 
       .title {
-        font-size: 1.22rem;
-        font-weight: 500 !important;
-        line-height: 1.38;
-        letter-spacing: -0.018em;
-        margin-bottom: 0.18rem;
+        font-weight: bolder;
       }
 
       .author {
@@ -835,31 +807,15 @@ footer.sticky-bottom {
         }
       }
 
-      .periodical {
-        font-size: 1.02rem;
-        line-height: 1.42;
-        color: var(--global-text-color-light) !important;
-        margin-bottom: 0.55rem;
-
-        em {
-          color: var(--global-theme-color) !important;
-          font-style: italic;
-        }
-      }
-
       .links {
-        margin-top: 0.35rem;
-
         a.btn {
           color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
-          border-radius: 3px;
-          padding: 0.22rem 0.72rem !important;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          padding-top: 0.25rem;
+          padding-bottom: 0.25rem;
           margin-left: 0;
-          font-size: 0.68rem;
-          letter-spacing: 0.055em;
-          text-transform: uppercase;
-          line-height: 1.35;
 
           &:hover {
             color: var(--global-theme-color);
@@ -890,6 +846,164 @@ footer.sticky-bottom {
       }
 
       .hidden {
+        font-size: 0.875rem;
+        max-height: 0px;
+        overflow: hidden;
+        text-align: justify;
+        transition-property: 0.15s ease;
+        -moz-transition: 0.15s ease;
+        -ms-transition: 0.15s ease;
+        -o-transition: 0.15s ease;
+        transition: all 0.15s ease;
+
+        p {
+          line-height: 1.4em;
+          margin: 10px;
+        }
+
+        pre {
+          font-size: 1em;
+          line-height: 1.4em;
+          padding: 10px;
+        }
+      }
+
+      .hidden.open {
+        max-height: 100em;
+        transition-property: 0.15s ease;
+        -moz-transition: 0.15s ease;
+        -ms-transition: 0.15s ease;
+        -o-transition: 0.15s ease;
+        transition: all 0.15s ease;
+      }
+
+      div.abstract.hidden {
+        border: dashed 1px var(--global-bg-color);
+      }
+
+      div.abstract.hidden.open {
+        border-color: var(--global-text-color);
+      }
+    }
+
+    div.award.hidden {
+      border: dashed 1px var(--global-bg-color);
+    }
+
+    div.award.hidden.open {
+      border-color: var(--global-highlight-color);
+    }
+  }
+}
+
+/*******************************************************************************
+ * Publications page only.
+ * This does NOT affect homepage latest publications.
+ ******************************************************************************/
+
+#publications-page {
+  max-width: 920px;
+  margin-top: 2.2rem;
+
+  h2.bibliography {
+    display: none !important;
+  }
+
+  .bibsearch-form-input,
+  input[type="search"],
+  input[type="text"] {
+    max-width: 390px;
+    border-radius: 6px;
+    padding: 0.62rem 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  ol.bibliography {
+    padding-left: 0;
+    margin-top: 1.9rem;
+    counter-reset: pub-counter;
+
+    > li {
+      list-style: none;
+      position: relative;
+      counter-increment: pub-counter;
+      margin-bottom: 1.35rem !important;
+      padding-bottom: 1.35rem;
+      padding-left: 3.05rem;
+      border-bottom: 1px solid var(--global-divider-color);
+      border-top: none !important;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &::before {
+        content: counter(pub-counter);
+        position: absolute;
+        left: 0;
+        top: 0.04rem;
+        width: 1.6rem;
+        text-align: right;
+        font-size: 0.95rem;
+        line-height: 1.35;
+        letter-spacing: 0.04em;
+        color: var(--global-theme-color);
+        font-weight: 500;
+      }
+
+      .preview,
+      .abbr {
+        display: none !important;
+      }
+
+      .row {
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .row > div {
+        max-width: 100%;
+        width: 100%;
+        flex: 0 0 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .title {
+        font-size: 1.2rem;
+        font-weight: 500 !important;
+        line-height: 1.38;
+        letter-spacing: -0.018em;
+        margin-bottom: 0.16rem;
+      }
+
+      .periodical {
+        font-size: 1rem;
+        line-height: 1.42;
+        color: var(--global-text-color-light) !important;
+        margin-bottom: 0.48rem;
+
+        em {
+          color: var(--global-theme-color) !important;
+          font-style: italic;
+        }
+      }
+
+      .links {
+        margin-top: 0.32rem;
+
+        a.btn {
+          border-radius: 3px;
+          padding: 0.21rem 0.72rem !important;
+          font-size: 0.68rem;
+          letter-spacing: 0.055em;
+          text-transform: uppercase;
+          line-height: 1.35;
+        }
+      }
+
+      .hidden {
         font-size: 0.95rem;
         max-height: 0;
         overflow: hidden;
@@ -899,12 +1013,6 @@ footer.sticky-bottom {
         p {
           line-height: 1.62;
           margin: 0;
-        }
-
-        pre {
-          font-size: 1em;
-          line-height: 1.4em;
-          padding: 10px;
         }
       }
 
@@ -921,7 +1029,7 @@ footer.sticky-bottom {
 
       div.abstract.hidden.open {
         max-width: 760px;
-        margin-top: 0.85rem !important;
+        margin-top: 0.78rem !important;
         border: none !important;
         border-left: 2px solid var(--global-divider-color) !important;
         padding: 0.1rem 0 0.1rem 1rem !important;
@@ -933,25 +1041,17 @@ footer.sticky-bottom {
         margin: 0;
       }
     }
-
-    div.award.hidden {
-      border: dashed 1px var(--global-bg-color);
-    }
-
-    div.award.hidden.open {
-      border-color: var(--global-highlight-color);
-    }
   }
 }
 
 @media (max-width: 576px) {
-  .publications {
+  #publications-page {
     max-width: 100%;
 
     ol.bibliography > li {
       padding-left: 2.35rem;
-      margin-bottom: 1.25rem !important;
-      padding-bottom: 1.25rem;
+      margin-bottom: 1.2rem !important;
+      padding-bottom: 1.2rem;
 
       &::before {
         width: 1.35rem;
