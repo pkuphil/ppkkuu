@@ -5,7 +5,7 @@ title: publications
 description:
 nav: true
 nav_order: 2
-abs_open: true
+abs_open: false
 
 scholar:
   sort_by: year
