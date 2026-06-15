@@ -951,7 +951,6 @@ html[data-theme="dark"] .publications:not(#publications-page) .periodical em {
   ol.bibliography {
     padding-left: 0;
     margin-top: 1.65rem;
-    counter-reset: pub-counter;
 
     > li {
       list-style: none;
@@ -1004,13 +1003,11 @@ html[data-theme="dark"] .publications:not(#publications-page) .periodical em {
 
         em {
           color: var(--global-theme-color) !important;
+          font-family: "Cormorant Garamond", "EB Garamond", "Georgia", serif;
           font-style: italic;
           font-weight: 500;
-          letter-spacing: 0.01em;
-          text-decoration: underline;
-          text-decoration-thickness: 0.045em;
-          text-underline-offset: 0.16em;
-          text-decoration-color: var(--global-theme-color);
+          letter-spacing: 0.015em;
+          text-decoration: none !important;
         }
       }
 
