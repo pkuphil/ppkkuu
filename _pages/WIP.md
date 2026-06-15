@@ -11,37 +11,36 @@ nav_order: 3
 .wip-container {
   max-width: 920px;
   margin-top: 2.2rem;
+  counter-reset: wip-counter;
 }
 
 .wip-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.15rem;
+  display: block;
 }
 
 .wip-item {
-  display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: 1.4rem;
-  padding: 1.45rem 1.55rem;
-  border: 1px solid var(--global-divider-color);
-  border-radius: 18px;
-  background: var(--global-card-bg-color);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  position: relative;
+  counter-increment: wip-counter;
+  padding-left: 3.05rem;
+  padding-bottom: 1.15rem;
+  margin-bottom: 1.15rem;
+  border-bottom: 1px solid var(--global-divider-color);
 }
 
-.wip-item:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--global-theme-color) 45%, var(--global-divider-color));
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+.wip-item:last-child {
+  border-bottom: none;
 }
 
-.wip-number {
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--global-text-color-light);
-  padding-top: 0.22rem;
+.wip-item::before {
+  content: counter(wip-counter);
+  position: absolute;
+  left: 0;
+  top: 0.03rem;
+  width: 1.6rem;
+  text-align: right;
+  color: var(--global-theme-color);
+  font-weight: 500;
+  letter-spacing: 0.04em;
 }
 
 .wip-content {
@@ -49,91 +48,80 @@ nav_order: 3
 }
 
 .wip-topline {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 0.55rem;
+  display: block;
+  margin-bottom: 0.28rem;
 }
 
 .wip-title {
   margin: 0;
-  font-size: 1.18rem;
-  font-weight: 500;
-  line-height: 1.38;
-  letter-spacing: -0.01em;
+  font-size: inherit;
+  font-weight: bolder;
+  line-height: inherit;
+  color: var(--global-text-color);
 }
 
 .wip-status {
-  flex-shrink: 0;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.045em;
-  text-transform: uppercase;
-  padding: 0.24rem 0.62rem;
-  border-radius: 999px;
+  display: inline-block;
+  margin-top: 0.28rem;
   color: var(--global-theme-color);
-  background: color-mix(in srgb, var(--global-theme-color) 9%, transparent);
-  border: 1px solid color-mix(in srgb, var(--global-theme-color) 35%, transparent);
-  white-space: nowrap;
+  font-family: "Cormorant Garamond", "EB Garamond", "Georgia", serif;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.015em;
+  text-decoration: none !important;
 }
 
 .wip-status.subtle {
   color: var(--global-text-color-light);
-  background: transparent;
-  border-color: var(--global-divider-color);
 }
 
 .wip-description {
   max-width: 760px;
-  margin: 0.2rem 0 0.85rem;
-  font-size: 0.96rem;
-  line-height: 1.72;
+  margin: 0.55rem 0 0.7rem;
   color: var(--global-text-color);
+  line-height: 1.62;
 }
 
 .wip-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
+  gap: 0.38rem;
   margin-top: 0.15rem;
 }
 
 .wip-tag {
-  font-size: 0.7rem;
-  letter-spacing: 0.025em;
+  font-size: 0.68rem;
+  line-height: 1;
+  letter-spacing: 0.035em;
+  text-transform: lowercase;
   color: var(--global-text-color-light);
-  padding: 0.16rem 0.52rem;
+  padding: 0.2rem 0.52rem;
   border-radius: 999px;
   border: 1px solid var(--global-divider-color);
-  background: rgba(127, 127, 127, 0.035);
+  background: transparent;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 576px) {
+  .wip-container {
+    max-width: 100%;
+  }
+
   .wip-item {
-    grid-template-columns: 1fr;
-    gap: 0.55rem;
-    padding: 1.25rem 1.2rem;
+    padding-left: 2.35rem;
+    margin-bottom: 1.05rem;
+    padding-bottom: 1.05rem;
   }
 
-  .wip-topline {
-    flex-direction: column;
-    gap: 0.45rem;
-  }
-
-  .wip-number {
-    padding-top: 0;
+  .wip-item::before {
+    width: 1.35rem;
   }
 }
 </style>
 
 <div class="wip-container">
-
   <div class="wip-list">
 
     <article class="wip-item">
-      <div class="wip-number">01</div>
-
       <div class="wip-content">
         <div class="wip-topline">
           <h2 class="wip-title">A paper about institutional status and social emotions</h2>
@@ -154,8 +142,6 @@ nav_order: 3
     </article>
 
     <article class="wip-item">
-      <div class="wip-number">02</div>
-
       <div class="wip-content">
         <div class="wip-topline">
           <h2 class="wip-title">A paper about perception and mediation</h2>
@@ -176,8 +162,6 @@ nav_order: 3
     </article>
 
     <article class="wip-item">
-      <div class="wip-number">03</div>
-
       <div class="wip-content">
         <div class="wip-topline">
           <h2 class="wip-title">A paper about reference and linguistic practice</h2>
@@ -198,5 +182,4 @@ nav_order: 3
     </article>
 
   </div>
-
 </div>
