@@ -75,6 +75,10 @@ nav_order: 3
   color: var(--global-text-color-light);
 }
 
+.wip-venue {
+  color: var(--global-theme-color);
+}
+
 .wip-description {
   max-width: 760px;
   margin: 0.55rem 0 0.7rem;
@@ -106,7 +110,9 @@ nav_order: 3
       <div class="wip-content">
         <div class="wip-topline">
           <h2 class="wip-title">A paper about institutional status and social emotions</h2>
-          <span class="wip-status">R&amp;R at The Philosophical Quarterly</span>
+          <span class="wip-status subtle">
+            R&amp;R at <span class="wip-venue">The Philosophical Quarterly</span>
+          </span>
         </div>
 
         <p class="wip-description">
