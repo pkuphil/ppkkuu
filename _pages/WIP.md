@@ -106,7 +106,7 @@ nav_order: 3
       <div class="wip-content">
         <div class="wip-topline">
           <h2 class="wip-title">A paper about institutional status and social emotions</h2>
-          <span class="wip-status">R&amp;R at Philosophical Quarterly</span>
+          <span class="wip-status">R&amp;R at The Philosophical Quarterly</span>
         </div>
 
         <p class="wip-description">
