@@ -669,8 +669,8 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     }
 
     .publication-journal {
-      font-size: 1rem;
-    }
+  font-size: 0.94rem;
+}
 
     .publication-link {
       font-size: 0.82em;
