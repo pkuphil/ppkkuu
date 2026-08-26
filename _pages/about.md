@@ -342,7 +342,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   .publication-link a,
   .publication-link a:link,
   .publication-link a:visited {
-    color: inherit !important;
+    color: var(--global-theme-color) !important;
 
     background: transparent !important;
 
@@ -365,7 +365,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
   .publication-link a:hover,
   .publication-link a:focus {
-    color: var(--global-text-color, inherit) !important;
+    color: var(--global-theme-color) !important;
 
     background: transparent !important;
 
