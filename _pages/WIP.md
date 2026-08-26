@@ -83,14 +83,17 @@ description: Research in philosophy of perception, emotion, and language.
 
     justify-self: end;
 
-    opacity: 0.9;
+    opacity: 1;
   }
 
-  .research-diagram svg {
+  .research-diagram img {
     display: block;
 
     width: 100%;
     height: 100%;
+
+    object-fit: contain;
+    object-position: center;
   }
 
 
@@ -723,107 +726,10 @@ description: Research in philosophy of perception, emotion, and language.
       aria-hidden="true"
     >
 
-      <svg
-        viewBox="0 0 240 240"
-        xmlns="http://www.w3.org/2000/svg"
+      <img
+        src="{{ '/assets/img/boy.png' | relative_url }}"
+        alt=""
       >
-
-        <circle
-          cx="120"
-          cy="120"
-          r="89"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="0.8"
-          stroke-dasharray="2.2 3.5"
-          opacity="0.17"
-        />
-
-        <line
-          x1="20"
-          y1="120"
-          x2="220"
-          y2="120"
-          stroke="currentColor"
-          stroke-width="0.7"
-          opacity="0.13"
-        />
-
-        <line
-          x1="120"
-          y1="20"
-          x2="120"
-          y2="220"
-          stroke="currentColor"
-          stroke-width="0.7"
-          opacity="0.13"
-        />
-
-
-        <!-- Perception -->
-
-        <circle
-          cx="88"
-          cy="135"
-          r="52"
-          fill="#315f94"
-          fill-opacity="0.10"
-          stroke="#315f94"
-          stroke-opacity="0.28"
-          stroke-width="1"
-        />
-
-
-        <!-- Emotion -->
-
-        <circle
-          cx="151"
-          cy="135"
-          r="52"
-          fill="#70854d"
-          fill-opacity="0.10"
-          stroke="#70854d"
-          stroke-opacity="0.28"
-          stroke-width="1"
-        />
-
-
-        <!-- Language -->
-
-        <circle
-          cx="120"
-          cy="87"
-          r="52"
-          fill="#c3653d"
-          fill-opacity="0.10"
-          stroke="#c3653d"
-          stroke-opacity="0.28"
-          stroke-width="1"
-        />
-
-
-        <circle
-          cx="120"
-          cy="31"
-          r="3.4"
-          fill="#315f94"
-        />
-
-        <circle
-          cx="198"
-          cy="62"
-          r="3"
-          fill="#c3653d"
-        />
-
-        <circle
-          cx="120"
-          cy="209"
-          r="3.2"
-          fill="#70854d"
-        />
-
-      </svg>
 
     </div>
 
