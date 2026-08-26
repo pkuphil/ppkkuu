@@ -186,7 +186,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
   /*
     每篇 publication 保持自然、舒展，
-    但不使用卡片、边框或大块空白。
+    不使用卡片、边框或背景。
   */
   .publication-item {
     margin: 0 0 1.02rem 0;
@@ -203,10 +203,8 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      ========================================================= */
 
   /*
-    文章标题和个人介绍正文使用同一级字号。
-
-    只通过字重来建立视觉重点，
-    不额外放大。
+    文章标题与个人介绍正文同级字号，
+    只通过稍高的字重突出。
   */
   .publication-title {
     margin: 0 0 0.12rem 0;
@@ -230,7 +228,8 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
     Journal · [publisher/manuscript]              forthcoming
 
-    左侧自然排版，只有状态 / 年份在最右侧。
+    期刊信息自然左对齐，
+    status / year 最右对齐。
   */
   .publication-meta {
     display: flex;
@@ -255,33 +254,21 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      ========================================================= */
 
   /*
-    期刊名：
+    期刊名直接使用网站本身的字体，
+    不再单独指定 Baskerville / Palatino 等字体。
 
-    - 与文章标题完全相同字号
-    - 不加粗
-    - 使用比较飘逸、书卷气的 serif italic
-    - 不使用真正的手写花体，因此仍然保持学术感
-
-    Baskerville Italic 会比普通 Georgia / Times
-    更流畅、更有 humanities / philosophy 的气质。
+    只保留 italic，
+    因此会和个人介绍及其他部分更统一。
   */
   .publication-journal {
-    font-family:
-      Baskerville,
-      "Baskerville Old Face",
-      "Iowan Old Style",
-      "Palatino Linotype",
-      "Book Antiqua",
-      Palatino,
-      Georgia,
-      serif;
+    font-family: inherit;
 
     font-size: 1rem;
     font-style: italic;
     font-weight: 400;
     line-height: 1.45;
 
-    letter-spacing: 0.004em;
+    letter-spacing: 0;
 
     color: var(--global-text-color, inherit);
   }
@@ -296,15 +283,15 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     [OUP]
     [Springer]
 
-    完全作为普通文字链接处理。
+    作为普通文字链接：
 
     默认：
     - 无背景
     - 无边框
-    - 无下划线
+    - 无可见下划线
 
     hover：
-    - 出现一条很细的下划线
+    - 出现细下划线
   */
   .publication-link {
     margin-left: 0.25em;
@@ -327,7 +314,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /*
-    期刊名和链接之间的小分隔点
+    期刊名和链接之间的小分隔点。
   */
   .publication-link::before {
     content: " · ";
@@ -337,8 +324,8 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /*
-    默认状态：
-    下划线实际存在但透明，因此 hover 时不会跳动。
+    默认下划线透明，
+    hover 出现时不会发生布局跳动。
   */
   .publication-link a,
   .publication-link a:link,
@@ -365,10 +352,6 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   }
 
 
-  /*
-    鼠标移上去才出现下划线。
-    方括号本身也是链接的一部分。
-  */
   .publication-link a:hover,
   .publication-link a:focus {
     color: var(--global-text-color, inherit) !important;
@@ -392,10 +375,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      ========================================================= */
 
   /*
-    forthcoming / 2025 与期刊在同一行。
-
-    最右侧与整个正文区域右边缘对齐，
-    也就是与上方头像的右边缘一致。
+    forthcoming / 2025 最右对齐。
   */
   .publication-status {
     flex: 0 0 auto;
@@ -427,9 +407,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /*
-    报告按照论文标题分组。
-
-    论文标题是 Talks 中的第一视觉重点。
+    论文标题是 Talks 中的主要视觉层级。
   */
   .talk-title {
     margin: 0 0 0.34rem 0;
@@ -457,7 +435,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   /*
     每场报告一行：
 
-    — Conference (refereed colloquium) · Place          Date
+    short line  Conference (refereed colloquium) · Place       Date
   */
   .talk-item {
     display: flex;
@@ -489,15 +467,26 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /* =========================================================
-     TALK DASH
+     SHORT DASH
      ========================================================= */
 
+  /*
+    不再直接使用文字 em dash。
+
+    改成真正的细横线，
+    长度更短、更精致，也不会抢会议名。
+  */
   .talk-dash {
     display: inline-block;
 
-    width: 1.05rem;
+    width: 0.62rem;
+    height: 1px;
 
-    color: var(--global-text-color-light, #8d8d8d);
+    margin-right: 0.32rem;
+
+    vertical-align: 0.23em;
+
+    background: var(--global-text-color-light, #8d8d8d);
   }
 
 
@@ -552,10 +541,10 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      ========================================================= */
 
   /*
-    只有日期右对齐。
+    日期最右对齐。
 
-    因为 .home-talks 是 width: 100%，
-    日期右边缘与上方头像右边缘保持一致。
+    因为 .home-talks 占满整个正文区域，
+    日期最右边会与上方头像右侧形成统一边界。
   */
   .talk-date {
     flex: 0 0 auto;
@@ -619,7 +608,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
     .talk-dash {
-      color: rgba(229, 231, 235, 0.38);
+      background: rgba(229, 231, 235, 0.4);
     }
 
     .talk-status {
@@ -667,9 +656,6 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
       margin-bottom: 0.92rem;
     }
 
-    /*
-      手机上文章标题和期刊名也保持正文大小。
-    */
     .publication-title {
       font-size: 1rem;
       line-height: 1.45;
@@ -722,8 +708,13 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
       padding-right: 0.7rem;
     }
 
+    /*
+      手机上横线再略微收一点，
+      避免占用宝贵的横向空间。
+    */
     .talk-dash {
-      width: 0.92rem;
+      width: 0.56rem;
+      margin-right: 0.28rem;
     }
 
     .talk-date {
@@ -773,6 +764,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
           <!-- LEFT -->
           <div class="publication-details">
 
+
             <!-- Journal -->
             <span class="publication-journal">
               {{ publication.journal }}
@@ -795,6 +787,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
               </span>
 
             {% endif %}
+
 
           </div>
 
@@ -857,10 +850,8 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
             <div class="talk-info">
 
 
-              <!-- Dash -->
-              <span class="talk-dash">
-                —
-              </span>
+              <!-- Short line -->
+              <span class="talk-dash"></span>
 
 
               <!-- Venue -->
