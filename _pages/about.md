@@ -122,7 +122,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      EB Garamond gives the homepage a more fluid, literary serif character.
      ========================================================= */
 
-  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+SC:wght@400;500;600&display=swap');
 
   body,
   .post,
@@ -134,7 +134,16 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   .navbar-nav,
   .home-publications,
   .home-talks {
-    font-family: "EB Garamond", Garamond, Georgia, "Times New Roman", serif !important;
+    font-family:
+      "EB Garamond",
+      "Songti SC",
+      STSong,
+      "Noto Serif SC",
+      SimSun,
+      Garamond,
+      Georgia,
+      "Times New Roman",
+      serif !important;
   }
 
   /* =========================================================
@@ -389,6 +398,14 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
     white-space: nowrap;
     text-align: right;
+  }
+
+  /*
+    forthcoming is a textual status, so the EB Garamond italic
+    gives it a softer, more fluid character. Numeric years stay upright.
+  */
+  .publication-status-forthcoming {
+    font-style: italic;
   }
 
 
@@ -798,7 +815,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
           <!-- RIGHT -->
-          <div class="publication-status">
+          <div class="publication-status{% if publication.status == 'forthcoming' %} publication-status-forthcoming{% endif %}">
             {{ publication.status }}
           </div>
 
