@@ -118,6 +118,26 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 <style>
 
   /* =========================================================
+     PAGE TYPEFACE
+     EB Garamond gives the homepage a more fluid, literary serif character.
+     ========================================================= */
+
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+
+  body,
+  .post,
+  .post-header,
+  .post-content,
+  .profile,
+  .navbar,
+  .navbar-brand,
+  .navbar-nav,
+  .home-publications,
+  .home-talks {
+    font-family: "EB Garamond", Garamond, Georgia, "Times New Roman", serif !important;
+  }
+
+  /* =========================================================
      SHARED
      ========================================================= */
 
