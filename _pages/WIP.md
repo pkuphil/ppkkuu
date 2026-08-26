@@ -1,36 +1,28 @@
 ---
-layout: default
+layout: page
 title: research
 permalink: /research/
 nav: true
 nav_order: 2
-description: Research in philosophy of perception, institutional objects, and temporal externalism.
+description: Research in philosophy of perception, emotion, and language.
 ---
 
 <style>
+
   /* =========================================================
      RESEARCH PAGE
      ========================================================= */
 
-  html {
-    scroll-behavior: smooth;
-  }
-
   .research-page {
     --research-blue: #315f94;
-    --research-blue-soft: rgba(49, 95, 148, 0.055);
-
     --research-green: #70854d;
-    --research-green-soft: rgba(112, 133, 77, 0.055);
-
     --research-orange: #c3653d;
-    --research-orange-soft: rgba(195, 101, 61, 0.055);
 
     width: 100%;
-    max-width: 1080px;
+    max-width: 1040px;
 
     margin: 0 auto;
-    padding: 1.65rem 0 4rem 0;
+    padding: 1.5rem 0 4rem 0;
 
     font-family: inherit;
     color: var(--global-text-color, inherit);
@@ -43,12 +35,12 @@ description: Research in philosophy of perception, institutional objects, and te
 
   .research-hero {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 245px;
+    grid-template-columns: minmax(0, 1fr) 220px;
     align-items: center;
 
     gap: 4rem;
 
-    margin: 0 0 3.15rem 0;
+    margin-bottom: 2.8rem;
   }
 
   .research-hero-copy {
@@ -56,12 +48,12 @@ description: Research in philosophy of perception, institutional objects, and te
   }
 
   .research-title {
-    margin: 0 0 1.45rem 0;
+    margin: 0 0 1.25rem 0;
 
     font-family: inherit;
-    font-size: clamp(3rem, 6vw, 4.35rem);
+    font-size: clamp(3rem, 6vw, 4.25rem);
     font-weight: 400;
-    line-height: 1.02;
+    line-height: 1;
 
     letter-spacing: -0.035em;
 
@@ -69,13 +61,13 @@ description: Research in philosophy of perception, institutional objects, and te
   }
 
   .research-intro {
-    max-width: 720px;
+    max-width: 710px;
 
     margin: 0;
 
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.72;
+    line-height: 1.7;
 
     color: var(--global-text-color, inherit);
   }
@@ -86,12 +78,12 @@ description: Research in philosophy of perception, institutional objects, and te
      ========================================================= */
 
   .research-diagram {
-    width: 230px;
-    height: 230px;
+    width: 210px;
+    height: 210px;
 
     justify-self: end;
 
-    opacity: 0.95;
+    opacity: 0.9;
   }
 
   .research-diagram svg {
@@ -103,196 +95,166 @@ description: Research in philosophy of perception, institutional objects, and te
 
 
   /* =========================================================
-     TOP PROJECT INDEX
+     TABS
      ========================================================= */
 
-  .research-index {
+  .research-tabs {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 
     width: 100%;
 
-    margin: 0 0 0 0;
+    margin: 0 0 2.65rem 0;
 
     border-top: 1px solid var(--global-divider-color, #dedede);
     border-bottom: 1px solid var(--global-divider-color, #dedede);
   }
 
-  .research-index-item {
+  .research-tab {
     position: relative;
 
+    appearance: none;
+    -webkit-appearance: none;
+
     display: flex;
-    align-items: baseline;
-
-    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
 
     min-width: 0;
+    min-height: 3.75rem;
 
-    padding: 0.95rem 1rem 0.92rem 0;
+    margin: 0;
+    padding: 0.9rem 1rem;
 
-    color: var(--global-text-color, inherit) !important;
-
-    background: transparent !important;
-
-    text-decoration: none !important;
-
-    border: 0 !important;
-    border-bottom: 2px solid transparent !important;
-
-    box-shadow: none !important;
-
-    transition:
-      border-color 0.16s ease,
-      color 0.16s ease;
-  }
-
-  .research-index-item + .research-index-item {
-    padding-left: 1.25rem;
-  }
-
-  .research-index-item:hover,
-  .research-index-item:focus {
-    background: transparent !important;
-
-    text-decoration: none !important;
-
-    border-bottom-color: currentColor !important;
-
-    box-shadow: none !important;
-  }
-
-  .research-index-number {
-    flex: 0 0 auto;
-
-    font-size: 1.02rem;
-    font-weight: 400;
-    line-height: 1;
-  }
-
-  .research-index-label {
-    min-width: 0;
-
-    font-size: 0.9rem;
+    font-family: inherit;
+    font-size: 0.87rem;
     font-weight: 400;
     line-height: 1.35;
+
+    text-align: center;
+
+    color: var(--global-text-color-light, #777);
+
+    background: transparent !important;
+
+    border: 0;
+    border-bottom: 2px solid transparent;
+
+    border-radius: 0;
+
+    box-shadow: none !important;
+
+    cursor: pointer;
+
+    transition:
+      color 0.16s ease,
+      border-color 0.16s ease;
   }
 
-  .research-index-item.blue {
-    color: var(--research-blue) !important;
+  .research-tab:hover,
+  .research-tab:focus {
+    color: var(--global-text-color, inherit);
+
+    background: transparent !important;
+
+    outline: none;
+
+    box-shadow: none !important;
   }
 
-  .research-index-item.green {
-    color: var(--research-green) !important;
+
+  /* Active tabs */
+
+  .research-tab-blue.active {
+    color: var(--research-blue);
+
+    border-bottom-color: var(--research-blue);
   }
 
-  .research-index-item.orange {
-    color: var(--research-orange) !important;
+  .research-tab-green.active {
+    color: var(--research-green);
+
+    border-bottom-color: var(--research-green);
+  }
+
+  .research-tab-orange.active {
+    color: var(--research-orange);
+
+    border-bottom-color: var(--research-orange);
+  }
+
+  .research-tab-other {
+    color: var(--global-text-color-light, #999);
+  }
+
+  .research-tab-other.active {
+    color: var(--global-text-color, inherit);
+
+    border-bottom-color: var(--global-text-color-light, #999);
   }
 
 
   /* =========================================================
-     PROJECT SECTION
+     PANELS
      ========================================================= */
 
-  .research-project {
+  .research-panel {
     --accent: var(--research-blue);
-    --accent-soft: var(--research-blue-soft);
 
-    display: grid;
-    grid-template-columns: 170px minmax(0, 1fr);
+    display: none;
 
     width: 100%;
 
-    border-bottom: 1px solid var(--global-divider-color, #dedede);
-
-    scroll-margin-top: 5.5rem;
+    animation: researchFadeIn 0.2s ease;
   }
 
-  .research-project.project-blue {
+  .research-panel.active {
+    display: block;
+  }
+
+  .research-panel.project-blue {
     --accent: var(--research-blue);
-    --accent-soft: var(--research-blue-soft);
   }
 
-  .research-project.project-green {
+  .research-panel.project-green {
     --accent: var(--research-green);
-    --accent-soft: var(--research-green-soft);
   }
 
-  .research-project.project-orange {
+  .research-panel.project-orange {
     --accent: var(--research-orange);
-    --accent-soft: var(--research-orange-soft);
+  }
+
+  .research-panel.project-other {
+    --accent: var(--global-text-color-light, #888);
+  }
+
+
+  @keyframes researchFadeIn {
+
+    from {
+      opacity: 0;
+      transform: translateY(3px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
   }
 
 
   /* =========================================================
-     LEFT RAIL
+     PROJECT HEADER
      ========================================================= */
-
-  .research-project-rail {
-    position: relative;
-
-    padding: 2.15rem 1.6rem 2.5rem 1.35rem;
-
-    background: var(--accent-soft);
-  }
-
-  .research-project-rail-inner {
-    position: sticky;
-    top: 5.4rem;
-  }
-
-  .research-project-number {
-    margin: 0 0 1rem 0;
-
-    font-size: 3.05rem;
-    font-weight: 300;
-    line-height: 1;
-
-    letter-spacing: -0.04em;
-
-    color: var(--accent);
-  }
-
-  .research-project-rail-line {
-    width: 3.2rem;
-    height: 1px;
-
-    margin: 0 0 0.85rem 0;
-
-    background: var(--accent);
-
-    opacity: 0.48;
-  }
-
-  .research-project-kicker {
-    margin: 0;
-
-    font-size: 0.71rem;
-    font-weight: 500;
-    line-height: 1.35;
-
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-
-    color: var(--accent);
-  }
-
-
-  /* =========================================================
-     PROJECT BODY
-     ========================================================= */
-
-  .research-project-body {
-    min-width: 0;
-
-    padding: 2.15rem 0 2.7rem 2.7rem;
-  }
 
   .research-project-heading {
-    margin: 0 0 0.35rem 0;
+    max-width: 780px;
+
+    margin: 0 0 0.38rem 0;
 
     font-family: inherit;
-    font-size: 1.6rem;
+    font-size: 1.65rem;
     font-weight: 500;
     line-height: 1.25;
 
@@ -302,7 +264,7 @@ description: Research in philosophy of perception, institutional objects, and te
   }
 
   .research-project-question {
-    max-width: 710px;
+    max-width: 730px;
 
     margin: 0 0 1.4rem 0;
 
@@ -313,6 +275,11 @@ description: Research in philosophy of perception, institutional objects, and te
 
     color: var(--accent);
   }
+
+
+  /* =========================================================
+     OVERVIEW
+     ========================================================= */
 
   .research-project-overview {
     max-width: 760px;
@@ -334,20 +301,22 @@ description: Research in philosophy of perception, institutional objects, and te
 
 
   /* =========================================================
-     KEYWORDS / RESEARCH FOCUS
+     RESEARCH FOCUS
      ========================================================= */
 
   .research-focus {
     display: flex;
     flex-wrap: wrap;
 
-    gap: 0.25rem 0;
+    gap: 0;
 
-    margin: 1.25rem 0 2.15rem 0;
+    max-width: 800px;
 
-    font-size: 0.7rem;
+    margin: 1.25rem 0 2rem 0;
+
+    font-size: 0.69rem;
     font-weight: 500;
-    line-height: 1.45;
+    line-height: 1.5;
 
     letter-spacing: 0.055em;
     text-transform: uppercase;
@@ -364,18 +333,18 @@ description: Research in philosophy of perception, institutional objects, and te
 
     margin: 0 0.55rem;
 
-    color: var(--global-text-color-light, #a3a3a3);
+    color: var(--global-text-color-light, #aaa);
   }
 
 
   /* =========================================================
-     SMALL SECTION LABEL
+     SUBHEADINGS
      ========================================================= */
 
   .research-subheading {
-    margin: 2.15rem 0 0.72rem 0;
+    margin: 2rem 0 0.7rem 0;
 
-    font-size: 0.72rem;
+    font-size: 0.71rem;
     font-weight: 500;
     line-height: 1.35;
 
@@ -387,11 +356,13 @@ description: Research in philosophy of perception, institutional objects, and te
 
 
   /* =========================================================
-     PUBLIC / CURRENT WORK LIST
+     WORK LIST
      ========================================================= */
 
   .research-work-list {
     width: 100%;
+
+    max-width: 830px;
 
     margin: 0;
     padding: 0;
@@ -401,14 +372,20 @@ description: Research in philosophy of perception, institutional objects, and te
 
   .research-work {
     margin: 0;
-    padding: 0.82rem 0 0.88rem 0;
 
-    border-bottom: 1px solid var(--global-divider-color, #e7e7e7);
+    padding: 0.85rem 0 0.9rem 0;
+
+    border-bottom: 1px solid var(--global-divider-color, #e8e8e8);
   }
 
   .research-work:last-child {
     border-bottom: 0;
   }
+
+
+  /* =========================================================
+     WORK HEADER
+     ========================================================= */
 
   .research-work-head {
     display: flex;
@@ -416,18 +393,19 @@ description: Research in philosophy of perception, institutional objects, and te
 
     width: 100%;
 
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .research-work-title {
-    min-width: 0;
     flex: 1 1 auto;
+
+    min-width: 0;
 
     margin: 0;
 
     font-size: 0.97rem;
     font-weight: 600;
-    line-height: 1.43;
+    line-height: 1.42;
 
     color: var(--global-text-color, inherit);
   }
@@ -440,17 +418,20 @@ description: Research in philosophy of perception, institutional objects, and te
     font-size: 0.78rem;
     font-weight: 400;
     font-style: italic;
-
     line-height: 1.4;
 
     white-space: nowrap;
-    text-align: right;
 
     color: var(--global-text-color-light, #777);
   }
 
+
+  /* =========================================================
+     META
+     ========================================================= */
+
   .research-work-meta {
-    margin-top: 0.12rem;
+    margin-top: 0.13rem;
 
     font-size: 0.84rem;
     font-weight: 400;
@@ -468,11 +449,9 @@ description: Research in philosophy of perception, institutional objects, and te
   .research-work-link::before {
     content: " · ";
 
-    color: var(--global-text-color-light, #aaa);
-  }
+    margin-right: 0.15rem;
 
-  .research-work-link {
-    margin-left: 0.15rem;
+    color: var(--global-text-color-light, #aaa);
   }
 
   .research-work-link a,
@@ -482,13 +461,12 @@ description: Research in philosophy of perception, institutional objects, and te
 
     background: transparent !important;
 
-    text-decoration-line: underline !important;
+    text-decoration: underline !important;
     text-decoration-color: transparent !important;
     text-decoration-thickness: 1px !important;
     text-underline-offset: 0.17em;
 
     border: 0 !important;
-    border-bottom: 0 !important;
 
     box-shadow: none !important;
   }
@@ -501,14 +479,16 @@ description: Research in philosophy of perception, institutional objects, and te
 
     text-decoration-color: currentColor !important;
 
-    border: 0 !important;
-    border-bottom: 0 !important;
-
     box-shadow: none !important;
   }
 
+
+  /* =========================================================
+     PAPER SUMMARY
+     ========================================================= */
+
   .research-work-summary {
-    max-width: 735px;
+    max-width: 740px;
 
     margin: 0.36rem 0 0 0;
 
@@ -521,7 +501,7 @@ description: Research in philosophy of perception, institutional objects, and te
 
 
   /* =========================================================
-     CURRENT / UNPUBLISHED WORK
+     CURRENT / PRIVATE WORK
      ========================================================= */
 
   .research-work.private-work .research-work-title {
@@ -538,7 +518,9 @@ description: Research in philosophy of perception, institutional objects, and te
      ========================================================= */
 
   .research-more {
-    margin: 1.45rem 0 0 0;
+    max-width: 760px;
+
+    margin: 1.4rem 0 0 0;
     padding: 0;
   }
 
@@ -546,7 +528,7 @@ description: Research in philosophy of perception, institutional objects, and te
     display: inline-flex;
     align-items: center;
 
-    gap: 0.48rem;
+    gap: 0.45rem;
 
     margin: 0;
     padding: 0;
@@ -555,7 +537,7 @@ description: Research in philosophy of perception, institutional objects, and te
 
     list-style: none;
 
-    font-size: 0.84rem;
+    font-size: 0.83rem;
     font-weight: 400;
 
     color: var(--accent);
@@ -586,20 +568,20 @@ description: Research in philosophy of perception, institutional objects, and te
   }
 
   .research-more-content {
-    max-width: 735px;
+    max-width: 720px;
 
-    margin: 1rem 0 0 0;
+    margin-top: 1rem;
     padding-left: 1rem;
 
     border-left: 1px solid var(--global-divider-color, #dedede);
   }
 
   .research-more-content p {
-    margin: 0 0 0.85rem 0;
+    margin: 0 0 0.8rem 0;
 
-    font-size: 0.9rem;
+    font-size: 0.89rem;
     font-weight: 400;
-    line-height: 1.64;
+    line-height: 1.62;
 
     color: var(--global-text-color, inherit);
   }
@@ -610,16 +592,26 @@ description: Research in philosophy of perception, institutional objects, and te
 
 
   /* =========================================================
-     COMPACT SECONDARY PROJECT
+     OTHER WORK
      ========================================================= */
 
-  .research-project.compact .research-project-body {
-    padding-top: 2.05rem;
-    padding-bottom: 2.4rem;
+  .project-other .research-project-heading {
+    margin-bottom: 1.25rem;
+
+    font-size: 1.45rem;
+    font-weight: 400;
   }
 
-  .research-project.compact .research-focus {
-    margin-bottom: 1.6rem;
+  .project-other .research-work-list {
+    max-width: 830px;
+  }
+
+  .project-other .research-work-title {
+    font-weight: 500;
+  }
+
+  .project-other .research-work-summary {
+    max-width: 690px;
   }
 
 
@@ -630,25 +622,17 @@ description: Research in philosophy of perception, institutional objects, and te
   html[data-theme="dark"] .research-page,
   body[data-theme="dark"] .research-page {
     --research-blue: #7ea2d1;
-    --research-blue-soft: rgba(126, 162, 209, 0.055);
-
     --research-green: #a0b97b;
-    --research-green-soft: rgba(160, 185, 123, 0.055);
-
     --research-orange: #df8b68;
-    --research-orange-soft: rgba(223, 139, 104, 0.055);
   }
 
+
   @media (prefers-color-scheme: dark) {
+
     .research-page {
       --research-blue: #7ea2d1;
-      --research-blue-soft: rgba(126, 162, 209, 0.055);
-
       --research-green: #a0b97b;
-      --research-green-soft: rgba(160, 185, 123, 0.055);
-
       --research-orange: #df8b68;
-      --research-orange-soft: rgba(223, 139, 104, 0.055);
     }
 
     .research-work-summary {
@@ -660,6 +644,7 @@ description: Research in philosophy of perception, institutional objects, and te
     .research-subheading {
       color: rgba(229, 231, 235, 0.58);
     }
+
   }
 
 
@@ -670,26 +655,21 @@ description: Research in philosophy of perception, institutional objects, and te
   @media (max-width: 900px) {
 
     .research-hero {
-      grid-template-columns: minmax(0, 1fr) 190px;
+      grid-template-columns: minmax(0, 1fr) 180px;
+
       gap: 2rem;
     }
 
     .research-diagram {
-      width: 185px;
-      height: 185px;
+      width: 175px;
+      height: 175px;
     }
 
-    .research-project {
-      grid-template-columns: 135px minmax(0, 1fr);
-    }
+    .research-tab {
+      padding-left: 0.65rem;
+      padding-right: 0.65rem;
 
-    .research-project-rail {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-
-    .research-project-body {
-      padding-left: 2rem;
+      font-size: 0.82rem;
     }
 
   }
@@ -702,151 +682,110 @@ description: Research in philosophy of perception, institutional objects, and te
   @media (max-width: 650px) {
 
     .research-page {
-      padding-top: 0.6rem;
+      padding-top: 0.5rem;
       padding-bottom: 3rem;
     }
 
 
-    /* ---------- Hero ---------- */
+    /* Hero */
 
     .research-hero {
       display: block;
 
-      margin-bottom: 2.25rem;
+      margin-bottom: 2rem;
     }
 
     .research-title {
-      margin-bottom: 1.15rem;
+      margin-bottom: 1.1rem;
 
-      font-size: 2.75rem;
+      font-size: 2.7rem;
       line-height: 1.04;
     }
 
     .research-intro {
-      font-size: 0.96rem;
-      line-height: 1.65;
+      font-size: 0.95rem;
+      line-height: 1.63;
     }
 
     .research-diagram {
-      width: 155px;
-      height: 155px;
+      width: 145px;
+      height: 145px;
 
-      margin: 1.55rem auto 0 auto;
+      margin: 1.45rem auto 0 auto;
     }
 
 
-    /* ---------- Index ---------- */
+    /* Tabs */
 
-    .research-index {
-      display: block;
-
-      margin-bottom: 0;
-    }
-
-    .research-index-item,
-    .research-index-item + .research-index-item {
-      width: 100%;
-
-      padding: 0.72rem 0;
-
-      border-bottom: 1px solid var(--global-divider-color, #e2e2e2) !important;
-    }
-
-    .research-index-item:last-child {
-      border-bottom: 0 !important;
-    }
-
-    .research-index-item:hover,
-    .research-index-item:focus {
-      border-bottom-color: var(--global-divider-color, #e2e2e2) !important;
-    }
-
-    .research-index-number {
-      width: 1.55rem;
-
-      font-size: 0.92rem;
-    }
-
-    .research-index-label {
-      font-size: 0.88rem;
-    }
-
-
-    /* ---------- Projects ---------- */
-
-    .research-project,
-    .research-project.compact {
-      display: block;
-
-      scroll-margin-top: 4.5rem;
-    }
-
-    .research-project-rail {
-      padding: 1.75rem 0 0.6rem 0;
-
-      background: transparent;
-    }
-
-    .research-project-rail-inner {
-      position: static;
-
+    .research-tabs {
       display: flex;
-      align-items: baseline;
 
-      gap: 0.75rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+
+      margin-bottom: 2rem;
+
+      scrollbar-width: none;
+
+      -webkit-overflow-scrolling: touch;
     }
 
-    .research-project-number {
-      margin: 0;
-
-      font-size: 1.52rem;
-      font-weight: 400;
-    }
-
-    .research-project-rail-line {
+    .research-tabs::-webkit-scrollbar {
       display: none;
     }
 
-    .research-project-kicker {
-      font-size: 0.68rem;
+    .research-tab {
+      flex: 0 0 auto;
+
+      min-height: auto;
+
+      padding: 0.82rem 1rem;
+
+      font-size: 0.82rem;
+
+      white-space: nowrap;
     }
 
-    .research-project-body,
-    .research-project.compact .research-project-body {
-      padding: 0 0 2.25rem 0;
+    .research-tab:first-child {
+      padding-left: 0;
     }
+
+
+    /* Project */
 
     .research-project-heading {
-      margin-top: 0.15rem;
-
-      font-size: 1.38rem;
+      font-size: 1.4rem;
       line-height: 1.28;
     }
 
     .research-project-question {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.15rem;
 
-      font-size: 0.93rem;
+      font-size: 0.92rem;
     }
 
     .research-project-overview p {
-      font-size: 0.93rem;
-      line-height: 1.62;
+      font-size: 0.92rem;
+      line-height: 1.6;
     }
 
     .research-focus {
-      margin-top: 1.05rem;
-      margin-bottom: 1.7rem;
+      margin-top: 1rem;
+      margin-bottom: 1.65rem;
 
-      font-size: 0.65rem;
+      font-size: 0.64rem;
       line-height: 1.55;
     }
 
 
-    /* ---------- Work ---------- */
+    /* Work */
+
+    .research-subheading {
+      margin-top: 1.7rem;
+    }
 
     .research-work {
-      padding-top: 0.76rem;
+      padding-top: 0.75rem;
       padding-bottom: 0.8rem;
     }
 
@@ -855,35 +794,29 @@ description: Research in philosophy of perception, institutional objects, and te
     }
 
     .research-work-title {
-      font-size: 0.94rem;
+      font-size: 0.93rem;
       line-height: 1.42;
     }
 
     .research-work-status {
       display: block;
 
-      margin: 0.16rem 0 0 0;
+      margin: 0.15rem 0 0 0;
 
-      font-size: 0.75rem;
-
-      text-align: left;
+      font-size: 0.74rem;
     }
 
     .research-work-meta {
       margin-top: 0.15rem;
 
-      font-size: 0.81rem;
+      font-size: 0.8rem;
     }
 
     .research-work-summary {
-      margin-top: 0.32rem;
+      margin-top: 0.3rem;
 
-      font-size: 0.84rem;
-      line-height: 1.53;
-    }
-
-    .research-subheading {
-      margin-top: 1.8rem;
+      font-size: 0.83rem;
+      line-height: 1.52;
     }
 
     .research-more-content {
@@ -907,30 +840,36 @@ description: Research in philosophy of perception, institutional objects, and te
 
     <div class="research-hero-copy">
 
-      <h1 class="research-title">Research</h1>
+      <h1 class="research-title">
+        Research
+      </h1>
 
       <p class="research-intro">
-        My research is organized around three projects concerning perceptual objects and direct realism,
-        institutional formal objects, and temporal externalism. Although they arise in different areas,
-        each project asks how the nature or significance of something may depend on structures extending
-        beyond what is immediately given.
+        My research focuses primarily on the objects of perception and the nature of
+        direct awareness. I also work in the philosophy of emotion, especially on
+        formal objects and fittingness, and in the philosophy of language, especially
+        on reference and temporal externalism.
       </p>
 
     </div>
 
 
-    <!--
-      Decorative research map.
-      Pure SVG: no image file required.
-    -->
-    <div class="research-diagram" aria-hidden="true">
+
+    <!-- Three main research programs -->
+
+    <div
+      class="research-diagram"
+      aria-hidden="true"
+    >
 
       <svg
         viewBox="0 0 240 240"
         xmlns="http://www.w3.org/2000/svg"
       >
 
-        <!-- guides -->
+
+        <!-- Guides -->
+
         <circle
           cx="120"
           cy="120"
@@ -939,8 +878,9 @@ description: Research in philosophy of perception, institutional objects, and te
           stroke="currentColor"
           stroke-width="0.8"
           stroke-dasharray="2.2 3.5"
-          opacity="0.18"
+          opacity="0.17"
         />
+
 
         <line
           x1="20"
@@ -949,8 +889,9 @@ description: Research in philosophy of perception, institutional objects, and te
           y2="120"
           stroke="currentColor"
           stroke-width="0.7"
-          opacity="0.14"
+          opacity="0.13"
         />
+
 
         <line
           x1="120"
@@ -959,11 +900,13 @@ description: Research in philosophy of perception, institutional objects, and te
           y2="220"
           stroke="currentColor"
           stroke-width="0.7"
-          opacity="0.14"
+          opacity="0.13"
         />
 
 
-        <!-- blue -->
+
+        <!-- Perception -->
+
         <circle
           cx="88"
           cy="135"
@@ -976,7 +919,9 @@ description: Research in philosophy of perception, institutional objects, and te
         />
 
 
-        <!-- green -->
+
+        <!-- Emotion -->
+
         <circle
           cx="151"
           cy="135"
@@ -989,7 +934,9 @@ description: Research in philosophy of perception, institutional objects, and te
         />
 
 
-        <!-- orange -->
+
+        <!-- Language -->
+
         <circle
           cx="120"
           cy="87"
@@ -1002,12 +949,30 @@ description: Research in philosophy of perception, institutional objects, and te
         />
 
 
-        <!-- small accent points -->
-        <circle cx="120" cy="31" r="3.4" fill="#315f94" />
 
-        <circle cx="198" cy="62" r="3" fill="#c3653d" />
+        <!-- Accent points -->
 
-        <circle cx="120" cy="209" r="3.2" fill="#70854d" />
+        <circle
+          cx="120"
+          cy="31"
+          r="3.4"
+          fill="#315f94"
+        />
+
+        <circle
+          cx="198"
+          cy="62"
+          r="3"
+          fill="#c3653d"
+        />
+
+        <circle
+          cx="120"
+          cy="209"
+          r="3.2"
+          fill="#70854d"
+        />
+
 
       </svg>
 
@@ -1018,731 +983,721 @@ description: Research in philosophy of perception, institutional objects, and te
 
 
   <!-- =======================================================
-       PROJECT INDEX
+       TABS
        ======================================================= -->
 
-  <nav class="research-index" aria-label="Research projects">
+  <div
+    class="research-tabs"
+    role="tablist"
+    aria-label="Research projects"
+  >
 
-    <a
-      class="research-index-item blue"
-      href="#perception"
+
+    <button
+      class="research-tab research-tab-blue active"
+      id="tab-perception"
+      type="button"
+      role="tab"
+      aria-selected="true"
+      aria-controls="research-perception"
+      data-project="perception"
     >
-      <span class="research-index-number">01</span>
-
-      <span class="research-index-label">
-        Perceptual Objects &amp; Direct Realism
-      </span>
-    </a>
+      Perceptual Objects &amp; Direct Realism
+    </button>
 
 
-    <a
-      class="research-index-item green"
-      href="#institutional-objects"
+
+    <button
+      class="research-tab research-tab-green"
+      id="tab-emotion"
+      type="button"
+      role="tab"
+      aria-selected="false"
+      aria-controls="research-emotion"
+      data-project="emotion"
     >
-      <span class="research-index-number">02</span>
-
-      <span class="research-index-label">
-        Institutional Formal Objects
-      </span>
-    </a>
+      Institutional Formal Objects
+    </button>
 
 
-    <a
-      class="research-index-item orange"
-      href="#temporal-externalism"
+
+    <button
+      class="research-tab research-tab-orange"
+      id="tab-language"
+      type="button"
+      role="tab"
+      aria-selected="false"
+      aria-controls="research-language"
+      data-project="language"
     >
-      <span class="research-index-number">03</span>
+      Temporal Externalism
+    </button>
 
-      <span class="research-index-label">
-        Temporal Externalism
-      </span>
-    </a>
 
-  </nav>
+
+    <button
+      class="research-tab research-tab-other"
+      id="tab-other"
+      type="button"
+      role="tab"
+      aria-selected="false"
+      aria-controls="research-other"
+      data-project="other"
+    >
+      Other Work
+    </button>
+
+
+  </div>
 
 
 
   <!-- =======================================================
-       01
-       PERCEPTUAL OBJECTS & DIRECT REALISM
+       PERCEPTION
        ======================================================= -->
 
   <section
-    class="research-project project-blue"
-    id="perception"
+    class="research-panel project-blue active"
+    id="research-perception"
+    data-panel="perception"
+    role="tabpanel"
+    aria-labelledby="tab-perception"
   >
 
 
-    <!-- LEFT RAIL -->
-    <aside class="research-project-rail">
+    <h2 class="research-project-heading">
+      Perceptual Objects and Direct Realism
+    </h2>
 
-      <div class="research-project-rail-inner">
 
-        <div class="research-project-number">
-          01
-        </div>
-
-        <div class="research-project-rail-line"></div>
-
-        <div class="research-project-kicker">
-          Perception
-        </div>
-
-      </div>
-
-    </aside>
+    <div class="research-project-question">
+      What are the objects of perception, and what makes our awareness of them direct?
+    </div>
 
 
 
-    <!-- BODY -->
-    <div class="research-project-body">
+    <div class="research-project-overview">
 
+      <p>
+        My main research concerns the objects of perceptual experience and the nature
+        of direct awareness. I am interested in how ordinary objects figure in
+        experience and in what a satisfactory form of direct realism should preserve.
+      </p>
 
-      <h2 class="research-project-heading">
-        Perceptual Objects and Direct Realism
-      </h2>
+      <p>
+        I approach these questions through work on perceptual objects, touch,
+        cross-modal experience, perceptual context, illusion, and hallucination.
+        A central manuscript develops the positive framework of this project.
+      </p>
 
-
-      <div class="research-project-question">
-        What does it take for perceptual awareness of the world to be genuinely direct?
-      </div>
-
-
-      <div class="research-project-overview">
-
-        <p>
-          My main project in the philosophy of perception concerns the objects of perceptual
-          experience and the nature of direct awareness. I am interested in what makes our
-          awareness of ordinary objects genuinely direct, and in whether familiar ways of
-          drawing the distinction between direct and indirect perception are sufficiently
-          fine-grained.
-        </p>
-
-        <p>
-          I approach these questions through work on naïve realism, perceptual objects,
-          illusion and hallucination, cross-modal perception, touch, and the role of perceptual
-          context. A recurring concern is how much explanatory work should be assigned to
-          ordinary objects themselves, and which commitments a satisfactory form of direct
-          realism must preserve.
-        </p>
-
-        <p>
-          The positive part of this project develops a systematic account of direct awareness
-          and its relation to perceptual mediation. Because the central manuscript is currently
-          under review, I keep its technical formulation and argumentative machinery off this
-          page.
-        </p>
-
-      </div>
+    </div>
 
 
 
-      <!-- Research vocabulary -->
-      <div class="research-focus">
+    <div class="research-focus">
 
-        <span>direct awareness</span>
+      <span>perceptual objects</span>
 
-        <span>perceptual objects</span>
+      <span>direct awareness</span>
 
-        <span>naïve realism</span>
+      <span>naïve realism</span>
 
-        <span>illusion</span>
+      <span>perceptual context</span>
 
-        <span>hallucination</span>
+      <span>cross-modal perception</span>
 
-        <span>cross-modal perception</span>
-
-      </div>
+    </div>
 
 
 
-      <!-- ===================================================
-           PUBLISHED & FORTHCOMING
-           =================================================== -->
+    <!-- Published & forthcoming -->
 
-      <div class="research-subheading">
-        Published &amp; forthcoming
-      </div>
+    <div class="research-subheading">
+      Published &amp; forthcoming
+    </div>
 
 
-      <div class="research-work-list">
+    <div class="research-work-list">
 
 
-        <!-- Tactile screening-off -->
-        <article class="research-work">
+      <article class="research-work">
 
-          <div class="research-work-head">
+        <div class="research-work-head">
 
-            <div class="research-work-title">
-              A Tactile Screening-Off Problem for Naïve Realism
-            </div>
-
-            <div class="research-work-status">
-              forthcoming
-            </div>
-
+          <div class="research-work-title">
+            A Tactile Screening-Off Problem for Naïve Realism
           </div>
 
-
-          <div class="research-work-meta">
-
-            <span class="research-work-journal">
-              Analysis
-            </span>
-
-            <span class="research-work-link">
-              <a
-                href="https://doi.org/10.1093/analys/anag033"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                [OUP]
-              </a>
-            </span>
-
+          <div class="research-work-status">
+            forthcoming
           </div>
-
-
-          <p class="research-work-summary">
-            I argue that naïve realism faces a screening-off problem arising within
-            ordinary tactile perception and realistic haptic simulation, without relying
-            on the traditional appeal to hallucination.
-          </p>
-
-        </article>
-
-
-
-        <!-- Cross-modal -->
-        <article class="research-work">
-
-          <div class="research-work-head">
-
-            <div class="research-work-title">
-              Cross-Modal Experiences and the Problem of Phenomenal Overlap
-            </div>
-
-            <div class="research-work-status">
-              forthcoming
-            </div>
-
-          </div>
-
-
-          <div class="research-work-meta">
-
-            <span class="research-work-journal">
-              Journal of Consciousness Studies
-            </span>
-
-            <span class="research-work-link">
-              <a
-                href="https://philpapers.org/rec/YANCEA-3"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                [manuscript]
-              </a>
-            </span>
-
-          </div>
-
-
-          <p class="research-work-summary">
-            I argue that the heterogeneity of cross-modal experience places pressure
-            on strong forms of naïve realism, and that abstract spatial similarity does
-            not provide the kind of phenomenal overlap such views require.
-          </p>
-
-        </article>
-
-
-
-        <!-- Rich phenomenology -->
-        <article class="research-work">
-
-          <div class="research-work-head">
-
-            <div class="research-work-title">
-              Is Rich Phenomenology Fragmented?
-            </div>
-
-            <div class="research-work-status">
-              2025
-            </div>
-
-          </div>
-
-
-          <div class="research-work-meta">
-
-            <span class="research-work-journal">
-              Synthese
-            </span>
-
-            <span class="research-work-link">
-              <a
-                href="https://doi.org/10.1007/s11229-025-05058-8"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                [Springer]
-              </a>
-            </span>
-
-          </div>
-
-
-          <p class="research-work-summary">
-            This paper examines whether rich phenomenal character should be understood
-            as fragmented across different aspects of perceptual experience.
-          </p>
-
-        </article>
-
-      </div>
-
-
-
-      <!-- ===================================================
-           CURRENT WORK
-           =================================================== -->
-
-      <div class="research-subheading">
-        Current work
-      </div>
-
-
-      <div class="research-work-list">
-
-
-        <!-- Core manuscript -->
-        <article class="research-work private-work">
-
-          <div class="research-work-head">
-
-            <div class="research-work-title">
-              A manuscript on direct awareness in perception
-            </div>
-
-            <div class="research-work-status">
-              under review
-            </div>
-
-          </div>
-
-
-          <p class="research-work-summary">
-            Develops the central positive account of this research program.
-            Further details are omitted while the manuscript is under review.
-          </p>
-
-        </article>
-
-
-
-        <!-- Context / perceptual objects -->
-        <article class="research-work private-work">
-
-          <div class="research-work-head">
-
-            <div class="research-work-title">
-              A manuscript on perceptual context and perceptual objects
-            </div>
-
-            <div class="research-work-status">
-              manuscript
-            </div>
-
-          </div>
-
-
-          <p class="research-work-summary">
-            Examines how perceptual context bears on questions about perceptual objects
-            and the explanation of context-sensitive phenomenal variation.
-          </p>
-
-        </article>
-
-
-
-        <!-- Boundary -->
-        <article class="research-work private-work">
-
-          <div class="research-work-head">
-
-            <div class="research-work-title">
-              A manuscript on the commitments of naïve realism
-            </div>
-
-            <div class="research-work-status">
-              manuscript
-            </div>
-
-          </div>
-
-
-          <p class="research-work-summary">
-            Asks which commitments are essential to naïve realism and which may be
-            revised without abandoning the view altogether.
-          </p>
-
-        </article>
-
-
-
-        <!-- Hallucination -->
-        <article class="research-work private-work">
-
-          <div class="research-work-head">
-
-            <div class="research-work-title">
-              A manuscript on hallucination and direct realism
-            </div>
-
-            <div class="research-work-status">
-              manuscript
-            </div>
-
-          </div>
-
-
-          <p class="research-work-summary">
-            Reconsiders what arguments from hallucination can establish about the
-            nature of successful perceptual experience.
-          </p>
-
-        </article>
-
-
-
-        <!-- Illusion -->
-        <article class="research-work private-work">
-
-          <div class="research-work-head">
-
-            <div class="research-work-title">
-              A manuscript on illusion and perceptual correctness
-            </div>
-
-            <div class="research-work-status">
-              manuscript
-            </div>
-
-          </div>
-
-
-          <p class="research-work-summary">
-            Examines how theories of perceptual error should characterize correctness
-            in cases where perceptual appearance is sensitive to background conditions.
-          </p>
-
-        </article>
-
-      </div>
-
-
-
-      <!-- ===================================================
-           MORE
-           =================================================== -->
-
-      <details class="research-more">
-
-        <summary>
-          More on this project
-        </summary>
-
-
-        <div class="research-more-content">
-
-          <p>
-            Much of the project begins from a tension in contemporary philosophy of
-            perception. Direct realist views capture the thought that ordinary worldly
-            objects are genuinely present to us in successful perception, but familiar
-            cases involving illusion, hallucination, sensory variation, and perceptual
-            context place pressure on simple versions of that picture.
-          </p>
-
-          <p>
-            Rather than treating these cases as isolated objections, I use them to ask
-            a more general question about the architecture of perceptual awareness:
-            which aspects of experience should be explained by the subject, which by
-            the world, and how should these contributions be related in a theory that
-            still deserves to count as direct realist?
-          </p>
-
-          <p>
-            The papers in this project approach that question from different directions.
-            Some develop pressure on orthodox relational views; others investigate
-            perceptual objects, contextual variation, and the structure of the familiar
-            bad cases. Together they form the background for a more systematic positive
-            account currently under review.
-          </p>
 
         </div>
 
-      </details>
+
+        <div class="research-work-meta">
+
+          <span class="research-work-journal">
+            Analysis
+          </span>
+
+          <span class="research-work-link">
+
+            <a
+              href="https://doi.org/10.1093/analys/anag033"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              [OUP]
+            </a>
+
+          </span>
+
+        </div>
+
+
+        <p class="research-work-summary">
+          I argue that ordinary tactile perception creates a screening-off problem
+          for naïve realism without relying on hallucination.
+        </p>
+
+      </article>
+
+
+
+      <article class="research-work">
+
+        <div class="research-work-head">
+
+          <div class="research-work-title">
+            Cross-Modal Experiences and the Problem of Phenomenal Overlap
+          </div>
+
+          <div class="research-work-status">
+            forthcoming
+          </div>
+
+        </div>
+
+
+        <div class="research-work-meta">
+
+          <span class="research-work-journal">
+            Journal of Consciousness Studies
+          </span>
+
+          <span class="research-work-link">
+
+            <a
+              href="https://philpapers.org/rec/YANCEA-3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              [manuscript]
+            </a>
+
+          </span>
+
+        </div>
+
+
+        <p class="research-work-summary">
+          I argue that cross-modal phenomenal heterogeneity creates a problem for
+          strong forms of naïve realism.
+        </p>
+
+      </article>
 
 
     </div>
+
+
+
+    <!-- Current work -->
+
+    <div class="research-subheading">
+      Current work
+    </div>
+
+
+    <div class="research-work-list">
+
+
+      <article class="research-work private-work">
+
+        <div class="research-work-head">
+
+          <div class="research-work-title">
+            A manuscript on direct awareness in perception
+          </div>
+
+          <div class="research-work-status">
+            under review
+          </div>
+
+        </div>
+
+
+        <p class="research-work-summary">
+          Develops the central positive account of this research project.
+        </p>
+
+      </article>
+
+
+
+      <article class="research-work private-work">
+
+        <div class="research-work-head">
+
+          <div class="research-work-title">
+            A manuscript on perceptual context and perceptual objects
+          </div>
+
+          <div class="research-work-status">
+            manuscript
+          </div>
+
+        </div>
+
+
+        <p class="research-work-summary">
+          Examines how perceptual context bears on the objects and phenomenal
+          character of experience.
+        </p>
+
+      </article>
+
+
+    </div>
+
+
+
+    <details class="research-more">
+
+      <summary>
+        More on this project
+      </summary>
+
+
+      <div class="research-more-content">
+
+        <p>
+          Across this work, I use problems concerning sensory variation, perceptual
+          context, and the relation between experience and worldly objects to ask
+          what a theory of direct perception needs to explain.
+        </p>
+
+        <p>
+          The individual papers develop different parts of this broader project,
+          while the central positive account is currently under review.
+        </p>
+
+      </div>
+
+    </details>
+
 
   </section>
 
 
 
   <!-- =======================================================
-       02
-       INSTITUTIONAL FORMAL OBJECTS
+       PHILOSOPHY OF EMOTION
        ======================================================= -->
 
   <section
-    class="research-project project-green compact"
-    id="institutional-objects"
+    class="research-panel project-green"
+    id="research-emotion"
+    data-panel="emotion"
+    role="tabpanel"
+    aria-labelledby="tab-emotion"
   >
 
 
-    <!-- LEFT RAIL -->
-    <aside class="research-project-rail">
+    <h2 class="research-project-heading">
+      Institutional Formal Objects
+    </h2>
 
-      <div class="research-project-rail-inner">
 
-        <div class="research-project-number">
-          02
-        </div>
-
-        <div class="research-project-rail-line"></div>
-
-        <div class="research-project-kicker">
-          Institutional<br>
-          Objects
-        </div>
-
-      </div>
-
-    </aside>
+    <div class="research-project-question">
+      How can socially constituted standings enter the evaluative structure of emotion?
+    </div>
 
 
 
-    <!-- BODY -->
-    <div class="research-project-body">
+    <div class="research-project-overview">
 
+      <p>
+        My work in the philosophy of emotion examines how social standings such as
+        prestige and stigma can enter emotional evaluation. I am especially interested
+        in formal objects, fittingness, and the relation between social reality and
+        emotional normativity.
+      </p>
 
-      <h2 class="research-project-heading">
-        Institutional Formal Objects
-      </h2>
-
-
-      <div class="research-project-question">
-        How do institutional structures shape the objects to which normative responses are directed?
-      </div>
-
-
-      <div class="research-project-overview">
-
-        <p>
-          My second project concerns institutional formal objects and the normative
-          structures associated with them. I am interested in objects whose identity or
-          significance depends partly on institutional practices, and in how those
-          structures bear on questions about fitting responses.
-        </p>
-
-        <p>
-          More broadly, the project asks how object-level facts and institutional
-          background conditions interact when we assess what attitudes or responses
-          are appropriate.
-        </p>
-
-      </div>
+    </div>
 
 
 
-      <div class="research-focus">
+    <div class="research-focus">
 
-        <span>formal objects</span>
+      <span>philosophy of emotion</span>
 
-        <span>institutions</span>
+      <span>formal objects</span>
 
-        <span>fittingness</span>
+      <span>fittingness</span>
 
-        <span>normativity</span>
+      <span>social ontology</span>
 
-      </div>
+      <span>institutional status</span>
 
-
-
-      <div class="research-subheading">
-        Published &amp; forthcoming
-      </div>
+    </div>
 
 
-      <div class="research-work-list">
 
-        <article class="research-work">
+    <div class="research-subheading">
+      Published &amp; forthcoming
+    </div>
 
-          <div class="research-work-head">
 
-            <div class="research-work-title">
-              Institutional Formal Objects and Two-Level Fittingness
-            </div>
+    <div class="research-work-list">
 
-            <div class="research-work-status">
-              forthcoming
-            </div>
 
+      <article class="research-work">
+
+        <div class="research-work-head">
+
+          <div class="research-work-title">
+            Institutional Formal Objects and Two-Level Fittingness
           </div>
 
-
-          <div class="research-work-meta">
-
-            <span class="research-work-journal">
-              The Philosophical Quarterly
-            </span>
-
-            <span class="research-work-link">
-              <a
-                href="https://philpapers.org/rec/YANIFO"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                [manuscript]
-              </a>
-            </span>
-
+          <div class="research-work-status">
+            forthcoming
           </div>
 
+        </div>
 
-          <p class="research-work-summary">
-            I develop an account of institutional formal objects and examine how
-            fittingness can operate at two connected levels.
-          </p>
 
-        </article>
+        <div class="research-work-meta">
 
-      </div>
+          <span class="research-work-journal">
+            The Philosophical Quarterly
+          </span>
+
+          <span class="research-work-link">
+
+            <a
+              href="https://philpapers.org/rec/YANIFO"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              [manuscript]
+            </a>
+
+          </span>
+
+        </div>
+
+
+        <p class="research-work-summary">
+          I argue that socially constituted evaluative properties can themselves be
+          formal objects of emotion, and develop a two-level account of their fittingness.
+        </p>
+
+      </article>
 
 
     </div>
+
 
   </section>
 
 
 
   <!-- =======================================================
-       03
-       TEMPORAL EXTERNALISM
+       PHILOSOPHY OF LANGUAGE
        ======================================================= -->
 
   <section
-    class="research-project project-orange compact"
-    id="temporal-externalism"
+    class="research-panel project-orange"
+    id="research-language"
+    data-panel="language"
+    role="tabpanel"
+    aria-labelledby="tab-language"
   >
 
 
-    <!-- LEFT RAIL -->
-    <aside class="research-project-rail">
+    <h2 class="research-project-heading">
+      Temporal Externalism
+    </h2>
 
-      <div class="research-project-rail-inner">
 
-        <div class="research-project-number">
-          03
-        </div>
-
-        <div class="research-project-rail-line"></div>
-
-        <div class="research-project-kicker">
-          Temporal<br>
-          Externalism
-        </div>
-
-      </div>
-
-    </aside>
+    <div class="research-project-question">
+      How can reference depend on linguistic practice across time?
+    </div>
 
 
 
-    <!-- BODY -->
-    <div class="research-project-body">
+    <div class="research-project-overview">
 
+      <p>
+        My work in the philosophy of language focuses on reference and temporal
+        externalism. I am interested in how present and future linguistic practice
+        bear on reference, semantic continuity, and change across time.
+      </p>
 
-      <h2 class="research-project-heading">
-        Temporal Externalism
-      </h2>
-
-
-      <div class="research-project-question">
-        To what extent can the determination of present semantic properties depend on temporally extended facts?
-      </div>
-
-
-      <div class="research-project-overview">
-
-        <p>
-          My third project concerns temporal externalism, especially questions about
-          the temporal structure of semantic determination. I am interested in whether
-          properties instantiated at a time must be fixed entirely by facts available at
-          that time, and in what follows if semantic dependence extends across time.
-        </p>
-
-        <p>
-          This project connects issues in the philosophy of language and metaphysics,
-          with particular attention to the relation between present semantic properties
-          and temporally extended patterns or conditions.
-        </p>
-
-      </div>
+    </div>
 
 
 
-      <div class="research-focus">
+    <div class="research-focus">
 
-        <span>temporal externalism</span>
+      <span>philosophy of language</span>
 
-        <span>semantics</span>
+      <span>metasemantics</span>
 
-        <span>metaphysics</span>
+      <span>reference</span>
 
-        <span>determination</span>
+      <span>temporal externalism</span>
 
-      </div>
+      <span>linguistic practice</span>
 
-
-
-      <div class="research-subheading">
-        Current work
-      </div>
+    </div>
 
 
-      <div class="research-work-list">
 
-        <article class="research-work private-work">
+    <div class="research-subheading">
+      Current work
+    </div>
 
-          <div class="research-work-head">
 
-            <div class="research-work-title">
-              A manuscript on temporal externalism and semantic properties
-            </div>
+    <div class="research-work-list">
 
-            <div class="research-work-status">
-              manuscript
-            </div>
 
+      <article class="research-work private-work">
+
+        <div class="research-work-head">
+
+          <div class="research-work-title">
+            A manuscript on reference and linguistic practice across time
           </div>
 
+          <div class="research-work-status">
+            under review
+          </div>
 
-          <p class="research-work-summary">
-            Examines questions about temporally extended dependence and the
-            determination of semantic properties.
-          </p>
+        </div>
 
-        </article>
 
-      </div>
+        <p class="research-work-summary">
+          Examines how present and future linguistic practice bear on the
+          determination of reference.
+        </p>
+
+      </article>
 
 
     </div>
+
+
+  </section>
+
+
+
+  <!-- =======================================================
+       OTHER WORK
+       ======================================================= -->
+
+  <section
+    class="research-panel project-other"
+    id="research-other"
+    data-panel="other"
+    role="tabpanel"
+    aria-labelledby="tab-other"
+  >
+
+
+    <h2 class="research-project-heading">
+      Other Work
+    </h2>
+
+
+    <div class="research-work-list">
+
+
+      <article class="research-work">
+
+        <div class="research-work-head">
+
+          <div class="research-work-title">
+            Is Rich Phenomenology Fragmented?
+          </div>
+
+          <div class="research-work-status">
+            2025
+          </div>
+
+        </div>
+
+
+        <div class="research-work-meta">
+
+          <span class="research-work-journal">
+            Synthese
+          </span>
+
+          <span class="research-work-link">
+
+            <a
+              href="https://doi.org/10.1007/s11229-025-05058-8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              [Springer]
+            </a>
+
+          </span>
+
+        </div>
+
+
+        <p class="research-work-summary">
+          I argue that evidence commonly taken to support a fragmented view of
+          phenomenal consciousness is also compatible with a richer view.
+        </p>
+
+      </article>
+
+
+    </div>
+
 
   </section>
 
 
 </div>
+
+
+
+<!-- =========================================================
+     TAB SWITCHING
+     ========================================================= -->
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const tabs = Array.from(
+      document.querySelectorAll(".research-tab")
+    );
+
+    const panels = Array.from(
+      document.querySelectorAll(".research-panel")
+    );
+
+
+    function activateResearchTab(tab) {
+
+      const project = tab.dataset.project;
+
+
+      tabs.forEach(function (item) {
+
+        item.classList.remove("active");
+
+        item.setAttribute(
+          "aria-selected",
+          "false"
+        );
+
+      });
+
+
+      panels.forEach(function (panel) {
+
+        panel.classList.remove("active");
+
+      });
+
+
+      tab.classList.add("active");
+
+      tab.setAttribute(
+        "aria-selected",
+        "true"
+      );
+
+
+      const targetPanel = document.querySelector(
+        '.research-panel[data-panel="' + project + '"]'
+      );
+
+
+      if (targetPanel) {
+
+        targetPanel.classList.add("active");
+
+      }
+
+    }
+
+
+
+    tabs.forEach(function (tab, index) {
+
+      tab.addEventListener("click", function () {
+
+        activateResearchTab(tab);
+
+      });
+
+
+
+      /*
+        Keyboard support:
+        left / right arrows switch tabs
+      */
+
+      tab.addEventListener("keydown", function (event) {
+
+        if (
+          event.key !== "ArrowLeft" &&
+          event.key !== "ArrowRight"
+        ) {
+          return;
+        }
+
+
+        event.preventDefault();
+
+
+        let newIndex;
+
+
+        if (event.key === "ArrowRight") {
+
+          newIndex =
+            (index + 1) % tabs.length;
+
+        } else {
+
+          newIndex =
+            (index - 1 + tabs.length) % tabs.length;
+
+        }
+
+
+        const nextTab = tabs[newIndex];
+
+
+        nextTab.focus();
+
+        activateResearchTab(nextTab);
+
+      });
+
+    });
+
+  });
+
+</script>
