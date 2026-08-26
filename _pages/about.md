@@ -12,8 +12,30 @@ profile:
     <p></p>
     <p></p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # custom Publication section below
 social: false # includes social icons at the bottom of the page
+
+publications:
+  - title: "Institutional Formal Objects and Two-Level Fittingness."
+    journal: "The Philosophical Quarterly"
+    status: "forthcoming"
+
+  - title: "A Tactile Screening-Off Problem for Naïve Realism."
+    journal: "Analysis"
+    doi: "10.1093/analys/anag033"
+    doi_url: "https://doi.org/10.1093/analys/anag033"
+    status: "forthcoming"
+
+  - title: "Cross-Modal Experiences and the Problem of Phenomenal Overlap."
+    journal: "Journal of Consciousness Studies"
+    status: "forthcoming"
+
+  - title: "Is Rich Phenomenology Fragmented?"
+    journal: "Synthese"
+    doi: "10.1007/s11229-025-05058-8"
+    doi_url: "https://doi.org/10.1007/s11229-025-05058-8"
+    status: "2025"
+
 
 talks:
   - title: "Situated Objects and Illusion"
@@ -91,37 +113,40 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 <style>
 
   /* =========================================================
-     TALKS
+     SHARED SECTION STYLE
      ========================================================= */
 
+  .home-publications,
   .home-talks {
-    /*
-      清除上方 profile image 的 float。
-      Talks 从头像下方开始，占满整个正文区域，
-      所以最右侧日期与上方头像右边缘对齐。
-    */
     clear: both;
     width: 100%;
+  }
 
-    margin-top: 2.4rem;
+  .home-publications {
+    margin-top: 2.45rem;
+    margin-bottom: 2.45rem;
+  }
+
+  .home-talks {
+    margin-top: 0;
     margin-bottom: 2rem;
   }
 
 
   /* =========================================================
-     TALKS HEADING
+     SECTION HEADINGS
      ========================================================= */
 
-  .home-talks-header {
-    margin: 0 0 1.1rem 0;
+  .home-section-header {
+    margin: 0 0 1.05rem 0;
   }
 
-  .home-talks-header h2 {
+  .home-section-header h2 {
     margin: 0;
     padding: 0;
   }
 
-  .home-talks-header h2 a {
+  .home-section-header h2 a {
     color: inherit !important;
 
     text-decoration-line: underline;
@@ -135,8 +160,8 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     transition: text-decoration-color 0.15s ease;
   }
 
-  .home-talks-header h2 a:hover,
-  .home-talks-header h2 a:focus {
+  .home-section-header h2 a:hover,
+  .home-section-header h2 a:focus {
     text-decoration-color: currentColor;
 
     border-bottom: 0 !important;
@@ -145,7 +170,152 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /* =========================================================
-     PAPER GROUP
+     PUBLICATION
+     ========================================================= */
+
+  .publication-list {
+    margin: 0;
+    padding: 0;
+  }
+
+
+  /*
+    每篇 publication 保持紧凑。
+
+    第一行：
+      论文标题
+
+    第二行：
+      Journal · DOI                              forthcoming
+
+    不使用卡片、边框或背景。
+  */
+  .publication-item {
+    margin: 0 0 0.86rem 0;
+    padding: 0;
+  }
+
+  .publication-item:last-child {
+    margin-bottom: 0;
+  }
+
+
+  /*
+    论文标题是 publication section 的主要视觉重点。
+  */
+  .publication-title {
+    margin: 0 0 0.12rem 0;
+
+    font-size: 0.96rem;
+    font-weight: 600;
+    line-height: 1.42;
+
+    letter-spacing: -0.006em;
+
+    color: var(--global-text-color, inherit);
+  }
+
+
+  /*
+    第二行使用 flex：
+
+    左边：
+      Journal · DOI
+
+    右边：
+      forthcoming / 2025
+
+    这样状态形成非常干净的右侧视觉轴。
+  */
+  .publication-meta {
+    display: flex;
+    align-items: baseline;
+
+    width: 100%;
+
+    gap: 1rem;
+
+    font-size: 0.82rem;
+    line-height: 1.45;
+
+    color: var(--global-text-color-light, #6d7378);
+  }
+
+
+  .publication-details {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+
+  /*
+    Journal 用 italic。
+    一篇 publication 只有一个期刊名，因此不会像 talks 中
+    大量会议名称全部斜体那样显得凌乱。
+  */
+  .publication-journal {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+
+  /*
+    DOI 是三级信息，进一步降低对比度。
+  */
+  .publication-doi {
+    margin-left: 0.18em;
+
+    font-size: 0.92em;
+
+    color: var(--global-text-color-light, #85898d);
+  }
+
+  .publication-doi::before {
+    content: " · ";
+
+    color: var(--global-text-color-light, #aaa);
+  }
+
+  .publication-doi a {
+    color: inherit !important;
+
+    text-decoration: none;
+
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .publication-doi a:hover,
+  .publication-doi a:focus {
+    text-decoration: underline;
+    text-underline-offset: 0.16em;
+
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+
+
+  /*
+    forthcoming / year 最右对齐。
+  */
+  .publication-status {
+    flex: 0 0 auto;
+
+    margin-left: auto;
+
+    font-size: 0.96em;
+    font-weight: 400;
+    font-style: normal;
+
+    color: var(--global-text-color-light, #73787d);
+
+    white-space: nowrap;
+    text-align: right;
+  }
+
+
+  /* =========================================================
+     TALKS — PAPER GROUP
      ========================================================= */
 
   .talk-group {
@@ -158,8 +328,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /*
-    论文标题是这一组最明显的信息：
-    稍微加粗、略微放大，但不做得过重。
+    Talk 的论文题目稍微突出。
   */
   .talk-title {
     margin: 0 0 0.34rem 0;
@@ -185,12 +354,9 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /*
-    每场报告一行：
+    每场 talk 一行：
 
-    — Conference (refereed colloquium) · Place          Date
-
-    会议相关信息自然左对齐，
-    只有日期贴到最右边。
+    — Conference (refereed colloquium) · Place           Date
   */
   .talk-item {
     display: flex;
@@ -209,10 +375,6 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   }
 
 
-  /* =========================================================
-     LEFT SIDE
-     ========================================================= */
-
   .talk-info {
     min-width: 0;
     flex: 1 1 auto;
@@ -221,9 +383,10 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   }
 
 
-  /*
-    使用 em dash，而不是 bullet。
-  */
+  /* =========================================================
+     DASH
+     ========================================================= */
+
   .talk-dash {
     display: inline-block;
 
@@ -249,13 +412,6 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      REFEREED COLLOQUIUM
      ========================================================= */
 
-  /*
-    只把 refereed 信息作为轻量说明：
-
-      (refereed colloquium)
-
-    不使用 badge、大写标签、角标或框。
-  */
   .talk-status {
     margin-left: 0.18em;
 
@@ -273,9 +429,6 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      PLACE / ONLINE
      ========================================================= */
 
-  /*
-    地点与会议名保持在同一行。
-  */
   .talk-place,
   .talk-online {
     color: var(--global-text-color-light, #686e73);
@@ -290,16 +443,9 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /* =========================================================
-     DATE
+     TALK DATE
      ========================================================= */
 
-  /*
-    日期单独贴到最右边。
-
-    因为 .home-talks 占满整个正文容器，
-    所以日期的右边缘就是该容器的右边缘，
-    也会与上方头像的右边缘保持一致。
-  */
   .talk-date {
     flex: 0 0 auto;
 
@@ -319,10 +465,6 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      CANCELLED
      ========================================================= */
 
-  /*
-    cancellation 是辅助信息，
-    所以做得更轻，不抢论文标题和会议名。
-  */
   .talk-cancelled {
     margin-left: 0.2em;
 
@@ -347,6 +489,19 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      ========================================================= */
 
   @media (prefers-color-scheme: dark) {
+
+    .publication-meta,
+    .publication-status {
+      color: rgba(229, 231, 235, 0.64);
+    }
+
+    .publication-doi {
+      color: rgba(229, 231, 235, 0.5);
+    }
+
+    .publication-doi::before {
+      color: rgba(229, 231, 235, 0.3);
+    }
 
     .talk-dash {
       color: rgba(229, 231, 235, 0.38);
@@ -381,14 +536,39 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
   @media (max-width: 576px) {
 
-    .home-talks {
+    .home-publications {
       margin-top: 2.15rem;
-      margin-bottom: 1.8rem;
+      margin-bottom: 2.15rem;
     }
 
-    .home-talks-header {
+    .home-section-header {
       margin-bottom: 0.95rem;
     }
+
+
+    /* Publications */
+
+    .publication-item {
+      margin-bottom: 0.82rem;
+    }
+
+    .publication-title {
+      font-size: 0.92rem;
+      line-height: 1.42;
+    }
+
+    .publication-meta {
+      gap: 0.65rem;
+
+      font-size: 0.78rem;
+    }
+
+    .publication-status {
+      font-size: 0.92em;
+    }
+
+
+    /* Talks */
 
     .talk-group {
       margin-bottom: 1.05rem;
@@ -428,13 +608,100 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 </style>
 
 
+<!-- =========================================================
+     PUBLICATION
+     ========================================================= -->
+
+<div class="home-publications">
+
+  <div class="home-section-header">
+
+    <h2>
+      <a href="{{ '/publications/' | relative_url }}">
+        Publication
+      </a>
+    </h2>
+
+  </div>
+
+
+  <div class="publication-list">
+
+    {% for publication in page.publications %}
+
+      <div class="publication-item">
+
+
+        <!-- Paper title -->
+        <div class="publication-title">
+          {{ publication.title }}
+        </div>
+
+
+        <!-- Journal / DOI / status -->
+        <div class="publication-meta">
+
+
+          <div class="publication-details">
+
+            <span class="publication-journal">
+              {{ publication.journal }}
+            </span>
+
+
+            {% if publication.doi %}
+              <span class="publication-doi">
+
+                {% if publication.doi_url %}
+
+                  <a
+                    href="{{ publication.doi_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    doi: {{ publication.doi }}
+                  </a>
+
+                {% else %}
+
+                  doi: {{ publication.doi }}
+
+                {% endif %}
+
+              </span>
+            {% endif %}
+
+          </div>
+
+
+          <div class="publication-status">
+            {{ publication.status }}
+          </div>
+
+
+        </div>
+
+      </div>
+
+    {% endfor %}
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TALKS
+     ========================================================= -->
+
 <div class="home-talks">
 
-  <div class="home-talks-header">
+  <div class="home-section-header">
 
     <h2>
       <a href="{{ '/talks/' | relative_url }}">
-        talks
+        Talks
       </a>
     </h2>
 
