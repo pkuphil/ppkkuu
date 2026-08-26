@@ -261,17 +261,17 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     因此会和个人介绍及其他部分更统一。
   */
   .publication-journal {
-    font-family: inherit;
+  font-family: inherit;
 
-    font-size: 1rem;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 1.45;
+  font-size: 0.94rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.45;
 
-    letter-spacing: 0;
+  letter-spacing: 0;
 
-    color: var(--global-text-color, inherit);
-  }
+  color: var(--global-text-color, inherit);
+}
 
 
   /* =========================================================
