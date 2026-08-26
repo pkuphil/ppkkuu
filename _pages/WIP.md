@@ -35,10 +35,10 @@ description: Research in philosophy of perception, emotion, and language.
 
   .research-hero {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 220px;
+    grid-template-columns: minmax(0, 1fr) 290px;
     align-items: center;
 
-    gap: 4rem;
+    gap: 3rem;
 
     margin-bottom: 2.8rem;
   }
@@ -78,8 +78,8 @@ description: Research in philosophy of perception, emotion, and language.
      ========================================================= */
 
   .research-diagram {
-    width: 210px;
-    height: 210px;
+    width: 280px;
+    height: 280px;
 
     justify-self: end;
 
@@ -527,14 +527,14 @@ description: Research in philosophy of perception, emotion, and language.
   @media (max-width: 900px) {
 
     .research-hero {
-      grid-template-columns: minmax(0, 1fr) 180px;
+      grid-template-columns: minmax(0, 1fr) 220px;
 
       gap: 2rem;
     }
 
     .research-diagram {
-      width: 175px;
-      height: 175px;
+      width: 215px;
+      height: 215px;
     }
 
     .research-tab {
@@ -577,8 +577,8 @@ description: Research in philosophy of perception, emotion, and language.
     }
 
     .research-diagram {
-      width: 145px;
-      height: 145px;
+      width: 180px;
+      height: 180px;
 
       margin: 1.45rem auto 0 auto;
     }
