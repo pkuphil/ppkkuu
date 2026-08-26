@@ -210,11 +210,11 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   .publication-title {
     margin: 0 0 0.16rem 0;
 
-    font-size: 0.98rem;
+    font-size: 1.03rem;
     font-weight: 500;
-    line-height: 1.42;
+    line-height: 1.46;
 
-    letter-spacing: -0.003em;
+    letter-spacing: 0;
 
     color: var(--global-text-color, inherit);
   }
@@ -258,10 +258,10 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   .publication-journal {
     font-family: inherit;
 
-    font-size: 0.88rem;
+    font-size: 0.93rem;
     font-style: italic;
     font-weight: 400;
-    line-height: 1.45;
+    line-height: 1.5;
 
     letter-spacing: 0;
 
@@ -289,7 +289,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     margin-left: 0.25em;
 
     font-family: inherit;
-    font-size: 0.84rem;
+    font-size: 0.86rem;
     font-style: normal;
     font-weight: 400;
 
@@ -361,7 +361,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
     margin-left: auto;
 
-    font-size: 0.84rem;
+    font-size: 0.88rem;
     font-weight: 400;
     font-style: normal;
 
@@ -398,11 +398,11 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   .talk-title {
     margin: 0 0 0.34rem 0;
 
-    font-size: 1.03rem;
+    font-size: 1.04rem;
     font-weight: 600;
-    line-height: 1.4;
+    line-height: 1.42;
 
-    letter-spacing: -0.008em;
+    letter-spacing: -0.003em;
 
     color: var(--global-text-color, inherit);
   }
@@ -435,9 +435,9 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     margin: 0;
     padding: 0.12rem 0;
 
-    font-size: 0.89rem;
+    font-size: 0.94rem;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.55;
 
     color: var(--global-text-color, inherit);
   }
@@ -501,7 +501,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   .talk-status {
     margin-left: 0.18em;
 
-    font-size: 0.8em;
+    font-size: 0.82em;
     font-weight: 400;
     font-style: normal;
 
@@ -540,7 +540,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
     margin-left: auto;
 
-    font-size: 0.88em;
+    font-size: 0.9em;
     font-weight: 400;
 
     color: var(--global-text-color-light, #686e73);
@@ -646,13 +646,13 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     }
 
     .publication-title {
-      font-size: 0.98rem;
+      font-size: 1rem;
       font-weight: 500;
-      line-height: 1.42;
+      line-height: 1.45;
     }
 
     .publication-journal {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
     }
 
     .publication-link {
@@ -660,7 +660,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     }
 
     .publication-status {
-      font-size: 0.84rem;
+      font-size: 0.86rem;
     }
 
 
@@ -673,17 +673,17 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     .talk-title {
       margin-bottom: 0.3rem;
 
-      font-size: 0.98rem;
+      font-size: 1rem;
       font-weight: 600;
-      line-height: 1.4;
+      line-height: 1.42;
     }
 
     .talk-item {
       padding-top: 0.11rem;
       padding-bottom: 0.11rem;
 
-      font-size: 0.85rem;
-      line-height: 1.48;
+      font-size: 0.9rem;
+      line-height: 1.52;
     }
 
     .talk-info {
@@ -703,7 +703,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     }
 
     .talk-date {
-      font-size: 0.84em;
+      font-size: 0.88em;
     }
 
   }
