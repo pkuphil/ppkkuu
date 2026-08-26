@@ -398,11 +398,11 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   .talk-title {
     margin: 0 0 0.34rem 0;
 
-    font-size: 1.03rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 500;
     line-height: 1.4;
 
-    letter-spacing: -0.008em;
+    letter-spacing: -0.006em;
 
     color: var(--global-text-color, inherit);
   }
@@ -674,7 +674,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
       margin-bottom: 0.3rem;
 
       font-size: 0.98rem;
-      font-weight: 600;
+      font-weight: 500;
       line-height: 1.4;
     }
 
