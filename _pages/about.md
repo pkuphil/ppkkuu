@@ -7,13 +7,13 @@ subtitle: "allenminesky ⟡ gmail · com"
 profile:
   align: right
   image: prof_pic_color.jpg
-  image_circular: false
+  image_circular: false # crops the image to make it circular
   more_info: >
     <p></p>
     <p></p>
 
-selected_papers: true
-social: false
+selected_papers: true # includes a list of papers marked as "selected={true}"
+social: false # includes social icons at the bottom of the page
 
 talks:
   - title: "Situated Objects and Illusion"
@@ -22,14 +22,12 @@ talks:
         place: "Vancouver, Canada"
         date: "May 2026"
         refereed: true
-        colloquium: true
         cancelled: true
 
-      - venue: "APA Eastern Division Meeting (122nd)"
+      - venue: "APA Eastern Division Meeting"
         place: "Baltimore, USA"
         date: "Jan. 2026"
         refereed: true
-        colloquium: true
 
   - title: "Mediated Direct Realism"
     items:
@@ -47,27 +45,25 @@ talks:
 
   - title: "Do Semantic Properties Involve the Future?"
     items:
-      - venue: "APA Pacific Division Meeting (98th)"
+      - venue: "APA Pacific Division Meeting"
         place: "San Francisco, USA"
         date: "Apr. 2025"
         refereed: true
-        colloquium: true
 
-      - venue: "APA Eastern Division Meeting (121st)"
+      - venue: "APA Eastern Division Meeting"
         place: "New York, USA"
         date: "Jan. 2025"
 
-      - venue: "Talk"
+      - venue: "PKU Philosophy R&W"
         place: "Beijing, China"
         date: "2025"
 
   - title: "Is Rich Phenomenology Fragmented?"
     items:
-      - venue: "APA Central Division Meeting (122nd)"
+      - venue: "APA Central Division Meeting"
         online: true
         date: "Feb./Mar. 2025"
         refereed: true
-        colloquium: true
 
   - title: "MCICCR"
     items:
@@ -75,25 +71,20 @@ talks:
         place: "Perth, Australia"
         date: "Jul. 2024"
         refereed: true
-        colloquium: true
 
       - venue: "Workshop for Young Scholars in Science and Philosophy"
         place: "Beijing, China"
         date: "Apr. 2024"
         refereed: true
-        colloquium: true
 
       - venue: "PKU Philosophy R&W"
         place: "Beijing, China"
         date: "Mar. 2024"
 ---
 
-Hi! I am Zhiwei. I am a fourth-year PhD student in the Department of Philosophy at <a href="https://www.pku.edu.cn">Peking University</a>. I mostly write about philosophy of mind and philosophy of perception.<br><br>
-
+Hi! I am Zhiwei. I am a fourth-year PhD student in the Department of Philosophy at <a href='https://www.pku.edu.cn'>Peking University</a>. I mostly write about philosophy of mind and philosophy of perception.<br><br>
 Much of my recent work forms part of a broader project aimed at advancing the claim that, roughly speaking, direct awareness of the world need not be unmediated: mediation can itself be a means by which we are directly aware of the world.<br><br>
-
-I’m advised by <a href="https://phil.pku.edu.cn/szdw/szll/wgzxjys/274743.htm" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Qilin Li</a> at <a href="https://www.pku.edu.cn">Peking University</a> and, during my visit at <a href="https://www.mit.edu">MIT</a>, by <a href="http://www.alexbyrne.org" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Alex Byrne</a>.<br><br>
-
+I’m advised by <a href="https://phil.pku.edu.cn/szdw/szll/wgzxjys/274743.htm" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Qilin Li</a> at <a href='https://www.pku.edu.cn'>Peking University</a> and, during my visit at <a href='https://www.mit.edu'>MIT</a>, by <a href="http://www.alexbyrne.org" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Alex Byrne</a>.<br><br>
 I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and reading personal biographies. I'm also a fan of the band <a href="https://music.apple.com/us/artist/twenty-one-pilots/349736311?l=zh-Hans-CN" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Twenty One Pilots</a> and Hong Kong singer <a href="https://music.apple.com/us/artist/%E8%AE%B8%E5%86%A0%E6%9D%B0/41642722?l=zh-Hans-CN" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Sam Hui</a>.
 
 
@@ -104,6 +95,11 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      ========================================================= */
 
   .home-talks {
+    /*
+      清除上方 profile image 的 float。
+      Talks 从头像下方开始，占满整个正文区域，
+      所以最右侧日期与上方头像右边缘对齐。
+    */
     clear: both;
     width: 100%;
 
@@ -113,7 +109,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /* =========================================================
-     HEADING
+     TALKS HEADING
      ========================================================= */
 
   .home-talks-header {
@@ -162,10 +158,8 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /*
-    论文标题作为整个分组最明显的信息。
-
-    稍微放大 + 600 weight，
-    但不会重到像大标题。
+    论文标题是这一组最明显的信息：
+    稍微加粗、略微放大，但不做得过重。
   */
   .talk-title {
     margin: 0 0 0.34rem 0;
@@ -191,15 +185,12 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /*
-    一场报告 = 一行。
+    每场报告一行：
 
-    左侧自然排列：
-      — Conference (refereed colloquium) · Place
+    — Conference (refereed colloquium) · Place          Date
 
-    右侧：
-      Date
-
-    除日期以外，不做任何表格式字段对齐。
+    会议相关信息自然左对齐，
+    只有日期贴到最右边。
   */
   .talk-item {
     display: flex;
@@ -231,10 +222,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /*
-    用 em dash 代替圆点。
-
-    视觉上更像 academic CV / talks list，
-    也比 bullet 更安静。
+    使用 em dash，而不是 bullet。
   */
   .talk-dash {
     display: inline-block;
@@ -249,12 +237,6 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      VENUE
      ========================================================= */
 
-  /*
-    会议名称使用正常字体。
-
-    因为论文标题已经负责视觉重点，
-    这里不再使用大量 italic。
-  */
   .talk-venue {
     font-style: normal;
     font-weight: 400;
@@ -264,17 +246,15 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /* =========================================================
-     REFEREED COLLOQUIUM / ONLINE
+     REFEREED COLLOQUIUM
      ========================================================= */
 
   /*
-    辅助信息只使用轻量括号文本：
+    只把 refereed 信息作为轻量说明：
 
       (refereed colloquium)
-      (online)
-      (refereed colloquium, online)
 
-    不使用 badge、大写、小方框或角标。
+    不使用 badge、大写标签、角标或框。
   */
   .talk-status {
     margin-left: 0.18em;
@@ -290,28 +270,18 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /* =========================================================
-     LOCATION
+     PLACE / ONLINE
      ========================================================= */
 
-  .talk-place {
-    color: var(--global-text-color-light, #686e73);
-  }
-
-  .talk-place::before {
-    content: " · ";
-
-    color: var(--global-text-color-light, #aaa);
-  }
-
-
   /*
-    Online 作为地点性质的信息，
-    因此也和 place 放在同一层级。
+    地点与会议名保持在同一行。
   */
+  .talk-place,
   .talk-online {
     color: var(--global-text-color-light, #686e73);
   }
 
+  .talk-place::before,
   .talk-online::before {
     content: " · ";
 
@@ -324,11 +294,11 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      ========================================================= */
 
   /*
-    只有日期右对齐。
+    日期单独贴到最右边。
 
-    .home-talks 本身 width: 100%，
-    所以日期最右端与 talks 容器的右边缘一致，
-    也就是与上方 profile image 的右边缘对齐。
+    因为 .home-talks 占满整个正文容器，
+    所以日期的右边缘就是该容器的右边缘，
+    也会与上方头像的右边缘保持一致。
   */
   .talk-date {
     flex: 0 0 auto;
@@ -349,6 +319,10 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      CANCELLED
      ========================================================= */
 
+  /*
+    cancellation 是辅助信息，
+    所以做得更轻，不抢论文标题和会议名。
+  */
   .talk-cancelled {
     margin-left: 0.2em;
 
@@ -457,11 +431,13 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 <div class="home-talks">
 
   <div class="home-talks-header">
+
     <h2>
       <a href="{{ '/talks/' | relative_url }}">
         talks
       </a>
     </h2>
+
   </div>
 
 
@@ -469,12 +445,14 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
     <section class="talk-group">
 
+
       <!-- Paper title -->
       <div class="talk-title">
         “{{ talk.title }}”
       </div>
 
 
+      <!-- Talks -->
       <div class="talk-list">
 
         {% for item in talk.items %}
@@ -482,39 +460,31 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
           <div class="talk-item">
 
 
-            <!-- LEFT -->
+            <!-- LEFT SIDE -->
             <div class="talk-info">
 
-              <span class="talk-dash">—</span>
 
+              <!-- Dash -->
+              <span class="talk-dash">
+                —
+              </span>
+
+
+              <!-- Venue -->
               <span class="talk-venue">
                 {{ item.venue }}
               </span>
 
 
-              <!-- refereed / colloquium status -->
-              {% if item.refereed or item.online %}
+              <!-- Refereed colloquium -->
+              {% if item.refereed %}
                 <span class="talk-status">
-                  (
-                  {%- if item.refereed and item.colloquium -%}
-                    refereed colloquium
-                  {%- elsif item.refereed -%}
-                    refereed
-                  {%- endif -%}
-
-                  {%- if item.refereed and item.online -%}
-                    ,&nbsp;
-                  {%- endif -%}
-
-                  {%- if item.online -%}
-                    online
-                  {%- endif -%}
-                  )
+                  (refereed colloquium)
                 </span>
               {% endif %}
 
 
-              <!-- place -->
+              <!-- Place -->
               {% if item.place %}
                 <span class="talk-place">
                   {{ item.place }}
@@ -522,7 +492,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
               {% endif %}
 
 
-              <!-- online as location -->
+              <!-- Online -->
               {% if item.online %}
                 <span class="talk-online">
                   Online
@@ -530,17 +500,18 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
               {% endif %}
 
 
-              <!-- cancellation -->
+              <!-- Cancellation -->
               {% if item.cancelled %}
                 <span class="talk-cancelled">
                   cancelled — dissertation defense
                 </span>
               {% endif %}
 
+
             </div>
 
 
-            <!-- RIGHT: date only -->
+            <!-- RIGHT SIDE: DATE -->
             {% if item.date %}
               <div class="talk-date">
                 {{ item.date }}
@@ -553,6 +524,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
         {% endfor %}
 
       </div>
+
 
     </section>
 
