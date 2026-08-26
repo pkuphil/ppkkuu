@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: research
 permalink: /research/
 nav: true
@@ -61,7 +61,7 @@ description: Research in philosophy of perception, emotion, and language.
   }
 
   .research-intro {
-    max-width: 710px;
+    max-width: 740px;
 
     margin: 0;
 
@@ -111,8 +111,6 @@ description: Research in philosophy of perception, emotion, and language.
   }
 
   .research-tab {
-    position: relative;
-
     appearance: none;
     -webkit-appearance: none;
 
@@ -139,7 +137,6 @@ description: Research in philosophy of perception, emotion, and language.
 
     border: 0;
     border-bottom: 2px solid transparent;
-
     border-radius: 0;
 
     box-shadow: none !important;
@@ -162,8 +159,6 @@ description: Research in philosophy of perception, emotion, and language.
     box-shadow: none !important;
   }
 
-
-  /* Active tabs */
 
   .research-tab-blue.active {
     color: var(--research-blue);
@@ -249,7 +244,7 @@ description: Research in philosophy of perception, emotion, and language.
      ========================================================= */
 
   .research-project-heading {
-    max-width: 780px;
+    max-width: 800px;
 
     margin: 0 0 0.38rem 0;
 
@@ -264,9 +259,9 @@ description: Research in philosophy of perception, emotion, and language.
   }
 
   .research-project-question {
-    max-width: 730px;
+    max-width: 760px;
 
-    margin: 0 0 1.4rem 0;
+    margin: 0 0 1.45rem 0;
 
     font-size: 0.98rem;
     font-style: italic;
@@ -278,62 +273,23 @@ description: Research in philosophy of perception, emotion, and language.
 
 
   /* =========================================================
-     OVERVIEW
+     PROJECT OVERVIEW
      ========================================================= */
 
   .research-project-overview {
-    max-width: 760px;
+    max-width: 790px;
+
+    margin-bottom: 2.25rem;
   }
 
   .research-project-overview p {
-    margin: 0 0 0.9rem 0;
+    margin: 0;
 
     font-size: 0.96rem;
     font-weight: 400;
-    line-height: 1.66;
+    line-height: 1.7;
 
     color: var(--global-text-color, inherit);
-  }
-
-  .research-project-overview p:last-child {
-    margin-bottom: 0;
-  }
-
-
-  /* =========================================================
-     RESEARCH FOCUS
-     ========================================================= */
-
-  .research-focus {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 0;
-
-    max-width: 800px;
-
-    margin: 1.25rem 0 2rem 0;
-
-    font-size: 0.69rem;
-    font-weight: 500;
-    line-height: 1.5;
-
-    letter-spacing: 0.055em;
-    text-transform: uppercase;
-
-    color: var(--accent);
-  }
-
-  .research-focus span {
-    white-space: nowrap;
-  }
-
-  .research-focus span:not(:last-child)::after {
-    content: " · ";
-
-    margin: 0 0.55rem;
-
-    color: var(--global-text-color-light, #aaa);
   }
 
 
@@ -361,8 +317,7 @@ description: Research in philosophy of perception, emotion, and language.
 
   .research-work-list {
     width: 100%;
-
-    max-width: 830px;
+    max-width: 850px;
 
     margin: 0;
     padding: 0;
@@ -373,7 +328,7 @@ description: Research in philosophy of perception, emotion, and language.
   .research-work {
     margin: 0;
 
-    padding: 0.85rem 0 0.9rem 0;
+    padding: 0.95rem 0 1.05rem 0;
 
     border-bottom: 1px solid var(--global-divider-color, #e8e8e8);
   }
@@ -403,7 +358,7 @@ description: Research in philosophy of perception, emotion, and language.
 
     margin: 0;
 
-    font-size: 0.97rem;
+    font-size: 0.98rem;
     font-weight: 600;
     line-height: 1.42;
 
@@ -431,7 +386,7 @@ description: Research in philosophy of perception, emotion, and language.
      ========================================================= */
 
   .research-work-meta {
-    margin-top: 0.13rem;
+    margin-top: 0.14rem;
 
     font-size: 0.84rem;
     font-weight: 400;
@@ -484,17 +439,17 @@ description: Research in philosophy of perception, emotion, and language.
 
 
   /* =========================================================
-     PAPER SUMMARY
+     PAPER DESCRIPTION
      ========================================================= */
 
   .research-work-summary {
-    max-width: 740px;
+    max-width: 780px;
 
-    margin: 0.36rem 0 0 0;
+    margin: 0.48rem 0 0 0;
 
-    font-size: 0.86rem;
+    font-size: 0.87rem;
     font-weight: 400;
-    line-height: 1.55;
+    line-height: 1.62;
 
     color: var(--global-text-color-light, #686d72);
   }
@@ -509,85 +464,7 @@ description: Research in philosophy of perception, emotion, and language.
   }
 
   .research-work.private-work .research-work-summary {
-    max-width: 690px;
-  }
-
-
-  /* =========================================================
-     MORE DETAILS
-     ========================================================= */
-
-  .research-more {
     max-width: 760px;
-
-    margin: 1.4rem 0 0 0;
-    padding: 0;
-  }
-
-  .research-more summary {
-    display: inline-flex;
-    align-items: center;
-
-    gap: 0.45rem;
-
-    margin: 0;
-    padding: 0;
-
-    cursor: pointer;
-
-    list-style: none;
-
-    font-size: 0.83rem;
-    font-weight: 400;
-
-    color: var(--accent);
-
-    user-select: none;
-  }
-
-  .research-more summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .research-more summary::after {
-    content: "+";
-
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1;
-  }
-
-  .research-more[open] summary::after {
-    content: "−";
-  }
-
-  .research-more summary:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.18em;
-  }
-
-  .research-more-content {
-    max-width: 720px;
-
-    margin-top: 1rem;
-    padding-left: 1rem;
-
-    border-left: 1px solid var(--global-divider-color, #dedede);
-  }
-
-  .research-more-content p {
-    margin: 0 0 0.8rem 0;
-
-    font-size: 0.89rem;
-    font-weight: 400;
-    line-height: 1.62;
-
-    color: var(--global-text-color, inherit);
-  }
-
-  .research-more-content p:last-child {
-    margin-bottom: 0;
   }
 
 
@@ -596,22 +473,20 @@ description: Research in philosophy of perception, emotion, and language.
      ========================================================= */
 
   .project-other .research-project-heading {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.45rem;
 
-    font-size: 1.45rem;
+    font-size: 1.5rem;
     font-weight: 400;
   }
 
-  .project-other .research-work-list {
-    max-width: 830px;
+  .project-other .research-project-overview {
+    max-width: 760px;
+
+    margin-bottom: 2rem;
   }
 
   .project-other .research-work-title {
     font-weight: 500;
-  }
-
-  .project-other .research-work-summary {
-    max-width: 690px;
   }
 
 
@@ -764,17 +639,13 @@ description: Research in philosophy of perception, emotion, and language.
       font-size: 0.92rem;
     }
 
-    .research-project-overview p {
-      font-size: 0.92rem;
-      line-height: 1.6;
+    .research-project-overview {
+      margin-bottom: 1.8rem;
     }
 
-    .research-focus {
-      margin-top: 1rem;
-      margin-bottom: 1.65rem;
-
-      font-size: 0.64rem;
-      line-height: 1.55;
+    .research-project-overview p {
+      font-size: 0.92rem;
+      line-height: 1.62;
     }
 
 
@@ -785,8 +656,8 @@ description: Research in philosophy of perception, emotion, and language.
     }
 
     .research-work {
-      padding-top: 0.75rem;
-      padding-bottom: 0.8rem;
+      padding-top: 0.8rem;
+      padding-bottom: 0.9rem;
     }
 
     .research-work-head {
@@ -813,14 +684,10 @@ description: Research in philosophy of perception, emotion, and language.
     }
 
     .research-work-summary {
-      margin-top: 0.3rem;
+      margin-top: 0.4rem;
 
       font-size: 0.83rem;
-      line-height: 1.52;
-    }
-
-    .research-more-content {
-      padding-left: 0.8rem;
+      line-height: 1.56;
     }
 
   }
@@ -845,10 +712,11 @@ description: Research in philosophy of perception, emotion, and language.
       </h1>
 
       <p class="research-intro">
-        My research focuses primarily on the objects of perception and the nature of
-        direct awareness. I also work in the philosophy of emotion, especially on
-        formal objects and fittingness, and in the philosophy of language, especially
-        on reference and temporal externalism.
+        My primary research interest is the problem of perceptual objects: what the
+        objects of perceptual experience are and how they can be directly present to us.
+        I also work in the philosophy of emotion, especially on institutional formal
+        objects and fittingness, and in the philosophy of language, especially on
+        reference and temporal externalism.
       </p>
 
     </div>
@@ -1002,7 +870,7 @@ description: Research in philosophy of perception, emotion, and language.
       aria-controls="research-perception"
       data-project="perception"
     >
-      Perceptual Objects &amp; Direct Realism
+      Perceptual Objects
     </button>
 
 
@@ -1079,32 +947,13 @@ description: Research in philosophy of perception, emotion, and language.
     <div class="research-project-overview">
 
       <p>
-        My main research concerns the objects of perceptual experience and the nature
-        of direct awareness. I am interested in how ordinary objects figure in
-        experience and in what a satisfactory form of direct realism should preserve.
+        I am developing a broader account of perceptual objects and direct awareness.
+        I want to understand how ordinary worldly objects figure in perceptual
+        experience across different sensory modalities and perceptual contexts, and
+        how a form of direct realism can accommodate illusion, hallucination, and
+        other difficult cases while preserving the idea that perception genuinely
+        puts us in touch with the world.
       </p>
-
-      <p>
-        I approach these questions through work on perceptual objects, touch,
-        cross-modal experience, perceptual context, illusion, and hallucination.
-        A central manuscript develops the positive framework of this project.
-      </p>
-
-    </div>
-
-
-
-    <div class="research-focus">
-
-      <span>perceptual objects</span>
-
-      <span>direct awareness</span>
-
-      <span>naïve realism</span>
-
-      <span>perceptual context</span>
-
-      <span>cross-modal perception</span>
 
     </div>
 
@@ -1119,6 +968,8 @@ description: Research in philosophy of perception, emotion, and language.
 
     <div class="research-work-list">
 
+
+      <!-- Tactile -->
 
       <article class="research-work">
 
@@ -1157,13 +1008,18 @@ description: Research in philosophy of perception, emotion, and language.
 
 
         <p class="research-work-summary">
-          I argue that ordinary tactile perception creates a screening-off problem
-          for naïve realism without relying on hallucination.
+          I develop a screening-off problem for naïve realism that begins with
+          ordinary tactile perception rather than hallucination. Using cases involving
+          touch and realistic haptic simulation, I argue that the particular external
+          object can become explanatorily redundant with respect to phenomenal
+          character, putting pressure on the constitutive role assigned to worldly objects.
         </p>
 
       </article>
 
 
+
+      <!-- Cross-modal -->
 
       <article class="research-work">
 
@@ -1202,8 +1058,11 @@ description: Research in philosophy of perception, emotion, and language.
 
 
         <p class="research-work-summary">
-          I argue that cross-modal phenomenal heterogeneity creates a problem for
-          strong forms of naïve realism.
+          I examine whether naïve realism can explain cases in which the same object
+          is perceived through different sensory modalities but the resulting experiences
+          seem phenomenally very different. I argue that appeals to abstract spatial
+          commonality do not provide the relevant phenomenal overlap, leaving a
+          significant problem for strong forms of naïve realism.
         </p>
 
       </article>
@@ -1223,6 +1082,8 @@ description: Research in philosophy of perception, emotion, and language.
     <div class="research-work-list">
 
 
+      <!-- Core manuscript -->
+
       <article class="research-work private-work">
 
         <div class="research-work-head">
@@ -1239,12 +1100,17 @@ description: Research in philosophy of perception, emotion, and language.
 
 
         <p class="research-work-summary">
-          Develops the central positive account of this research project.
+          I develop the central positive account of this research project and use it
+          to clarify what it takes for perceptual awareness of ordinary objects to count
+          as genuinely direct. The manuscript brings together several of the questions
+          about perceptual objects that motivate my work in philosophy of perception.
         </p>
 
       </article>
 
 
+
+      <!-- Context manuscript -->
 
       <article class="research-work private-work">
 
@@ -1262,40 +1128,16 @@ description: Research in philosophy of perception, emotion, and language.
 
 
         <p class="research-work-summary">
-          Examines how perceptual context bears on the objects and phenomenal
-          character of experience.
+          I examine how changes in perceptual context bear on the objects and
+          phenomenal character of experience. I use these cases to ask how a theory
+          of perceptual objects should accommodate contextual variation without
+          losing sight of the worldly objects that perception appears to present.
         </p>
 
       </article>
 
 
     </div>
-
-
-
-    <details class="research-more">
-
-      <summary>
-        More on this project
-      </summary>
-
-
-      <div class="research-more-content">
-
-        <p>
-          Across this work, I use problems concerning sensory variation, perceptual
-          context, and the relation between experience and worldly objects to ask
-          what a theory of direct perception needs to explain.
-        </p>
-
-        <p>
-          The individual papers develop different parts of this broader project,
-          while the central positive account is currently under review.
-        </p>
-
-      </div>
-
-    </details>
 
 
   </section>
@@ -1329,27 +1171,12 @@ description: Research in philosophy of perception, emotion, and language.
     <div class="research-project-overview">
 
       <p>
-        My work in the philosophy of emotion examines how social standings such as
-        prestige and stigma can enter emotional evaluation. I am especially interested
-        in formal objects, fittingness, and the relation between social reality and
-        emotional normativity.
+        I am interested in how institutions and social practices shape the evaluative
+        objects of our emotions. My aim is to understand when socially constituted
+        standings such as prestige and stigma become part of what emotions respond to,
+        and how the reality of such standings should be distinguished from the further
+        question of whether they make admiration, contempt, or related emotions fitting.
       </p>
-
-    </div>
-
-
-
-    <div class="research-focus">
-
-      <span>philosophy of emotion</span>
-
-      <span>formal objects</span>
-
-      <span>fittingness</span>
-
-      <span>social ontology</span>
-
-      <span>institutional status</span>
 
     </div>
 
@@ -1400,8 +1227,11 @@ description: Research in philosophy of perception, emotion, and language.
 
 
         <p class="research-work-summary">
-          I argue that socially constituted evaluative properties can themselves be
-          formal objects of emotion, and develop a two-level account of their fittingness.
+          I introduce the idea of institutional formal objects and argue that socially
+          constituted evaluative properties such as prestige and stigma can themselves
+          enter the evaluative content of emotion, rather than merely serving as evidence
+          of personal excellence or defect. I then develop a two-level account of
+          fittingness for emotions directed at such institutional standings.
         </p>
 
       </article>
@@ -1441,26 +1271,13 @@ description: Research in philosophy of perception, emotion, and language.
     <div class="research-project-overview">
 
       <p>
-        My work in the philosophy of language focuses on reference and temporal
-        externalism. I am interested in how present and future linguistic practice
-        bear on reference, semantic continuity, and change across time.
+        I am interested in how reference is fixed and maintained across time,
+        particularly when a community's present linguistic practice appears compatible
+        with more than one candidate interpretation. I want to understand how much
+        work can be done by present public practice before future use enters the
+        metasemantic story, and what this tells us about semantic continuity,
+        indeterminacy, and change.
       </p>
-
-    </div>
-
-
-
-    <div class="research-focus">
-
-      <span>philosophy of language</span>
-
-      <span>metasemantics</span>
-
-      <span>reference</span>
-
-      <span>temporal externalism</span>
-
-      <span>linguistic practice</span>
 
     </div>
 
@@ -1490,8 +1307,11 @@ description: Research in philosophy of perception, emotion, and language.
 
 
         <p class="research-work-summary">
-          Examines how present and future linguistic practice bear on the
-          determination of reference.
+          I examine cases in which the applications of a public term are compatible
+          with more than one candidate extension and ask what fixes its reference
+          before later separating cases appear. I compare the role of present public
+          practice with appeals to future linguistic use, with particular attention to
+          semantic continuity and change across time.
         </p>
 
       </article>
@@ -1520,6 +1340,19 @@ description: Research in philosophy of perception, emotion, and language.
     <h2 class="research-project-heading">
       Other Work
     </h2>
+
+
+
+    <div class="research-project-overview">
+
+      <p>
+        I wrote the paper below during my master's studies. I remain interested in
+        questions about consciousness, attention, and phenomenal richness, but this
+        is no longer one of the main directions of my current research.
+      </p>
+
+    </div>
+
 
 
     <div class="research-work-list">
@@ -1562,8 +1395,11 @@ description: Research in philosophy of perception, emotion, and language.
 
 
         <p class="research-work-summary">
-          I argue that evidence commonly taken to support a fragmented view of
-          phenomenal consciousness is also compatible with a richer view.
+          I revisit the debate between rich and fragmented views of phenomenal
+          consciousness using evidence from the Sperling paradigm and related work
+          on attention. I argue that data often taken to favour the Fragment View can
+          also be accommodated by the Rich View, and that the latter retains important
+          theoretical advantages.
         </p>
 
       </article>
@@ -1610,6 +1446,11 @@ description: Research in philosophy of perception, emotion, and language.
           "false"
         );
 
+        item.setAttribute(
+          "tabindex",
+          "-1"
+        );
+
       });
 
 
@@ -1625,6 +1466,11 @@ description: Research in philosophy of perception, emotion, and language.
       tab.setAttribute(
         "aria-selected",
         "true"
+      );
+
+      tab.setAttribute(
+        "tabindex",
+        "0"
       );
 
 
@@ -1645,6 +1491,16 @@ description: Research in philosophy of perception, emotion, and language.
 
     tabs.forEach(function (tab, index) {
 
+      if (!tab.classList.contains("active")) {
+
+        tab.setAttribute(
+          "tabindex",
+          "-1"
+        );
+
+      }
+
+
       tab.addEventListener("click", function () {
 
         activateResearchTab(tab);
@@ -1652,11 +1508,6 @@ description: Research in philosophy of perception, emotion, and language.
       });
 
 
-
-      /*
-        Keyboard support:
-        left / right arrows switch tabs
-      */
 
       tab.addEventListener("keydown", function (event) {
 
