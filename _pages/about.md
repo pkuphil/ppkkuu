@@ -188,7 +188,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   }
 
   .publication-item {
-    margin: 0 0 1.02rem 0;
+    margin: 0 0 1.15rem 0;
     padding: 0;
   }
 
@@ -208,13 +208,13 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     - 不加引号，避免视觉上过于繁复
   */
   .publication-title {
-    margin: 0 0 0.11rem 0;
+    margin: 0 0 0.16rem 0;
 
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.48;
+    font-size: 0.98rem;
+    font-weight: 500;
+    line-height: 1.42;
 
-    letter-spacing: -0.004em;
+    letter-spacing: -0.003em;
 
     color: var(--global-text-color, inherit);
   }
@@ -258,7 +258,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   .publication-journal {
     font-family: inherit;
 
-    font-size: 0.94rem;
+    font-size: 0.88rem;
     font-style: italic;
     font-weight: 400;
     line-height: 1.45;
@@ -289,7 +289,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     margin-left: 0.25em;
 
     font-family: inherit;
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     font-style: normal;
     font-weight: 400;
 
@@ -361,7 +361,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
     margin-left: auto;
 
-    font-size: 0.92rem;
+    font-size: 0.84rem;
     font-weight: 400;
     font-style: normal;
 
@@ -642,25 +642,25 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     /* ---------- Publication ---------- */
 
     .publication-item {
-      margin-bottom: 0.92rem;
+      margin-bottom: 1.05rem;
     }
 
     .publication-title {
-      font-size: 1rem;
-      font-weight: 600;
-      line-height: 1.45;
+      font-size: 0.98rem;
+      font-weight: 500;
+      line-height: 1.42;
     }
 
     .publication-journal {
-      font-size: 0.94rem;
+      font-size: 0.88rem;
     }
 
     .publication-link {
-      font-size: 0.78rem;
+      font-size: 0.84rem;
     }
 
     .publication-status {
-      font-size: 0.88rem;
+      font-size: 0.84rem;
     }
 
 
