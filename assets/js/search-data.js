@@ -9,14 +9,7 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/ppkkuu/";
     },
-  },{id: "nav-research",
-          title: "research",
-          description: "Research in philosophy of perception, emotion, and language.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/ppkkuu/research/";
-          },
-        },{id: "dropdown-cv",
+  },{id: "dropdown-cv",
               title: "CV",
               description: "",
               section: "Dropdown",
