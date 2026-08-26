@@ -143,7 +143,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      ========================================================= */
 
   .home-section-header {
-    margin: 0 0 1.05rem 0;
+    margin: 0 0 1.08rem 0;
   }
 
   .home-section-header h2 {
@@ -185,10 +185,11 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /*
-    每篇 publication 保持舒展但紧凑。
+    每篇 publication 保持自然、舒展，
+    但不使用卡片、边框或大块空白。
   */
   .publication-item {
-    margin: 0 0 1.12rem 0;
+    margin: 0 0 1.02rem 0;
     padding: 0;
   }
 
@@ -197,41 +198,51 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   }
 
 
+  /* =========================================================
+     PUBLICATION TITLE
+     ========================================================= */
+
   /*
-    论文标题是第一视觉层级。
-    比个人介绍正文略大，并稍微加粗。
+    文章标题和个人介绍正文使用同一级字号。
+
+    只通过字重来建立视觉重点，
+    不额外放大。
   */
   .publication-title {
-    margin: 0 0 0.15rem 0;
+    margin: 0 0 0.12rem 0;
 
-    font-size: 1.06rem;
+    font-size: 1rem;
     font-weight: 600;
-    line-height: 1.43;
+    line-height: 1.48;
 
-    letter-spacing: -0.007em;
+    letter-spacing: -0.004em;
 
     color: var(--global-text-color, inherit);
   }
 
 
+  /* =========================================================
+     PUBLICATION META
+     ========================================================= */
+
   /*
     第二行：
 
-    Journal · [publisher/manuscript]             forthcoming
+    Journal · [publisher/manuscript]              forthcoming
 
-    整体字号与个人介绍正文保持同一级别。
+    左侧自然排版，只有状态 / 年份在最右侧。
   */
   .publication-meta {
     display: flex;
     align-items: baseline;
 
     width: 100%;
-    gap: 1.25rem;
+
+    gap: 1.15rem;
 
     font-size: 1rem;
     line-height: 1.48;
   }
-
 
   .publication-details {
     min-width: 0;
@@ -239,15 +250,25 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   }
 
 
-  /*
-    期刊名使用更舒展、具有书刊气质的 serif italic。
+  /* =========================================================
+     JOURNAL NAME
+     ========================================================= */
 
-    不额外加载网络字体，避免影响速度。
-    系统会依次尝试：
-    Iowan Old Style / Palatino / Book Antiqua / Georgia
+  /*
+    期刊名：
+
+    - 与文章标题完全相同字号
+    - 不加粗
+    - 使用比较飘逸、书卷气的 serif italic
+    - 不使用真正的手写花体，因此仍然保持学术感
+
+    Baskerville Italic 会比普通 Georgia / Times
+    更流畅、更有 humanities / philosophy 的气质。
   */
   .publication-journal {
     font-family:
+      Baskerville,
+      "Baskerville Old Face",
       "Iowan Old Style",
       "Palatino Linotype",
       "Book Antiqua",
@@ -255,12 +276,12 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
       Georgia,
       serif;
 
-    font-size: 1.10rem;
+    font-size: 1rem;
     font-style: italic;
-    font-weight: 500;
-    line-height: 1.38;
+    font-weight: 400;
+    line-height: 1.45;
 
-    letter-spacing: -0.009em;
+    letter-spacing: 0.004em;
 
     color: var(--global-text-color, inherit);
   }
@@ -271,25 +292,43 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      ========================================================= */
 
   /*
+    [manuscript]
     [OUP]
     [Springer]
-    [manuscript]
 
-    作为功能入口，不抢期刊名称的视觉重点。
+    完全作为普通文字链接处理。
+
+    默认：
+    - 无背景
+    - 无边框
+    - 无下划线
+
+    hover：
+    - 出现一条很细的下划线
   */
   .publication-link {
-    margin-left: 0.27em;
+    margin-left: 0.25em;
 
     font-family: inherit;
-    font-size: 0.81rem;
+    font-size: 0.86em;
     font-style: normal;
     font-weight: 400;
 
-    color: var(--global-text-color-light, #777d82);
+    color: var(--global-text-color-light, #74787d);
 
     white-space: nowrap;
+
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
   }
 
+
+  /*
+    期刊名和链接之间的小分隔点
+  */
   .publication-link::before {
     content: " · ";
 
@@ -297,16 +336,28 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   }
 
 
-  .publication-link a {
+  /*
+    默认状态：
+    下划线实际存在但透明，因此 hover 时不会跳动。
+  */
+  .publication-link a,
+  .publication-link a:link,
+  .publication-link a:visited {
     color: inherit !important;
 
-    text-decoration-line: underline;
-    text-decoration-color: rgba(115, 120, 125, 0.34);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.16em;
+    background: transparent !important;
 
+    text-decoration-line: underline !important;
+    text-decoration-color: transparent !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 0.17em;
+
+    border: 0 !important;
     border-bottom: 0 !important;
+    border-radius: 0 !important;
     box-shadow: none !important;
+
+    padding: 0 !important;
 
     transition:
       color 0.15s ease,
@@ -314,13 +365,24 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   }
 
 
+  /*
+    鼠标移上去才出现下划线。
+    方括号本身也是链接的一部分。
+  */
   .publication-link a:hover,
   .publication-link a:focus {
     color: var(--global-text-color, inherit) !important;
 
-    text-decoration-color: currentColor;
+    background: transparent !important;
 
+    text-decoration-line: underline !important;
+    text-decoration-color: currentColor !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 0.17em;
+
+    border: 0 !important;
     border-bottom: 0 !important;
+    border-radius: 0 !important;
     box-shadow: none !important;
   }
 
@@ -330,17 +392,17 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      ========================================================= */
 
   /*
-    forthcoming / 2025 贴到最右边。
+    forthcoming / 2025 与期刊在同一行。
 
-    与 Talks 的日期共享同一条视觉右边界，
-    也与上方头像右边缘一致。
+    最右侧与整个正文区域右边缘对齐，
+    也就是与上方头像的右边缘一致。
   */
   .publication-status {
     flex: 0 0 auto;
 
     margin-left: auto;
 
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     font-weight: 400;
     font-style: normal;
 
@@ -365,8 +427,9 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /*
-    Talk 的论文题目明显突出，
-    但不做得像 section heading 那么重。
+    报告按照论文标题分组。
+
+    论文标题是 Talks 中的第一视觉重点。
   */
   .talk-title {
     margin: 0 0 0.34rem 0;
@@ -395,8 +458,6 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     每场报告一行：
 
     — Conference (refereed colloquium) · Place          Date
-
-    只有日期贴右边。
   */
   .talk-item {
     display: flex;
@@ -414,6 +475,10 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     color: var(--global-text-color, inherit);
   }
 
+
+  /* =========================================================
+     TALK LEFT SIDE
+     ========================================================= */
 
   .talk-info {
     min-width: 0;
@@ -474,7 +539,6 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     color: var(--global-text-color-light, #686e73);
   }
 
-
   .talk-place::before,
   .talk-online::before {
     content: " · ";
@@ -488,7 +552,10 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      ========================================================= */
 
   /*
-    日期始终最右对齐。
+    只有日期右对齐。
+
+    因为 .home-talks 是 width: 100%，
+    日期右边缘与上方头像右边缘保持一致。
   */
   .talk-date {
     flex: 0 0 auto;
@@ -518,7 +585,6 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
     color: var(--global-text-color-light, #929292);
   }
-
 
   .talk-cancelled::before {
     content: " · ";
@@ -590,7 +656,6 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
       margin-bottom: 2.15rem;
     }
 
-
     .home-section-header {
       margin-bottom: 0.95rem;
     }
@@ -599,26 +664,30 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     /* ---------- Publication ---------- */
 
     .publication-item {
-      margin-bottom: 1rem;
+      margin-bottom: 0.92rem;
     }
 
+    /*
+      手机上文章标题和期刊名也保持正文大小。
+    */
     .publication-title {
       font-size: 1rem;
-      line-height: 1.43;
+      line-height: 1.45;
     }
 
     .publication-meta {
-      gap: 0.65rem;
+      gap: 0.6rem;
 
-      font-size: 0.96rem;
+      font-size: 1rem;
+      line-height: 1.45;
     }
 
     .publication-journal {
-      font-size: 1.05rem;
+      font-size: 1rem;
     }
 
     .publication-link {
-      font-size: 0.76rem;
+      font-size: 0.82em;
     }
 
     .publication-status {
@@ -691,7 +760,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
       <div class="publication-item">
 
 
-        <!-- Paper title -->
+        <!-- Article title -->
         <div class="publication-title">
           {{ publication.title }}
         </div>
@@ -701,14 +770,16 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
         <div class="publication-meta">
 
 
-          <!-- Left -->
+          <!-- LEFT -->
           <div class="publication-details">
 
+            <!-- Journal -->
             <span class="publication-journal">
               {{ publication.journal }}
             </span>
 
 
+            <!-- Publisher / manuscript link -->
             {% if publication.link_url %}
 
               <span class="publication-link">
@@ -728,7 +799,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
           </div>
 
 
-          <!-- Right -->
+          <!-- RIGHT -->
           <div class="publication-status">
             {{ publication.status }}
           </div>
@@ -774,6 +845,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
       </div>
 
 
+      <!-- Talk list -->
       <div class="talk-list">
 
         {% for item in talk.items %}
@@ -781,7 +853,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
           <div class="talk-item">
 
 
-            <!-- LEFT -->
+            <!-- LEFT SIDE -->
             <div class="talk-info">
 
 
@@ -832,7 +904,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
             </div>
 
 
-            <!-- RIGHT: DATE -->
+            <!-- RIGHT SIDE: DATE -->
             {% if item.date %}
               <div class="talk-date">
                 {{ item.date }}
