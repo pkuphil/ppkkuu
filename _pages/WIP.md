@@ -159,22 +159,18 @@ description: Research in philosophy of perception, emotion, and language.
     box-shadow: none !important;
   }
 
-
   .research-tab-blue.active {
     color: var(--research-blue);
-
     border-bottom-color: var(--research-blue);
   }
 
   .research-tab-green.active {
     color: var(--research-green);
-
     border-bottom-color: var(--research-green);
   }
 
   .research-tab-orange.active {
     color: var(--research-orange);
-
     border-bottom-color: var(--research-orange);
   }
 
@@ -184,7 +180,6 @@ description: Research in philosophy of perception, emotion, and language.
 
   .research-tab-other.active {
     color: var(--global-text-color, inherit);
-
     border-bottom-color: var(--global-text-color-light, #999);
   }
 
@@ -294,18 +289,18 @@ description: Research in philosophy of perception, emotion, and language.
 
 
   /* =========================================================
-     SUBHEADINGS
+     SECTION LABELS
+     intentionally lighter than before
      ========================================================= */
 
   .research-subheading {
-    margin: 2rem 0 0.7rem 0;
+    margin: 2rem 0 0.65rem 0;
 
-    font-size: 0.71rem;
+    font-size: 0.83rem;
     font-weight: 500;
-    line-height: 1.35;
+    line-height: 1.4;
 
-    letter-spacing: 0.085em;
-    text-transform: uppercase;
+    letter-spacing: 0;
 
     color: var(--global-text-color-light, #777);
   }
@@ -469,7 +464,7 @@ description: Research in philosophy of perception, emotion, and language.
 
 
   /* =========================================================
-     OTHER WORK
+     OTHERS
      ========================================================= */
 
   .project-other .research-project-heading {
@@ -500,7 +495,6 @@ description: Research in philosophy of perception, emotion, and language.
     --research-green: #a0b97b;
     --research-orange: #df8b68;
   }
-
 
   @media (prefers-color-scheme: dark) {
 
@@ -560,9 +554,6 @@ description: Research in philosophy of perception, emotion, and language.
       padding-top: 0.5rem;
       padding-bottom: 3rem;
     }
-
-
-    /* Hero */
 
     .research-hero {
       display: block;
@@ -653,6 +644,8 @@ description: Research in philosophy of perception, emotion, and language.
 
     .research-subheading {
       margin-top: 1.7rem;
+
+      font-size: 0.8rem;
     }
 
     .research-work {
@@ -735,9 +728,6 @@ description: Research in philosophy of perception, emotion, and language.
         xmlns="http://www.w3.org/2000/svg"
       >
 
-
-        <!-- Guides -->
-
         <circle
           cx="120"
           cy="120"
@@ -749,7 +739,6 @@ description: Research in philosophy of perception, emotion, and language.
           opacity="0.17"
         />
 
-
         <line
           x1="20"
           y1="120"
@@ -760,7 +749,6 @@ description: Research in philosophy of perception, emotion, and language.
           opacity="0.13"
         />
 
-
         <line
           x1="120"
           y1="20"
@@ -770,7 +758,6 @@ description: Research in philosophy of perception, emotion, and language.
           stroke-width="0.7"
           opacity="0.13"
         />
-
 
 
         <!-- Perception -->
@@ -787,7 +774,6 @@ description: Research in philosophy of perception, emotion, and language.
         />
 
 
-
         <!-- Emotion -->
 
         <circle
@@ -800,7 +786,6 @@ description: Research in philosophy of perception, emotion, and language.
           stroke-opacity="0.28"
           stroke-width="1"
         />
-
 
 
         <!-- Language -->
@@ -816,9 +801,6 @@ description: Research in philosophy of perception, emotion, and language.
           stroke-width="1"
         />
 
-
-
-        <!-- Accent points -->
 
         <circle
           cx="120"
@@ -840,7 +822,6 @@ description: Research in philosophy of perception, emotion, and language.
           r="3.2"
           fill="#70854d"
         />
-
 
       </svg>
 
@@ -912,7 +893,7 @@ description: Research in philosophy of perception, emotion, and language.
       aria-controls="research-other"
       data-project="other"
     >
-      Other Work
+      Others
     </button>
 
 
@@ -959,10 +940,10 @@ description: Research in philosophy of perception, emotion, and language.
 
 
 
-    <!-- Published & forthcoming -->
+    <!-- Papers -->
 
     <div class="research-subheading">
-      Published &amp; forthcoming
+      Papers
     </div>
 
 
@@ -1137,6 +1118,35 @@ description: Research in philosophy of perception, emotion, and language.
       </article>
 
 
+
+      <!-- Illusion manuscript -->
+
+      <article class="research-work private-work">
+
+        <div class="research-work-head">
+
+          <div class="research-work-title">
+            A manuscript on illusion and perceptual correctness
+          </div>
+
+          <div class="research-work-status">
+            manuscript
+          </div>
+
+        </div>
+
+
+        <p class="research-work-summary">
+          I examine how judgments of perceptual error in color depend on the
+          background conditions used to assess correctness. I use these cases to ask
+          whether familiar arguments from illusion rely on assumptions about
+          perceptual correctness that need to be made explicit before they can support
+          conclusions about the objects of perception.
+        </p>
+
+      </article>
+
+
     </div>
 
 
@@ -1182,8 +1192,10 @@ description: Research in philosophy of perception, emotion, and language.
 
 
 
+    <!-- Papers -->
+
     <div class="research-subheading">
-      Published &amp; forthcoming
+      Papers
     </div>
 
 
@@ -1232,6 +1244,45 @@ description: Research in philosophy of perception, emotion, and language.
           enter the evaluative content of emotion, rather than merely serving as evidence
           of personal excellence or defect. I then develop a two-level account of
           fittingness for emotions directed at such institutional standings.
+        </p>
+
+      </article>
+
+
+    </div>
+
+
+
+    <!-- Current work -->
+
+    <div class="research-subheading">
+      Current work
+    </div>
+
+
+    <div class="research-work-list">
+
+
+      <article class="research-work private-work">
+
+        <div class="research-work-head">
+
+          <div class="research-work-title">
+            A manuscript on social context and institutional emotions
+          </div>
+
+          <div class="research-work-status">
+            manuscript
+          </div>
+
+        </div>
+
+
+        <p class="research-work-summary">
+          I examine how an emotion can respond to a social standing that varies across
+          different social settings. I use these cases to ask how social context bears
+          on which institutional standing an emotion attributes to its target, and how
+          this in turn affects questions about emotional accuracy and fittingness.
         </p>
 
       </article>
@@ -1325,7 +1376,7 @@ description: Research in philosophy of perception, emotion, and language.
 
 
   <!-- =======================================================
-       OTHER WORK
+       OTHERS
        ======================================================= -->
 
   <section
@@ -1338,7 +1389,7 @@ description: Research in philosophy of perception, emotion, and language.
 
 
     <h2 class="research-project-heading">
-      Other Work
+      Others
     </h2>
 
 
