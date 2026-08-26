@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-research",
           title: "research",
-          description: "Research in philosophy of perception, institutional objects, and temporal externalism.",
+          description: "Research in philosophy of perception, emotion, and language.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/ppkkuu/research/";
