@@ -9,12 +9,12 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/ppkkuu/";
     },
-  },{id: "nav-work-in-progress",
-          title: "work in progress",
-          description: "",
+  },{id: "nav-research",
+          title: "research",
+          description: "Research in philosophy of perception, institutional objects, and temporal externalism.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/ppkkuu/WIP/";
+            window.location.href = "/ppkkuu/research/";
           },
         },{id: "dropdown-cv",
               title: "CV",
