@@ -438,6 +438,68 @@ description: Research in philosophy of perception, emotion, and language.
 
 
   /* =========================================================
+     PUBLISHED PAPERS — APA-STYLE SINGLE-LINE REFERENCES
+     Title. Journal, forthcoming/year. [link]
+     ========================================================= */
+
+  .published-work {
+    padding-top: 0.68rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .research-citation-line {
+    display: block;
+    width: 100%;
+    padding-right: 1.55rem;
+
+    font-size: 0.98rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.001em;
+
+    color: var(--research-text);
+
+    white-space: nowrap;
+  }
+
+  .research-citation-title {
+    font-weight: 500;
+    color: var(--research-heading);
+  }
+
+  .research-citation-journal {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--research-text);
+  }
+
+  .research-citation-status {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--research-muted);
+  }
+
+  .research-citation-year {
+    font-style: normal;
+  }
+
+  .published-work .research-work-link {
+    margin-left: 0.12em;
+    font-size: inherit;
+  }
+
+  .published-work .research-work-link::before {
+    content: "";
+    margin: 0;
+  }
+
+  .published-work .research-abstract summary {
+    top: 0.79rem;
+    right: 0;
+  }
+
+
+  /* =========================================================
      WORK HEADER
      ========================================================= */
 
@@ -744,6 +806,11 @@ description: Research in philosophy of perception, emotion, and language.
      ========================================================= */
 
   @media (max-width: 960px) {
+
+    .research-citation-line {
+      white-space: normal;
+    }
+
 
     main.container {
       max-width: 980px !important;
@@ -1164,39 +1231,19 @@ description: Research in philosophy of perception, emotion, and language.
 
       <!-- Tactile -->
 
-      <article class="research-work">
+      <article class="research-work published-work">
 
-        <div class="research-work-head">
-
-          <div class="research-work-title">
-            A Tactile Screening-Off Problem for Naïve Realism
-          </div>
-
-          <div class="research-work-status">
-            forthcoming
-          </div>
-
-        </div>
-
-
-        <div class="research-work-meta">
-
-          <span class="research-work-journal">
-            Analysis
-          </span>
-
+        <div class="research-citation-line">
+          <span class="research-citation-title">A Tactile Screening-Off Problem for Naïve Realism.</span>
+          <span class="research-citation-journal"> Analysis</span>,
+          <span class="research-citation-status"> forthcoming</span>.
           <span class="research-work-link">
-
             <a
               href="https://doi.org/10.1093/analys/anag033"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              [OUP]
-            </a>
-
+            >[OUP]</a>
           </span>
-
         </div>
 
 
@@ -1229,39 +1276,19 @@ description: Research in philosophy of perception, emotion, and language.
 
       <!-- Cross-modal -->
 
-      <article class="research-work">
+      <article class="research-work published-work">
 
-        <div class="research-work-head">
-
-          <div class="research-work-title">
-            Cross-Modal Experiences and the Problem of Phenomenal Overlap
-          </div>
-
-          <div class="research-work-status">
-            forthcoming
-          </div>
-
-        </div>
-
-
-        <div class="research-work-meta">
-
-          <span class="research-work-journal">
-            Journal of Consciousness Studies
-          </span>
-
+        <div class="research-citation-line">
+          <span class="research-citation-title">Cross-Modal Experiences and the Problem of Phenomenal Overlap.</span>
+          <span class="research-citation-journal"> Journal of Consciousness Studies</span>,
+          <span class="research-citation-status"> forthcoming</span>.
           <span class="research-work-link">
-
             <a
               href="https://philpapers.org/rec/YANCEA-3"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              [manuscript]
-            </a>
-
+            >[manuscript]</a>
           </span>
-
         </div>
 
 
@@ -1489,39 +1516,19 @@ description: Research in philosophy of perception, emotion, and language.
     <div class="research-work-list">
 
 
-      <article class="research-work">
+      <article class="research-work published-work">
 
-        <div class="research-work-head">
-
-          <div class="research-work-title">
-            Institutional Formal Objects and Two-Level Fittingness
-          </div>
-
-          <div class="research-work-status">
-            forthcoming
-          </div>
-
-        </div>
-
-
-        <div class="research-work-meta">
-
-          <span class="research-work-journal">
-            The Philosophical Quarterly
-          </span>
-
+        <div class="research-citation-line">
+          <span class="research-citation-title">Institutional Formal Objects and Two-Level Fittingness.</span>
+          <span class="research-citation-journal"> The Philosophical Quarterly</span>,
+          <span class="research-citation-status"> forthcoming</span>.
           <span class="research-work-link">
-
             <a
               href="https://philpapers.org/rec/YANIFO"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              [manuscript]
-            </a>
-
+            >[manuscript]</a>
           </span>
-
         </div>
 
 
@@ -1741,39 +1748,19 @@ description: Research in philosophy of perception, emotion, and language.
     <div class="research-work-list">
 
 
-      <article class="research-work">
+      <article class="research-work published-work">
 
-        <div class="research-work-head">
-
-          <div class="research-work-title">
-            Is Rich Phenomenology Fragmented?
-          </div>
-
-          <div class="research-work-status">
-            2025
-          </div>
-
-        </div>
-
-
-        <div class="research-work-meta">
-
-          <span class="research-work-journal">
-            Synthese
-          </span>
-
+        <div class="research-citation-line">
+          <span class="research-citation-title">Is Rich Phenomenology Fragmented?.</span>
+          <span class="research-citation-journal"> Synthese</span>,
+          <span class="research-citation-status research-citation-year"> 2025</span>.
           <span class="research-work-link">
-
             <a
               href="https://doi.org/10.1007/s11229-025-05058-8"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              [Springer]
-            </a>
-
+            >[Springer]</a>
           </span>
-
         </div>
 
 
