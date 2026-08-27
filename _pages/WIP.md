@@ -526,7 +526,7 @@ description: Research in philosophy of perception, emotion, and language.
   .research-work-link a,
   .research-work-link a:link,
   .research-work-link a:visited {
-    color: var(--accent) !important;
+    color: var(--research-muted) !important;
 
     background: transparent !important;
 
@@ -538,12 +538,14 @@ description: Research in philosophy of perception, emotion, and language.
     border: 0 !important;
     box-shadow: none !important;
 
-    transition: text-decoration-color 0.15s ease;
+    transition:
+      color 0.15s ease,
+      text-decoration-color 0.15s ease;
   }
 
   .research-work-link a:hover,
   .research-work-link a:focus {
-    color: var(--accent) !important;
+    color: var(--research-text) !important;
 
     background: transparent !important;
 
