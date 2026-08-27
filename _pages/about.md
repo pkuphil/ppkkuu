@@ -142,7 +142,7 @@ talks:
 
     width: 100%;
     margin: 0 auto;
-    padding: 1.2rem 0 4.8rem;
+    padding: 0.35rem 0 4.8rem;
 
     color: var(--home-text);
   }
@@ -735,7 +735,7 @@ talks:
     }
 
     .home-shell {
-      padding-top: 0.45rem;
+      padding-top: 0.15rem;
       padding-bottom: 3.4rem;
     }
 
@@ -904,12 +904,6 @@ talks:
         </p>
 
         <p>
-          Much of my recent work forms part of a broader project aimed at advancing the claim that,
-          roughly speaking, direct awareness of the world need not be unmediated: mediation can itself
-          be a means by which we are directly aware of the world.
-        </p>
-
-        <p>
           I’m advised by
           <a href="https://phil.pku.edu.cn/szdw/szll/wgzxjys/274743.htm" target="_blank" rel="noopener noreferrer">Qilin Li</a>
           at
@@ -918,6 +912,12 @@ talks:
           <a href="https://www.mit.edu/" target="_blank" rel="noopener noreferrer">MIT</a>
           (2024–2025), by
           <a href="http://www.alexbyrne.org/" target="_blank" rel="noopener noreferrer">Alex Byrne</a>.
+        </p>
+
+        <p>
+          Much of my recent work forms part of a broader project aimed at advancing the claim that,
+          roughly speaking, direct awareness of the world need not be unmediated: mediation can itself
+          be a means by which we are directly aware of the world.
         </p>
 
         <p>
@@ -954,7 +954,7 @@ talks:
         <div class="home-section-heading">
           <h2 id="home-publications-title">
             <a href="{{ '/publications/' | relative_url }}">
-              Publications
+              Papers
             </a>
           </h2>
         </div>
