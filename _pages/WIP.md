@@ -56,8 +56,8 @@ description: Research in philosophy of perception, emotion, and language.
     width: 100%;
     max-width: 1160px;
 
-    margin: 0 auto;
-    padding: 0.4rem 0 4.8rem;
+    margin: -1rem auto 0;
+    padding: 0 0 4.2rem;
 
     color: var(--research-text);
   }
@@ -72,9 +72,9 @@ description: Research in philosophy of perception, emotion, and language.
     grid-template-columns: minmax(0, 1fr) 300px;
     align-items: center;
 
-    gap: clamp(3rem, 6vw, 5.5rem);
+    gap: clamp(2.8rem, 5vw, 4.6rem);
 
-    margin-bottom: 3.35rem;
+    margin-bottom: 2.45rem;
   }
 
   .research-hero-copy {
@@ -82,7 +82,7 @@ description: Research in philosophy of perception, emotion, and language.
   }
 
   .research-title {
-    margin: 0 0 1.2rem 0;
+    margin: 0 0 0.95rem 0;
 
     font-family: inherit;
     font-size: clamp(3.2rem, 5.8vw, 4.55rem);
@@ -99,9 +99,9 @@ description: Research in philosophy of perception, emotion, and language.
 
     margin: 0;
 
-    font-size: 1.06rem;
+    font-size: 1.04rem;
     font-weight: 400;
-    line-height: 1.72;
+    line-height: 1.64;
 
     color: var(--research-text);
   }
@@ -112,8 +112,8 @@ description: Research in philosophy of perception, emotion, and language.
      ========================================================= */
 
   .research-diagram {
-    width: 290px;
-    height: 290px;
+    width: 286px;
+    height: 286px;
 
     justify-self: end;
   }
@@ -138,9 +138,9 @@ description: Research in philosophy of perception, emotion, and language.
     grid-template-columns: 210px minmax(0, 1fr);
     align-items: start;
 
-    column-gap: clamp(3.2rem, 5vw, 5.1rem);
+    column-gap: clamp(3rem, 4.5vw, 4.6rem);
 
-    padding-top: 0.2rem;
+    padding-top: 0;
   }
 
 
@@ -329,7 +329,7 @@ description: Research in philosophy of perception, emotion, and language.
   .research-project-heading {
     max-width: 800px;
 
-    margin: -0.08rem 0 0.35rem 0;
+    margin: -0.05rem 0 0.28rem 0;
 
     font-family: inherit;
     font-size: clamp(1.7rem, 2.4vw, 1.95rem);
@@ -344,7 +344,7 @@ description: Research in philosophy of perception, emotion, and language.
   .research-project-question {
     max-width: 770px;
 
-    margin: 0 0 1.35rem 0;
+    margin: 0 0 1.05rem 0;
 
     font-size: 1.02rem;
     font-style: italic;
@@ -362,15 +362,15 @@ description: Research in philosophy of perception, emotion, and language.
   .research-project-overview {
     max-width: 790px;
 
-    margin-bottom: 2.2rem;
+    margin-bottom: 1.55rem;
   }
 
   .research-project-overview p {
     margin: 0;
 
-    font-size: 1.02rem;
+    font-size: 1rem;
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.64;
 
     color: var(--research-text);
   }
@@ -384,9 +384,9 @@ description: Research in philosophy of perception, emotion, and language.
     display: flex;
     align-items: center;
 
-    gap: 0.75rem;
+    gap: 0.68rem;
 
-    margin: 2.15rem 0 0.65rem 0;
+    margin: 1.55rem 0 0.42rem 0;
 
     font-size: 0.84rem;
     font-weight: 500;
@@ -419,13 +419,15 @@ description: Research in philosophy of perception, emotion, and language.
     margin: 0;
     padding: 0;
 
-    border-top: 1px solid var(--research-rule);
+    border-top: 0;
   }
 
   .research-work {
+    position: relative;
+
     margin: 0;
 
-    padding: 0.92rem 0 0.98rem;
+    padding: 0.72rem 0 0.78rem;
 
     border-bottom: 1px solid var(--research-rule);
   }
@@ -485,7 +487,7 @@ description: Research in philosophy of perception, emotion, and language.
      ========================================================= */
 
   .research-work-meta {
-    margin-top: 0.13rem;
+    margin-top: 0.08rem;
 
     font-size: 0.91rem;
     font-weight: 400;
@@ -544,20 +546,24 @@ description: Research in philosophy of perception, emotion, and language.
      ========================================================= */
 
   .research-abstract {
-    margin: 0.18rem 0 0 0;
+    margin: 0;
     padding: 0;
   }
 
   .research-abstract summary {
     list-style: none;
 
+    position: absolute;
+    right: 0;
+    top: 2.02rem;
+
     display: grid;
     place-items: center;
 
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.08rem;
+    height: 1.08rem;
 
-    margin: 0 0 0 auto;
+    margin: 0;
     padding: 0;
 
     color: var(--accent);
@@ -574,6 +580,18 @@ description: Research in philosophy of perception, emotion, and language.
     transition:
       opacity 0.15s ease,
       transform 0.15s ease;
+  }
+
+  /*
+    Current-work entries have no journal/meta line.
+    Keep the symbol on the title/status line instead.
+  */
+  .research-work.private-work .research-work-head {
+    padding-right: 1.4rem;
+  }
+
+  .research-work.private-work .research-abstract summary {
+    top: 0.76rem;
   }
 
   .research-abstract summary::-webkit-details-marker {
@@ -596,7 +614,7 @@ description: Research in philosophy of perception, emotion, and language.
     display: block;
 
     font-family: inherit;
-    font-size: 1.18rem;
+    font-size: 1.02rem;
     font-weight: 400;
     line-height: 1;
   }
@@ -628,7 +646,7 @@ description: Research in philosophy of perception, emotion, and language.
   .research-work-summary {
     max-width: 760px;
 
-    margin: 0.3rem 0 0 0;
+    margin: 0.42rem 0 0 0;
 
     font-size: 0.93rem;
     font-weight: 400;
@@ -769,18 +787,19 @@ description: Research in philosophy of perception, emotion, and language.
     }
 
     .research-page {
-      padding-top: 0.1rem;
-      padding-bottom: 3.4rem;
+      margin-top: -0.35rem;
+      padding-top: 0;
+      padding-bottom: 3rem;
     }
 
     .research-hero {
       display: block;
 
-      margin-bottom: 2.35rem;
+      margin-bottom: 1.9rem;
     }
 
     .research-title {
-      margin-bottom: 1rem;
+      margin-bottom: 0.82rem;
 
       font-size: 2.85rem;
       line-height: 1.02;
@@ -795,7 +814,7 @@ description: Research in philosophy of perception, emotion, and language.
       width: 190px;
       height: 190px;
 
-      margin: 1.6rem auto 0;
+      margin: 1.25rem auto 0;
     }
 
 
@@ -815,7 +834,7 @@ description: Research in philosophy of perception, emotion, and language.
 
       width: 100%;
 
-      margin: 0 0 2.2rem 0;
+      margin: 0 0 1.7rem 0;
 
       border-top: 1px solid var(--research-rule);
       border-bottom: 1px solid var(--research-rule);
@@ -894,13 +913,13 @@ description: Research in philosophy of perception, emotion, and language.
     }
 
     .research-project-question {
-      margin-bottom: 1.15rem;
+      margin-bottom: 0.95rem;
 
       font-size: 0.96rem;
     }
 
     .research-project-overview {
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.35rem;
     }
 
     .research-project-overview p {
@@ -909,7 +928,7 @@ description: Research in philosophy of perception, emotion, and language.
     }
 
     .research-subheading {
-      margin-top: 1.85rem;
+      margin-top: 1.45rem;
 
       font-size: 0.82rem;
     }
@@ -918,8 +937,8 @@ description: Research in philosophy of perception, emotion, and language.
     /* ---------- Work ---------- */
 
     .research-work {
-      padding-top: 0.82rem;
-      padding-bottom: 0.9rem;
+      padding-top: 0.68rem;
+      padding-bottom: 0.74rem;
     }
 
     .research-work-head {
@@ -946,7 +965,16 @@ description: Research in philosophy of perception, emotion, and language.
     }
 
     .research-abstract {
-      margin-top: 0.1rem;
+      margin-top: 0;
+    }
+
+    .research-abstract summary {
+      top: 1.95rem;
+      right: 0;
+    }
+
+    .research-work.private-work .research-abstract summary {
+      top: 0.7rem;
     }
 
     .research-work-summary {
