@@ -436,7 +436,7 @@ talks:
   .publication-link a,
   .publication-link a:link,
   .publication-link a:visited {
-    color: var(--home-accent) !important;
+    color: var(--home-muted) !important;
 
     background: transparent !important;
 
@@ -448,11 +448,14 @@ talks:
     border: 0 !important;
     box-shadow: none !important;
 
-    transition: text-decoration-color 0.15s ease;
+    transition:
+      color 0.15s ease,
+      text-decoration-color 0.15s ease;
   }
 
   .publication-link a:hover,
   .publication-link a:focus {
+    color: var(--home-text) !important;
     text-decoration-color: currentColor !important;
   }
 
