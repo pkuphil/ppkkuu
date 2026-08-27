@@ -478,13 +478,35 @@ description: Research in philosophy of perception, emotion, and language.
      ========================================================= */
 
   .research-work-meta {
+    display: flex;
+    align-items: baseline;
+
+    width: 100%;
+
     margin-top: 0.08rem;
+    padding-right: 1.42rem;
 
     font-size: 0.91rem;
     font-weight: 400;
     line-height: 1.45;
 
     color: var(--research-muted);
+  }
+
+  .research-work-meta-left {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .research-work-meta .research-work-status {
+    flex: 0 0 auto;
+
+    margin-left: 1rem;
+
+    font-size: 0.92em;
+    line-height: inherit;
+
+    white-space: nowrap;
   }
 
   .research-work-journal {
@@ -546,7 +568,7 @@ description: Research in philosophy of perception, emotion, and language.
 
     position: absolute;
     right: 0;
-    top: 2.02rem;
+    top: 2.00rem;
 
     display: grid;
     place-items: center;
@@ -578,7 +600,7 @@ description: Research in philosophy of perception, emotion, and language.
     Keep the symbol on the title/status line instead.
   */
   .research-work.private-work .research-work-head {
-    padding-right: 1.4rem;
+    padding-right: 1.42rem;
   }
 
   .research-work.private-work .research-abstract summary {
@@ -943,7 +965,13 @@ description: Research in philosophy of perception, emotion, and language.
     .research-work-meta {
       margin-top: 0.13rem;
 
+      padding-right: 1.3rem;
+
       font-size: 0.87rem;
+    }
+
+    .research-work-meta .research-work-status {
+      margin-left: 0.7rem;
     }
 
     .research-abstract {
@@ -1045,7 +1073,7 @@ description: Research in philosophy of perception, emotion, and language.
       aria-controls="research-perception"
       data-project="perception"
     >
-      Direct Realism
+      Perceptual Objects
     </button>
 
 
@@ -1143,15 +1171,13 @@ description: Research in philosophy of perception, emotion, and language.
             A Tactile Screening-Off Problem for Naïve Realism
           </div>
 
-          <div class="research-work-status">
-            forthcoming
-          </div>
-
         </div>
 
         <div class="research-work-meta">
 
-          <span class="research-work-journal">
+          <div class="research-work-meta-left">
+
+<span class="research-work-journal">
             Analysis
           </span>
 
@@ -1166,6 +1192,12 @@ description: Research in philosophy of perception, emotion, and language.
             </a>
 
           </span>
+
+          </div>
+
+          <div class="research-work-status">
+            forthcoming
+          </div>
 
         </div>
 
@@ -1207,15 +1239,13 @@ description: Research in philosophy of perception, emotion, and language.
             Cross-Modal Experiences and the Problem of Phenomenal Overlap
           </div>
 
-          <div class="research-work-status">
-            forthcoming
-          </div>
-
         </div>
 
         <div class="research-work-meta">
 
-          <span class="research-work-journal">
+          <div class="research-work-meta-left">
+
+<span class="research-work-journal">
             Journal of Consciousness Studies
           </span>
 
@@ -1230,6 +1260,12 @@ description: Research in philosophy of perception, emotion, and language.
             </a>
 
           </span>
+
+          </div>
+
+          <div class="research-work-status">
+            forthcoming
+          </div>
 
         </div>
 
@@ -1456,15 +1492,13 @@ description: Research in philosophy of perception, emotion, and language.
             Institutional Formal Objects and Two-Level Fittingness
           </div>
 
-          <div class="research-work-status">
-            forthcoming
-          </div>
-
         </div>
 
         <div class="research-work-meta">
 
-          <span class="research-work-journal">
+          <div class="research-work-meta-left">
+
+<span class="research-work-journal">
             The Philosophical Quarterly
           </span>
 
@@ -1479,6 +1513,12 @@ description: Research in philosophy of perception, emotion, and language.
             </a>
 
           </span>
+
+          </div>
+
+          <div class="research-work-status">
+            forthcoming
+          </div>
 
         </div>
 
@@ -1696,15 +1736,13 @@ description: Research in philosophy of perception, emotion, and language.
             Is Rich Phenomenology Fragmented?
           </div>
 
-          <div class="research-work-status">
-            2025
-          </div>
-
         </div>
 
         <div class="research-work-meta">
 
-          <span class="research-work-journal">
+          <div class="research-work-meta-left">
+
+<span class="research-work-journal">
             Synthese
           </span>
 
@@ -1719,6 +1757,12 @@ description: Research in philosophy of perception, emotion, and language.
             </a>
 
           </span>
+
+          </div>
+
+          <div class="research-work-status">
+            2025
+          </div>
 
         </div>
 
