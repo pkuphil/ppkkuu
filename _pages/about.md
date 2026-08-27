@@ -148,8 +148,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
   /* =========================================================
      HOMEPAGE TEXT TONE
-     Slightly softer than pure black in light mode.
-     This changes color only, not font weight or typography.
+     Softer light-mode text color; typography and layout unchanged.
      ========================================================= */
 
   .post,
@@ -271,25 +270,21 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
 
   /* =========================================================
-     PUBLICATION — CITATION STYLE
+     PUBLICATION TITLE
      ========================================================= */
 
   /*
-    Each publication is presented as one continuous citation-like entry.
-
-    All parts use the same base font size:
-    “Title.” Journal, forthcoming. [link]
-
-    Hierarchy is created through weight, italics, and link color
-    rather than through smaller metadata text.
+    文章标题：
+    - 与个人介绍正文同级字号
+    - semi-bold 突出
+    - 不加引号，避免视觉上过于繁复
   */
-  .publication-entry {
-    margin: 0;
+  .publication-title {
+    margin: 0 0 0.16rem 0;
 
-    font-family: inherit;
     font-size: 1.03rem;
-    font-weight: 400;
-    line-height: 1.55;
+    font-weight: 500;
+    line-height: 1.46;
 
     letter-spacing: 0;
 
@@ -297,45 +292,52 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   }
 
 
-  /* Article title */
-  .publication-title {
-    font-size: inherit;
-    font-style: normal;
-    font-weight: 500;
-    line-height: inherit;
+  /* =========================================================
+     PUBLICATION META
+     ========================================================= */
 
-    color: inherit;
+  /*
+    Journal · [publisher/manuscript]              forthcoming
+  */
+  .publication-meta {
+    display: flex;
+    align-items: baseline;
+
+    width: 100%;
+
+    gap: 1.15rem;
+
+    line-height: 1.45;
+  }
+
+  .publication-details {
+    min-width: 0;
+    flex: 1 1 auto;
   }
 
 
-  /* Journal name */
+  /* =========================================================
+     JOURNAL NAME
+     ========================================================= */
+
+  /*
+    期刊名：
+    - 网站原字体
+    - italic
+    - 不加粗
+    - 比文章标题略小
+  */
   .publication-journal {
     font-family: inherit;
 
-    font-size: inherit;
+    font-size: 0.93rem;
     font-style: italic;
     font-weight: 400;
-    line-height: inherit;
+    line-height: 1.5;
 
     letter-spacing: 0;
 
-    color: inherit;
-  }
-
-
-  /* forthcoming / year */
-  .publication-status {
-    font-size: inherit;
-    font-weight: 400;
-    font-style: normal;
-
-    color: inherit;
-
-    white-space: nowrap;
-  }
-
-  .publication-status-forthcoming {
-    font-style: italic;
+    color: var(--global-text-color, inherit);
   }
 
 
@@ -348,16 +350,22 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     [OUP]
     [Springer]
 
-    Same font size as the rest of the citation.
-    Only the bracketed link uses the site's theme color.
+    默认就是普通文字：
+    - 无背景
+    - 无边框
+    - 无可见下划线
+
+    hover 才显示细下划线。
   */
   .publication-link {
-    margin-left: 0.18em;
+    margin-left: 0.25em;
 
     font-family: inherit;
-    font-size: inherit;
+    font-size: 0.86rem;
     font-style: normal;
     font-weight: 400;
+
+    color: var(--global-text-color-light, #74787d);
 
     white-space: nowrap;
 
@@ -366,6 +374,12 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     border-radius: 0 !important;
     box-shadow: none !important;
     padding: 0 !important;
+  }
+
+  .publication-link::before {
+    content: " · ";
+
+    color: var(--global-text-color-light, #aaa);
   }
 
   .publication-link a,
@@ -407,6 +421,34 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     border-bottom: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
+  }
+
+
+  /* =========================================================
+     PUBLICATION STATUS / YEAR
+     ========================================================= */
+
+  .publication-status {
+    flex: 0 0 auto;
+
+    margin-left: auto;
+
+    font-size: 0.88rem;
+    font-weight: 400;
+    font-style: normal;
+
+    color: var(--global-text-color-light, #70767b);
+
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  /*
+    forthcoming is a textual status, so the EB Garamond italic
+    gives it a softer, more fluid character. Numeric years stay upright.
+  */
+  .publication-status-forthcoming {
+    font-style: italic;
   }
 
 
@@ -617,6 +659,22 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
   @media (prefers-color-scheme: dark) {
 
+    .publication-journal {
+      color: var(--global-text-color, inherit);
+    }
+
+    .publication-link {
+      color: rgba(229, 231, 235, 0.58);
+    }
+
+    .publication-link::before {
+      color: rgba(229, 231, 235, 0.3);
+    }
+
+    .publication-status {
+      color: rgba(229, 231, 235, 0.66);
+    }
+
 
     .talk-marker {
       background: rgba(229, 231, 235, 0.38);
@@ -667,9 +725,22 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
       margin-bottom: 1.05rem;
     }
 
-    .publication-entry {
+    .publication-title {
       font-size: 1rem;
-      line-height: 1.52;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .publication-journal {
+      font-size: 0.9rem;
+    }
+
+    .publication-link {
+      font-size: 0.84rem;
+    }
+
+    .publication-status {
+      font-size: 0.86rem;
     }
 
 
@@ -744,33 +815,53 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
       <div class="publication-item">
 
-        <div class="publication-entry">
 
-          <span class="publication-title">
-            “{{ publication.title }}”
-          </span>
+        <!-- Article title -->
+        <div class="publication-title">
+          {{ publication.title }}
+        </div>
 
-          <span class="publication-journal">
-            {{ publication.journal }}
-          </span>,
 
-          <span class="publication-status{% if publication.status == 'forthcoming' %} publication-status-forthcoming{% endif %}">
-            {{ publication.status }}
-          </span>.
+        <!-- Journal / link / status -->
+        <div class="publication-meta">
 
-          {% if publication.link_url %}
 
-            <span class="publication-link">
-              <a
-                href="{{ publication.link_url }}"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                [{{ publication.link_label }}]
-              </a>
+          <!-- LEFT -->
+          <div class="publication-details">
+
+
+            <!-- Journal -->
+            <span class="publication-journal">
+              {{ publication.journal }}
             </span>
 
-          {% endif %}
+
+            <!-- Publisher / manuscript link -->
+            {% if publication.link_url %}
+
+              <span class="publication-link">
+
+                <a
+                  href="{{ publication.link_url }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  [{{ publication.link_label }}]
+                </a>
+
+              </span>
+
+            {% endif %}
+
+
+          </div>
+
+
+          <!-- RIGHT -->
+          <div class="publication-status{% if publication.status == 'forthcoming' %} publication-status-forthcoming{% endif %}">
+            {{ publication.status }}
+          </div>
+
 
         </div>
 
