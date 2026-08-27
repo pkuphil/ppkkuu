@@ -1,20 +1,11 @@
 ---
-layout: about
+layout: default
 title: hi!
 permalink: /
 subtitle: "allenminesky ⟡ gmail · com"
 
-profile:
-  align: right
-  image: prof_pic_color.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p></p>
-    <p></p>
-
 selected_papers: false
-social: false # includes social icons at the bottom of the page
-
+social: false
 
 publications:
   - title: "Institutional Formal Objects and Two-Level Fittingness."
@@ -40,7 +31,6 @@ publications:
     link_label: "Springer"
     link_url: "https://doi.org/10.1007/s11229-025-05058-8"
     status: "2025"
-
 
 talks:
   - title: "Situated Objects and Illusion"
@@ -109,31 +99,20 @@ talks:
         date: "Mar. 2024"
 ---
 
-Hi! I am Zhiwei. I received my PhD in Philosophy from <a href='https://www.pku.edu.cn'>Peking University</a> in 2026. I mostly write about philosophy of mind and philosophy of perception.<br><br>
-Much of my recent work forms part of a broader project aimed at advancing the claim that, roughly speaking, direct awareness of the world need not be unmediated: mediation can itself be a means by which we are directly aware of the world.<br><br>
-I’m advised by <a href="https://phil.pku.edu.cn/szdw/szll/wgzxjys/274743.htm" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Qilin Li</a> at <a href="https://www.pku.edu.cn/">Peking University</a> (2022–2026) and, during my visit at <a href="https://www.mit.edu/">MIT</a> (2024–2025), by <a href="http://www.alexbyrne.org/" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Alex Byrne</a>.<br><br>
-I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and reading personal biographies. I'm also a fan of the band <a href="https://music.apple.com/us/artist/twenty-one-pilots/349736311?l=zh-Hans-CN" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Twenty One Pilots</a> and Hong Kong singer <a href="https://music.apple.com/us/artist/%E8%AE%B8%E5%86%A0%E6%9D%B0/41642722?l=zh-Hans-CN" class="custom-link" target="_blank" rel="noopener noreferrer" style="color: #2f4f6e;">Sam Hui</a>.
-
-
 <style>
-
   /* =========================================================
-     PAGE TYPEFACE
-     EB Garamond gives the homepage a more fluid, literary serif character.
+     HOMEPAGE — THREE-COLUMN EDITORIAL LAYOUT
+     Profile | Publications + Talks | Portrait
+     Research remains in the site navigation only.
      ========================================================= */
 
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+SC:wght@400;500;600&display=swap');
 
   body,
-  .post,
-  .post-header,
-  .post-content,
-  .profile,
   .navbar,
   .navbar-brand,
   .navbar-nav,
-  .home-publications,
-  .home-talks {
+  .home-shell {
     font-family:
       "EB Garamond",
       "Songti SC",
@@ -146,112 +125,218 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
       serif !important;
   }
 
-  /* =========================================================
-     HOMEPAGE TEXT TONE
-     Softer light-mode text color; typography and layout unchanged.
-     ========================================================= */
-
-  .post,
-  .post-header,
-  .post-content,
-  .profile,
-  .home-publications,
-  .home-talks {
-    --global-text-color: #262626;
-    color: #262626;
+  /* Let the homepage breathe beyond the theme's normal article width. */
+  main.container {
+    max-width: 1320px !important;
+    padding-left: clamp(1.35rem, 3vw, 3rem);
+    padding-right: clamp(1.35rem, 3vw, 3rem);
   }
 
-  html[data-theme="dark"] .post,
-  html[data-theme="dark"] .post-header,
-  html[data-theme="dark"] .post-content,
-  html[data-theme="dark"] .profile,
-  html[data-theme="dark"] .home-publications,
-  html[data-theme="dark"] .home-talks,
-  body[data-theme="dark"] .post,
-  body[data-theme="dark"] .post-header,
-  body[data-theme="dark"] .post-content,
-  body[data-theme="dark"] .profile,
-  body[data-theme="dark"] .home-publications,
-  body[data-theme="dark"] .home-talks {
-    --global-text-color: #dedede;
-    color: #dedede;
-  }
+  .home-shell {
+    --home-text: #2d2c2a;
+    --home-muted: #74716d;
+    --home-soft: #98948f;
+    --home-rule: rgba(45, 44, 42, 0.16);
+    --home-accent: var(--global-theme-color, #735c8f);
 
-  @media (prefers-color-scheme: dark) {
-    .post,
-    .post-header,
-    .post-content,
-    .profile,
-    .home-publications,
-    .home-talks {
-      --global-text-color: #dedede;
-      color: #dedede;
-    }
-  }
-
-  /* =========================================================
-     SHARED
-     ========================================================= */
-
-  .home-publications,
-  .home-talks {
-    clear: both;
     width: 100%;
+    margin: 0 auto;
+    padding: 1.2rem 0 4.8rem;
+
+    color: var(--home-text);
   }
 
-  .home-publications {
-    margin-top: 2.45rem;
-    margin-bottom: 2.45rem;
+  .home-shell a,
+  .home-shell a:link,
+  .home-shell a:visited {
+    color: var(--home-accent);
   }
 
-  .home-talks {
-    margin-top: 0;
-    margin-bottom: 2rem;
+  .home-shell a:hover,
+  .home-shell a:focus {
+    color: var(--home-accent);
+  }
+
+
+  /* =========================================================
+     MAIN GRID
+     ========================================================= */
+
+  .home-grid {
+    display: grid;
+    grid-template-columns:
+      minmax(205px, 0.82fr)
+      minmax(500px, 1.9fr)
+      minmax(220px, 0.9fr);
+
+    column-gap: clamp(2.6rem, 4vw, 4.6rem);
+    align-items: start;
+  }
+
+  .home-about,
+  .home-academic,
+  .home-portrait {
+    min-width: 0;
   }
 
 
   /* =========================================================
      SECTION HEADINGS
+     A quiet rule makes the structure clear without cards/boxes.
      ========================================================= */
 
-  .home-section-header {
-    margin: 0 0 1.08rem 0;
+  .home-section-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 0.8rem;
+
+    margin: 0 0 1.35rem 0;
   }
 
-  .home-section-header h2 {
+  .home-section-heading::after {
+    content: "";
+
+    flex: 1 1 auto;
+
+    height: 1px;
+
+    background: var(--home-rule);
+  }
+
+  .home-section-heading h2 {
+    flex: 0 0 auto;
+
     margin: 0;
     padding: 0;
 
-    font-weight: 400;
+    font-family: inherit;
+    font-size: 1.42rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.012em;
+
+    color: var(--home-text);
   }
 
-  .home-section-header h2 a {
-    color: inherit !important;
-
-    font-weight: 400;
+  .home-section-heading h2 a,
+  .home-section-heading h2 a:link,
+  .home-section-heading h2 a:visited {
+    color: var(--home-text) !important;
 
     text-decoration-line: underline;
     text-decoration-color: transparent;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.18em;
 
-    border-bottom: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+
+    transition: text-decoration-color 0.16s ease;
+  }
+
+  .home-section-heading h2 a:hover,
+  .home-section-heading h2 a:focus {
+    color: var(--home-text) !important;
+    text-decoration-color: currentColor;
+  }
+
+
+  /* =========================================================
+     LEFT COLUMN — ABOUT
+     ========================================================= */
+
+  .home-about {
+    padding-top: 0.1rem;
+  }
+
+  .home-about-copy {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.72;
+  }
+
+  .home-about-copy p {
+    margin: 0 0 1.08rem 0;
+  }
+
+  .home-about-copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .home-about-copy a,
+  .home-about-copy a:link,
+  .home-about-copy a:visited {
+    color: var(--home-accent) !important;
+
+    text-decoration-line: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+
+    border: 0 !important;
     box-shadow: none !important;
 
     transition: text-decoration-color 0.15s ease;
   }
 
-  .home-section-header h2 a:hover,
-  .home-section-header h2 a:focus {
+  .home-about-copy a:hover,
+  .home-about-copy a:focus {
     text-decoration-color: currentColor;
+  }
 
-    border-bottom: 0 !important;
-    box-shadow: none !important;
+  .home-contact {
+    margin-top: 1.65rem;
+    padding-top: 1.05rem;
+
+    border-top: 1px solid var(--home-rule);
+  }
+
+  .home-contact-label {
+    margin: 0 0 0.18rem 0;
+
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1.35;
+
+    letter-spacing: 0.045em;
+    text-transform: uppercase;
+
+    color: var(--home-soft);
+  }
+
+  .home-contact-value {
+    margin: 0;
+
+    font-size: 0.94rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.45;
+
+    color: var(--home-muted);
   }
 
 
   /* =========================================================
-     PUBLICATION
+     CENTER COLUMN — ACADEMIC CONTENT
+     ========================================================= */
+
+  .home-academic {
+    min-width: 0;
+  }
+
+  .home-publications {
+    margin: 0;
+  }
+
+  .home-talks {
+    margin: 3rem 0 0 0;
+    padding-top: 0;
+  }
+
+
+  /* =========================================================
+     PUBLICATIONS
      ========================================================= */
 
   .publication-list {
@@ -260,7 +345,7 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
   }
 
   .publication-item {
-    margin: 0 0 1.15rem 0;
+    margin: 0 0 1.28rem 0;
     padding: 0;
   }
 
@@ -268,46 +353,26 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     margin-bottom: 0;
   }
 
-
-  /* =========================================================
-     PUBLICATION TITLE
-     ========================================================= */
-
-  /*
-    文章标题：
-    - 与个人介绍正文同级字号
-    - semi-bold 突出
-    - 不加引号，避免视觉上过于繁复
-  */
   .publication-title {
-    margin: 0 0 0.16rem 0;
+    margin: 0 0 0.13rem 0;
 
-    font-size: 1.03rem;
+    font-size: 1.035rem;
     font-weight: 500;
-    line-height: 1.46;
+    line-height: 1.43;
+    letter-spacing: -0.002em;
 
-    letter-spacing: 0;
-
-    color: var(--global-text-color, inherit);
+    color: var(--home-text);
   }
 
-
-  /* =========================================================
-     PUBLICATION META
-     ========================================================= */
-
-  /*
-    Journal · [publisher/manuscript]              forthcoming
-  */
   .publication-meta {
     display: flex;
     align-items: baseline;
 
     width: 100%;
 
-    gap: 1.15rem;
+    gap: 1.1rem;
 
-    line-height: 1.45;
+    line-height: 1.46;
   }
 
   .publication-details {
@@ -315,77 +380,34 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     flex: 1 1 auto;
   }
 
-
-  /* =========================================================
-     JOURNAL NAME
-     ========================================================= */
-
-  /*
-    期刊名：
-    - 网站原字体
-    - italic
-    - 不加粗
-    - 比文章标题略小
-  */
   .publication-journal {
-    font-family: inherit;
-
     font-size: 0.93rem;
     font-style: italic;
     font-weight: 400;
-    line-height: 1.5;
 
-    letter-spacing: 0;
-
-    color: var(--global-text-color, inherit);
+    color: var(--home-text);
   }
 
-
-  /* =========================================================
-     PUBLICATION LINK
-     ========================================================= */
-
-  /*
-    [manuscript]
-    [OUP]
-    [Springer]
-
-    默认就是普通文字：
-    - 无背景
-    - 无边框
-    - 无可见下划线
-
-    hover 才显示细下划线。
-  */
   .publication-link {
-    margin-left: 0.25em;
+    margin-left: 0.22em;
 
-    font-family: inherit;
-    font-size: 0.86rem;
+    font-size: 0.87rem;
     font-style: normal;
     font-weight: 400;
 
-    color: var(--global-text-color-light, #74787d);
-
     white-space: nowrap;
-
-    background: transparent !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    padding: 0 !important;
   }
 
   .publication-link::before {
     content: " · ";
 
-    color: var(--global-text-color-light, #aaa);
+    color: var(--home-soft);
   }
 
   .publication-link a,
   .publication-link a:link,
   .publication-link a:visited {
-    color: var(--global-theme-color) !important;
+    color: var(--home-accent) !important;
 
     background: transparent !important;
 
@@ -395,38 +417,15 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     text-underline-offset: 0.17em;
 
     border: 0 !important;
-    border-bottom: 0 !important;
-    border-radius: 0 !important;
     box-shadow: none !important;
 
-    padding: 0 !important;
-
-    transition:
-      color 0.15s ease,
-      text-decoration-color 0.15s ease;
+    transition: text-decoration-color 0.15s ease;
   }
 
   .publication-link a:hover,
   .publication-link a:focus {
-    color: var(--global-theme-color) !important;
-
-    background: transparent !important;
-
-    text-decoration-line: underline !important;
     text-decoration-color: currentColor !important;
-    text-decoration-thickness: 1px !important;
-    text-underline-offset: 0.17em;
-
-    border: 0 !important;
-    border-bottom: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
   }
-
-
-  /* =========================================================
-     PUBLICATION STATUS / YEAR
-     ========================================================= */
 
   .publication-status {
     flex: 0 0 auto;
@@ -437,73 +436,45 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     font-weight: 400;
     font-style: normal;
 
-    color: var(--global-text-color-light, #70767b);
+    color: var(--home-muted);
 
     white-space: nowrap;
     text-align: right;
   }
 
-  /*
-    forthcoming is a textual status, so the EB Garamond italic
-    gives it a softer, more fluid character. Numeric years stay upright.
-  */
   .publication-status-forthcoming {
     font-style: italic;
   }
 
 
   /* =========================================================
-     TALKS — GROUP
+     TALKS
      ========================================================= */
 
   .talk-group {
-    margin: 0 0 1.22rem 0;
+    margin: 0 0 1.36rem 0;
   }
 
   .talk-group:last-child {
     margin-bottom: 0;
   }
 
-
-  /* =========================================================
-     TALK PAPER TITLE
-     ========================================================= */
-
-  /*
-    Talks 中的论文 / 报告题目：
-    - 保留引号
-    - 保持加粗
-    - 是 Talks 内的第一视觉重点
-  */
   .talk-title {
-    margin: 0 0 0.34rem 0;
+    margin: 0 0 0.33rem 0;
 
-    font-size: 1.04rem;
+    font-size: 1.03rem;
     font-weight: 600;
-    line-height: 1.42;
+    line-height: 1.4;
+    letter-spacing: -0.004em;
 
-    letter-spacing: -0.003em;
-
-    color: var(--global-text-color, inherit);
+    color: var(--home-text);
   }
-
-
-  /* =========================================================
-     TALK LIST
-     ========================================================= */
 
   .talk-list {
     margin: 0;
     padding: 0;
   }
 
-
-  /*
-    每场会议一行。
-
-    小圆点悬挂在正文左边界之外，
-    因此会议名称本身与上方文章标题左边缘对齐。
-  */
   .talk-item {
     position: relative;
 
@@ -513,135 +484,88 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     width: 100%;
 
     margin: 0;
-    padding: 0.12rem 0;
+    padding: 0.105rem 0;
 
-    font-size: 0.94rem;
+    font-size: 0.92rem;
     font-weight: 400;
-    line-height: 1.55;
+    line-height: 1.5;
 
-    color: var(--global-text-color, inherit);
+    color: var(--home-text);
   }
-
-
-  /* =========================================================
-     TALK LEFT SIDE
-     ========================================================= */
 
   .talk-info {
     min-width: 0;
     flex: 1 1 auto;
 
-    padding-right: 1.25rem;
+    padding-right: 1.2rem;
   }
 
-
-  /* =========================================================
-     HANGING DOT
-     ========================================================= */
-
-  /*
-    小圆点放到正文文字边界之外。
-
-    好处：
-    - article title 和 conference name 完全左对齐
-    - 不再浪费横向空间
-    - 比 dash 更轻
-  */
   .talk-marker {
     position: absolute;
 
-    left: -0.82rem;
-    top: 0.77em;
+    left: -0.72rem;
+    top: 0.76em;
 
-    width: 0.18rem;
-    height: 0.18rem;
+    width: 0.16rem;
+    height: 0.16rem;
 
     border-radius: 50%;
 
-    background: var(--global-text-color-light, #999);
+    background: var(--home-soft);
   }
-
-
-  /* =========================================================
-     TALK VENUE
-     ========================================================= */
 
   .talk-venue {
     font-style: normal;
     font-weight: 400;
 
-    color: var(--global-text-color, inherit);
+    color: var(--home-text);
   }
 
-
-  /* =========================================================
-     REFEREED COLLOQUIUM
-     ========================================================= */
-
   .talk-status {
-    margin-left: 0.18em;
+    margin-left: 0.16em;
 
-    font-size: 0.82em;
+    font-size: 0.81em;
     font-weight: 400;
-    font-style: normal;
 
-    color: var(--global-text-color-light, #838383);
+    color: var(--home-soft);
 
     white-space: nowrap;
   }
 
-
-  /* =========================================================
-     PLACE / ONLINE
-     ========================================================= */
-
   .talk-place,
   .talk-online {
-    color: var(--global-text-color-light, #686e73);
+    color: var(--home-muted);
   }
 
   .talk-place::before,
   .talk-online::before {
     content: " · ";
 
-    color: var(--global-text-color-light, #aaa);
+    color: var(--home-soft);
   }
 
-
-  /* =========================================================
-     TALK DATE
-     ========================================================= */
-
-  /*
-    日期保持最右对齐。
-  */
   .talk-date {
     flex: 0 0 auto;
 
     margin-left: auto;
 
-    font-size: 0.9em;
+    font-size: 0.88em;
     font-weight: 400;
 
-    color: var(--global-text-color-light, #686e73);
+    color: var(--home-muted);
 
     white-space: nowrap;
     text-align: right;
   }
 
-
-  /* =========================================================
-     CANCELLED
-     ========================================================= */
-
   .talk-cancelled {
-    margin-left: 0.2em;
+    margin-left: 0.18em;
 
-    font-size: 0.79em;
+    font-size: 0.78em;
     font-weight: 400;
     font-style: italic;
 
-    color: var(--global-text-color-light, #929292);
+    color: var(--home-soft);
   }
 
   .talk-cancelled::before {
@@ -649,7 +573,53 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
 
     font-style: normal;
 
-    color: var(--global-text-color-light, #aaa);
+    color: var(--home-soft);
+  }
+
+
+  /* =========================================================
+     RIGHT COLUMN — PORTRAIT
+     ========================================================= */
+
+  .home-portrait {
+    justify-self: end;
+
+    width: 100%;
+    max-width: 280px;
+
+    position: sticky;
+    top: 6.4rem;
+  }
+
+  .home-portrait-frame {
+    margin: 0;
+    padding: 0;
+  }
+
+  .home-portrait-frame img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+
+    border-radius: 2px;
+
+    box-shadow: none;
+  }
+
+  .home-portrait-caption {
+    margin: 0.72rem 0 0 0;
+
+    font-size: 0.82rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.45;
+
+    text-align: right;
+
+    color: var(--home-soft);
   }
 
 
@@ -657,49 +627,66 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      DARK MODE
      ========================================================= */
 
+  html[data-theme="dark"] .home-shell,
+  body[data-theme="dark"] .home-shell {
+    --home-text: #e3e0dc;
+    --home-muted: #aaa6a1;
+    --home-soft: #807c77;
+    --home-rule: rgba(227, 224, 220, 0.14);
+  }
+
   @media (prefers-color-scheme: dark) {
+    .home-shell {
+      --home-text: #e3e0dc;
+      --home-muted: #aaa6a1;
+      --home-soft: #807c77;
+      --home-rule: rgba(227, 224, 220, 0.14);
+    }
+  }
 
-    .publication-journal {
-      color: var(--global-text-color, inherit);
+
+  /* =========================================================
+     TABLET
+     Keep the portrait separate while allowing the academic
+     column to remain comfortably wide.
+     ========================================================= */
+
+  @media (max-width: 1080px) {
+
+    main.container {
+      max-width: 940px !important;
     }
 
-    .publication-link {
-      color: rgba(229, 231, 235, 0.58);
+    .home-grid {
+      grid-template-columns: minmax(0, 1fr) 220px;
+
+      column-gap: 3rem;
+      row-gap: 2.8rem;
     }
 
-    .publication-link::before {
-      color: rgba(229, 231, 235, 0.3);
+    .home-about {
+      grid-column: 1;
+      grid-row: 1;
     }
 
-    .publication-status {
-      color: rgba(229, 231, 235, 0.66);
+    .home-academic {
+      grid-column: 1;
+      grid-row: 2;
     }
 
+    .home-portrait {
+      grid-column: 2;
+      grid-row: 1 / span 2;
 
-    .talk-marker {
-      background: rgba(229, 231, 235, 0.38);
+      max-width: 220px;
+
+      position: sticky;
+      top: 6rem;
     }
 
-    .talk-status {
-      color: rgba(229, 231, 235, 0.5);
+    .home-about-copy {
+      max-width: 640px;
     }
-
-    .talk-place,
-    .talk-online,
-    .talk-date {
-      color: rgba(229, 231, 235, 0.64);
-    }
-
-    .talk-place::before,
-    .talk-online::before,
-    .talk-cancelled::before {
-      color: rgba(229, 231, 235, 0.3);
-    }
-
-    .talk-cancelled {
-      color: rgba(229, 231, 235, 0.46);
-    }
-
   }
 
 
@@ -707,28 +694,79 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
      MOBILE
      ========================================================= */
 
-  @media (max-width: 576px) {
+  @media (max-width: 720px) {
 
-    .home-publications {
-      margin-top: 2.15rem;
-      margin-bottom: 2.15rem;
+    main.container {
+      max-width: 100% !important;
+
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
     }
 
-    .home-section-header {
-      margin-bottom: 0.95rem;
+    .home-shell {
+      padding-top: 0.45rem;
+      padding-bottom: 3.4rem;
     }
 
+    .home-grid {
+      display: flex;
+      flex-direction: column;
 
-    /* ---------- Publication ---------- */
+      gap: 0;
+    }
+
+    .home-about {
+      order: 1;
+    }
+
+    .home-portrait {
+      order: 2;
+
+      width: min(72vw, 260px);
+      max-width: none;
+
+      margin: 2rem auto 0;
+
+      position: static;
+    }
+
+    .home-portrait-caption {
+      text-align: center;
+    }
+
+    .home-academic {
+      order: 3;
+
+      width: 100%;
+
+      margin-top: 2.8rem;
+    }
+
+    .home-section-heading {
+      margin-bottom: 1.05rem;
+    }
+
+    .home-section-heading h2 {
+      font-size: 1.34rem;
+    }
+
+    .home-about-copy {
+      font-size: 0.98rem;
+      line-height: 1.68;
+    }
+
+    .home-contact {
+      margin-top: 1.35rem;
+      padding-top: 0.9rem;
+    }
 
     .publication-item {
-      margin-bottom: 1.05rem;
+      margin-bottom: 1.08rem;
     }
 
     .publication-title {
       font-size: 1rem;
-      font-weight: 500;
-      line-height: 1.45;
+      line-height: 1.43;
     }
 
     .publication-journal {
@@ -740,243 +778,301 @@ I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and r
     }
 
     .publication-status {
-      font-size: 0.86rem;
+      font-size: 0.85rem;
     }
 
-
-    /* ---------- Talks ---------- */
+    .home-talks {
+      margin-top: 2.5rem;
+    }
 
     .talk-group {
-      margin-bottom: 1.05rem;
+      margin-bottom: 1.12rem;
     }
 
     .talk-title {
-      margin-bottom: 0.3rem;
-
       font-size: 1rem;
-      font-weight: 600;
-      line-height: 1.42;
+      line-height: 1.4;
     }
 
     .talk-item {
-      padding-top: 0.11rem;
-      padding-bottom: 0.11rem;
-
-      font-size: 0.9rem;
-      line-height: 1.52;
+      font-size: 0.88rem;
+      line-height: 1.5;
     }
 
     .talk-info {
       padding-right: 0.7rem;
     }
 
-    /*
-      手机上圆点略微靠近正文，
-      避免越出屏幕。
-    */
     .talk-marker {
-      left: -0.68rem;
-      top: 0.75em;
-
-      width: 0.16rem;
-      height: 0.16rem;
+      left: -0.58rem;
     }
 
     .talk-date {
-      font-size: 0.88em;
+      font-size: 0.86em;
     }
-
   }
 
+
+  /* =========================================================
+     VERY SMALL SCREENS
+     Long venue names can wrap without squeezing the date.
+     ========================================================= */
+
+  @media (max-width: 430px) {
+
+    .publication-meta,
+    .talk-item {
+      align-items: flex-start;
+    }
+
+    .publication-meta {
+      gap: 0.65rem;
+    }
+
+    .publication-status {
+      padding-top: 0.04rem;
+    }
+
+    .talk-info {
+      padding-right: 0.45rem;
+    }
+
+    .talk-date {
+      padding-top: 0.08rem;
+    }
+  }
 </style>
 
 
+<div class="home-shell">
 
-<!-- =========================================================
-     PUBLICATION
-     ========================================================= -->
-
-<div class="home-publications">
-
-  <div class="home-section-header">
-
-    <h2>
-      <a href="{{ '/publications/' | relative_url }}">
-        Publication
-      </a>
-    </h2>
-
-  </div>
+  <div class="home-grid">
 
 
-  <div class="publication-list">
+    <!-- =====================================================
+         LEFT — ABOUT
+         ===================================================== -->
 
-    {% for publication in page.publications %}
+    <aside class="home-about" aria-label="About">
 
-      <div class="publication-item">
+      <div class="home-section-heading">
+        <h2>About</h2>
+      </div>
 
+      <div class="home-about-copy">
 
-        <!-- Article title -->
-        <div class="publication-title">
-          {{ publication.title }}
-        </div>
+        <p>
+          Hi! I am Zhiwei. I received my PhD in Philosophy from
+          <a href="https://www.pku.edu.cn/" target="_blank" rel="noopener noreferrer">Peking University</a>
+          in 2026. I mostly write about philosophy of mind and philosophy of perception.
+        </p>
 
+        <p>
+          Much of my recent work forms part of a broader project aimed at advancing the claim that,
+          roughly speaking, direct awareness of the world need not be unmediated: mediation can itself
+          be a means by which we are directly aware of the world.
+        </p>
 
-        <!-- Journal / link / status -->
-        <div class="publication-meta">
+        <p>
+          I’m advised by
+          <a href="https://phil.pku.edu.cn/szdw/szll/wgzxjys/274743.htm" target="_blank" rel="noopener noreferrer">Qilin Li</a>
+          at
+          <a href="https://www.pku.edu.cn/" target="_blank" rel="noopener noreferrer">Peking University</a>
+          (2022–2026) and, during my visit at
+          <a href="https://www.mit.edu/" target="_blank" rel="noopener noreferrer">MIT</a>
+          (2024–2025), by
+          <a href="http://www.alexbyrne.org/" target="_blank" rel="noopener noreferrer">Alex Byrne</a>.
+        </p>
 
-
-          <!-- LEFT -->
-          <div class="publication-details">
-
-
-            <!-- Journal -->
-            <span class="publication-journal">
-              {{ publication.journal }}
-            </span>
-
-
-            <!-- Publisher / manuscript link -->
-            {% if publication.link_url %}
-
-              <span class="publication-link">
-
-                <a
-                  href="{{ publication.link_url }}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  [{{ publication.link_label }}]
-                </a>
-
-              </span>
-
-            {% endif %}
-
-
-          </div>
-
-
-          <!-- RIGHT -->
-          <div class="publication-status{% if publication.status == 'forthcoming' %} publication-status-forthcoming{% endif %}">
-            {{ publication.status }}
-          </div>
-
-
-        </div>
+        <p>
+          I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and reading
+          personal biographies. I'm also a fan of the band
+          <a href="https://music.apple.com/us/artist/twenty-one-pilots/349736311?l=zh-Hans-CN" target="_blank" rel="noopener noreferrer">Twenty One Pilots</a>
+          and Hong Kong singer
+          <a href="https://music.apple.com/us/artist/%E8%AE%B8%E5%86%A0%E6%9D%B0/41642722?l=zh-Hans-CN" target="_blank" rel="noopener noreferrer">Sam Hui</a>.
+        </p>
 
       </div>
 
-    {% endfor %}
-
-  </div>
-
-</div>
-
-
-
-<!-- =========================================================
-     TALKS
-     ========================================================= -->
-
-<div class="home-talks">
-
-  <div class="home-section-header">
-
-    <h2>
-      <a href="{{ '/talks/' | relative_url }}">
-        Talks
-      </a>
-    </h2>
-
-  </div>
-
-
-  {% for talk in page.talks %}
-
-    <section class="talk-group">
-
-
-      <!-- Paper / talk title -->
-      <div class="talk-title">
-        “{{ talk.title }}”
+      <div class="home-contact">
+        <div class="home-contact-label">contact</div>
+        <p class="home-contact-value">
+          allenminesky ⟡ gmail · com
+        </p>
       </div>
 
-
-      <!-- Talk list -->
-      <div class="talk-list">
-
-        {% for item in talk.items %}
-
-          <div class="talk-item">
+    </aside>
 
 
-            <!-- Hanging marker -->
-            <span class="talk-marker"></span>
+    <!-- =====================================================
+         CENTER — PUBLICATIONS + TALKS
+         ===================================================== -->
+
+    <main class="home-academic">
 
 
-            <!-- LEFT SIDE -->
-            <div class="talk-info">
+      <!-- PUBLICATIONS -->
+
+      <section class="home-publications" aria-labelledby="home-publications-title">
+
+        <div class="home-section-heading">
+          <h2 id="home-publications-title">
+            <a href="{{ '/publications/' | relative_url }}">
+              Publications
+            </a>
+          </h2>
+        </div>
+
+        <div class="publication-list">
+
+          {% for publication in page.publications %}
+
+            <article class="publication-item">
+
+              <div class="publication-title">
+                {{ publication.title }}
+              </div>
+
+              <div class="publication-meta">
+
+                <div class="publication-details">
+
+                  <span class="publication-journal">
+                    {{ publication.journal }}
+                  </span>
+
+                  {% if publication.link_url %}
+                    <span class="publication-link">
+                      <a
+                        href="{{ publication.link_url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        [{{ publication.link_label }}]
+                      </a>
+                    </span>
+                  {% endif %}
+
+                </div>
+
+                <div class="publication-status{% if publication.status == 'forthcoming' %} publication-status-forthcoming{% endif %}">
+                  {{ publication.status }}
+                </div>
+
+              </div>
+
+            </article>
+
+          {% endfor %}
+
+        </div>
+
+      </section>
 
 
-              <!-- Venue -->
-              <span class="talk-venue">
-                {{ item.venue }}
-              </span>
+      <!-- TALKS -->
 
+      <section class="home-talks" aria-labelledby="home-talks-title">
 
-              <!-- Refereed colloquium -->
-              {% if item.refereed %}
-                <span class="talk-status">
-                  (refereed colloquium)
-                </span>
-              {% endif %}
+        <div class="home-section-heading">
+          <h2 id="home-talks-title">
+            <a href="{{ '/talks/' | relative_url }}">
+              Talks
+            </a>
+          </h2>
+        </div>
 
+        {% for talk in page.talks %}
 
-              <!-- Place -->
-              {% if item.place %}
-                <span class="talk-place">
-                  {{ item.place }}
-                </span>
-              {% endif %}
+          <section class="talk-group">
 
+            <div class="talk-title">
+              “{{ talk.title }}”
+            </div>
 
-              <!-- Online -->
-              {% if item.online %}
-                <span class="talk-online">
-                  Online
-                </span>
-              {% endif %}
+            <div class="talk-list">
 
+              {% for item in talk.items %}
 
-              <!-- Cancellation -->
-              {% if item.cancelled %}
-                <span class="talk-cancelled">
-                  cancelled — dissertation defense
-                </span>
-              {% endif %}
+                <div class="talk-item">
 
+                  <span class="talk-marker" aria-hidden="true"></span>
+
+                  <div class="talk-info">
+
+                    <span class="talk-venue">
+                      {{ item.venue }}
+                    </span>
+
+                    {% if item.refereed %}
+                      <span class="talk-status">
+                        (refereed colloquium)
+                      </span>
+                    {% endif %}
+
+                    {% if item.place %}
+                      <span class="talk-place">
+                        {{ item.place }}
+                      </span>
+                    {% endif %}
+
+                    {% if item.online %}
+                      <span class="talk-online">
+                        Online
+                      </span>
+                    {% endif %}
+
+                    {% if item.cancelled %}
+                      <span class="talk-cancelled">
+                        cancelled — dissertation defense
+                      </span>
+                    {% endif %}
+
+                  </div>
+
+                  {% if item.date %}
+                    <div class="talk-date">
+                      {{ item.date }}
+                    </div>
+                  {% endif %}
+
+                </div>
+
+              {% endfor %}
 
             </div>
 
-
-            <!-- RIGHT SIDE: DATE -->
-            {% if item.date %}
-              <div class="talk-date">
-                {{ item.date }}
-              </div>
-            {% endif %}
-
-
-          </div>
+          </section>
 
         {% endfor %}
 
-      </div>
+      </section>
+
+    </main>
 
 
-    </section>
+    <!-- =====================================================
+         RIGHT — PORTRAIT
+         ===================================================== -->
 
-  {% endfor %}
+    <aside class="home-portrait" aria-label="Portrait">
+
+      <figure class="home-portrait-frame">
+
+        <img
+          src="{{ '/assets/img/prof_pic_color.jpg' | relative_url }}"
+          alt="Portrait of Zhiwei Yang"
+        >
+
+        <figcaption class="home-portrait-caption">
+          Zhiwei Yang（杨嘉）
+        </figcaption>
+
+      </figure>
+
+    </aside>
+
+
+  </div>
 
 </div>
