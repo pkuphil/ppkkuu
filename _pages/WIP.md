@@ -254,20 +254,22 @@ description: Research in philosophy of perception, emotion, and language.
     opacity: 1;
   }
 
-  .research-tab-blue.active {
-    color: var(--research-blue);
+  /*
+    Active research area:
+    neutral monochrome treatment rather than project colors.
+    The selected item is indicated by darker text, slightly stronger weight,
+    and the filled dot.
+  */
+  .research-tab.active {
+    color: var(--research-heading);
+    font-weight: 500;
   }
 
-  .research-tab-green.active {
-    color: var(--research-green);
-  }
-
-  .research-tab-orange.active {
-    color: var(--research-orange);
-  }
-
+  .research-tab-blue.active,
+  .research-tab-green.active,
+  .research-tab-orange.active,
   .research-tab-other.active {
-    color: var(--research-muted);
+    color: var(--research-heading);
   }
 
 
@@ -423,71 +425,6 @@ description: Research in philosophy of perception, emotion, and language.
 
   .research-work:last-child {
     border-bottom: 0;
-  }
-
-
-  /* =========================================================
-     PUBLISHED PAPERS — APA-STYLE SINGLE-LINE REFERENCES
-     Title. Journal, forthcoming/year. [link]
-     ========================================================= */
-
-  .published-work {
-    padding-top: 0.62rem;
-    padding-bottom: 0.66rem;
-  }
-
-  .research-citation-line {
-    display: block;
-    width: 100%;
-    min-width: 0;
-
-    padding-right: 1.55rem;
-
-    font-size: 0.93rem;
-    font-weight: 400;
-    line-height: 1.46;
-    letter-spacing: -0.003em;
-
-    color: var(--research-text);
-
-    white-space: normal;
-    overflow-wrap: anywhere;
-  }
-
-  .research-citation-title {
-    font-weight: 500;
-    color: var(--research-heading);
-  }
-
-  .research-citation-journal {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--research-text);
-  }
-
-  .research-citation-status {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--research-muted);
-  }
-
-  .research-citation-year {
-    font-style: normal;
-  }
-
-  .published-work .research-work-link {
-    margin-left: 0.12em;
-    font-size: inherit;
-  }
-
-  .published-work .research-work-link::before {
-    content: "";
-    margin: 0;
-  }
-
-  .published-work .research-abstract summary {
-    top: 0.67rem;
-    right: 0;
   }
 
 
@@ -799,9 +736,6 @@ description: Research in philosophy of perception, emotion, and language.
 
   @media (max-width: 960px) {
 
-    .research-citation-line {
-      white-space: normal;
-    }
 
 
     main.container {
@@ -943,20 +877,13 @@ description: Research in philosophy of perception, emotion, and language.
       padding-left: 0;
     }
 
-    .research-tab-blue.active {
-      border-bottom-color: var(--research-blue);
-    }
-
-    .research-tab-green.active {
-      border-bottom-color: var(--research-green);
-    }
-
-    .research-tab-orange.active {
-      border-bottom-color: var(--research-orange);
-    }
-
+    .research-tab-blue.active,
+    .research-tab-green.active,
+    .research-tab-orange.active,
     .research-tab-other.active {
-      border-bottom-color: var(--research-muted);
+      color: var(--research-heading);
+      border-bottom-color: var(--research-heading);
+      font-weight: 500;
     }
 
 
@@ -1004,11 +931,6 @@ description: Research in philosophy of perception, emotion, and language.
       line-height: 1.42;
     }
 
-    .research-citation-line {
-      font-size: 0.91rem;
-      line-height: 1.44;
-      padding-right: 1.35rem;
-    }
 
     .research-work-status {
       display: block;
@@ -1213,19 +1135,38 @@ description: Research in philosophy of perception, emotion, and language.
 
       <!-- Tactile -->
 
-      <article class="research-work published-work">
+      <article class="research-work">
 
-        <div class="research-citation-line">
-          <span class="research-citation-title">A Tactile Screening-Off Problem for Naïve Realism.</span>
-          <span class="research-citation-journal"> Analysis</span>,
-          <span class="research-citation-status"> forthcoming</span>.
+        <div class="research-work-head">
+
+          <div class="research-work-title">
+            A Tactile Screening-Off Problem for Naïve Realism
+          </div>
+
+          <div class="research-work-status">
+            forthcoming
+          </div>
+
+        </div>
+
+        <div class="research-work-meta">
+
+          <span class="research-work-journal">
+            Analysis
+          </span>
+
           <span class="research-work-link">
+
             <a
               href="https://doi.org/10.1093/analys/anag033"
               target="_blank"
               rel="noopener noreferrer"
-            >[OUP]</a>
+            >
+              [OUP]
+            </a>
+
           </span>
+
         </div>
 
 
@@ -1258,19 +1199,38 @@ description: Research in philosophy of perception, emotion, and language.
 
       <!-- Cross-modal -->
 
-      <article class="research-work published-work">
+      <article class="research-work">
 
-        <div class="research-citation-line">
-          <span class="research-citation-title">Cross-Modal Experiences and the Problem of Phenomenal Overlap.</span>
-          <span class="research-citation-journal"> Journal of Consciousness Studies</span>,
-          <span class="research-citation-status"> forthcoming</span>.
+        <div class="research-work-head">
+
+          <div class="research-work-title">
+            Cross-Modal Experiences and the Problem of Phenomenal Overlap
+          </div>
+
+          <div class="research-work-status">
+            forthcoming
+          </div>
+
+        </div>
+
+        <div class="research-work-meta">
+
+          <span class="research-work-journal">
+            Journal of Consciousness Studies
+          </span>
+
           <span class="research-work-link">
+
             <a
               href="https://philpapers.org/rec/YANCEA-3"
               target="_blank"
               rel="noopener noreferrer"
-            >[manuscript]</a>
+            >
+              [manuscript]
+            </a>
+
           </span>
+
         </div>
 
 
@@ -1488,19 +1448,38 @@ description: Research in philosophy of perception, emotion, and language.
     <div class="research-work-list">
 
 
-      <article class="research-work published-work">
+      <article class="research-work">
 
-        <div class="research-citation-line">
-          <span class="research-citation-title">Institutional Formal Objects and Two-Level Fittingness.</span>
-          <span class="research-citation-journal"> The Philosophical Quarterly</span>,
-          <span class="research-citation-status"> forthcoming</span>.
+        <div class="research-work-head">
+
+          <div class="research-work-title">
+            Institutional Formal Objects and Two-Level Fittingness
+          </div>
+
+          <div class="research-work-status">
+            forthcoming
+          </div>
+
+        </div>
+
+        <div class="research-work-meta">
+
+          <span class="research-work-journal">
+            The Philosophical Quarterly
+          </span>
+
           <span class="research-work-link">
+
             <a
               href="https://philpapers.org/rec/YANIFO"
               target="_blank"
               rel="noopener noreferrer"
-            >[manuscript]</a>
+            >
+              [manuscript]
+            </a>
+
           </span>
+
         </div>
 
 
@@ -1709,19 +1688,38 @@ description: Research in philosophy of perception, emotion, and language.
     <div class="research-work-list">
 
 
-      <article class="research-work published-work">
+      <article class="research-work">
 
-        <div class="research-citation-line">
-          <span class="research-citation-title">Is Rich Phenomenology Fragmented?.</span>
-          <span class="research-citation-journal"> Synthese</span>,
-          <span class="research-citation-status research-citation-year"> 2025</span>.
+        <div class="research-work-head">
+
+          <div class="research-work-title">
+            Is Rich Phenomenology Fragmented?
+          </div>
+
+          <div class="research-work-status">
+            2025
+          </div>
+
+        </div>
+
+        <div class="research-work-meta">
+
+          <span class="research-work-journal">
+            Synthese
+          </span>
+
           <span class="research-work-link">
+
             <a
               href="https://doi.org/10.1007/s11229-025-05058-8"
               target="_blank"
               rel="noopener noreferrer"
-            >[Springer]</a>
+            >
+              [Springer]
+            </a>
+
           </span>
+
         </div>
 
 
