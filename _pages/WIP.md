@@ -341,18 +341,6 @@ description: Research in philosophy of perception, emotion, and language.
     color: var(--research-heading);
   }
 
-  .research-project-question {
-    max-width: 770px;
-
-    margin: 0 0 1.05rem 0;
-
-    font-size: 1.02rem;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 1.5;
-
-    color: var(--accent);
-  }
 
 
   /* =========================================================
@@ -362,15 +350,16 @@ description: Research in philosophy of perception, emotion, and language.
   .research-project-overview {
     max-width: 790px;
 
-    margin-bottom: 1.55rem;
+    margin-top: 0.72rem;
+    margin-bottom: 1.45rem;
   }
 
   .research-project-overview p {
     margin: 0;
 
-    font-size: 1rem;
+    font-size: 0.99rem;
     font-weight: 400;
-    line-height: 1.64;
+    line-height: 1.62;
 
     color: var(--research-text);
   }
@@ -443,23 +432,26 @@ description: Research in philosophy of perception, emotion, and language.
      ========================================================= */
 
   .published-work {
-    padding-top: 0.68rem;
-    padding-bottom: 0.7rem;
+    padding-top: 0.62rem;
+    padding-bottom: 0.66rem;
   }
 
   .research-citation-line {
     display: block;
     width: 100%;
+    min-width: 0;
+
     padding-right: 1.55rem;
 
-    font-size: 0.98rem;
+    font-size: 0.93rem;
     font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: -0.001em;
+    line-height: 1.46;
+    letter-spacing: -0.003em;
 
     color: var(--research-text);
 
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .research-citation-title {
@@ -494,7 +486,7 @@ description: Research in philosophy of perception, emotion, and language.
   }
 
   .published-work .research-abstract summary {
-    top: 0.79rem;
+    top: 0.67rem;
     right: 0;
   }
 
@@ -979,11 +971,6 @@ description: Research in philosophy of perception, emotion, and language.
       line-height: 1.24;
     }
 
-    .research-project-question {
-      margin-bottom: 0.95rem;
-
-      font-size: 0.96rem;
-    }
 
     .research-project-overview {
       margin-bottom: 1.35rem;
@@ -1015,6 +1002,12 @@ description: Research in philosophy of perception, emotion, and language.
     .research-work-title {
       font-size: 0.98rem;
       line-height: 1.42;
+    }
+
+    .research-citation-line {
+      font-size: 0.91rem;
+      line-height: 1.44;
+      padding-right: 1.35rem;
     }
 
     .research-work-status {
@@ -1194,25 +1187,14 @@ description: Research in philosophy of perception, emotion, and language.
 
 
     <h2 class="research-project-heading">
-      Perceptual Objects and Direct Realism
+      Direct Realism
     </h2>
-
-
-    <div class="research-project-question">
-      What are the objects of perception, and what makes our awareness of them direct?
-    </div>
-
 
 
     <div class="research-project-overview">
 
       <p>
-        I am developing a broader account of perceptual objects and direct awareness.
-        I want to understand how ordinary worldly objects figure in perceptual
-        experience across different sensory modalities and perceptual contexts, and
-        how a form of direct realism can accommodate illusion, hallucination, and
-        other difficult cases while preserving the idea that perception genuinely
-        puts us in touch with the world.
+        What are the objects of perception, and what makes our awareness of them direct? I am developing a broader account of perceptual objects and direct awareness. I want to understand how ordinary worldly objects figure in perceptual experience across different sensory modalities and perceptual contexts, and how a form of direct realism can accommodate illusion, hallucination, and other difficult cases while preserving the idea that perception genuinely puts us in touch with the world.
       </p>
 
     </div>
@@ -1486,20 +1468,10 @@ description: Research in philosophy of perception, emotion, and language.
     </h2>
 
 
-    <div class="research-project-question">
-      How can socially constituted standings enter the evaluative structure of emotion?
-    </div>
-
-
-
     <div class="research-project-overview">
 
       <p>
-        I am interested in how institutions and social practices shape the evaluative
-        objects of our emotions. My aim is to understand when socially constituted
-        standings such as prestige and stigma become part of what emotions respond to,
-        and how the reality of such standings should be distinguished from the further
-        question of whether they make admiration, contempt, or related emotions fitting.
+        How can socially constituted standings enter the evaluative structure of emotion? I am interested in how institutions and social practices shape the evaluative objects of our emotions. My aim is to understand when socially constituted standings such as prestige and stigma become part of what emotions respond to, and how the reality of such standings should be distinguished from the further question of whether they make admiration, contempt, or related emotions fitting.
       </p>
 
     </div>
@@ -1637,21 +1609,10 @@ description: Research in philosophy of perception, emotion, and language.
     </h2>
 
 
-    <div class="research-project-question">
-      How can reference depend on linguistic practice across time?
-    </div>
-
-
-
     <div class="research-project-overview">
 
       <p>
-        I am interested in how reference is fixed and maintained across time,
-        particularly when a community's present linguistic practice appears compatible
-        with more than one candidate interpretation. I want to understand how much
-        work can be done by present public practice before future use enters the
-        metasemantic story, and what this tells us about semantic continuity,
-        indeterminacy, and change.
+        How can reference depend on linguistic practice across time? I am interested in how reference is fixed and maintained across time, particularly when a community's present linguistic practice appears compatible with more than one candidate interpretation. I want to understand how much work can be done by present public practice before future use enters the metasemantic story, and what this tells us about semantic continuity, indeterminacy, and change.
       </p>
 
     </div>
