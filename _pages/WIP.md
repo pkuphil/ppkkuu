@@ -1045,7 +1045,7 @@ description: Research in philosophy of perception, emotion, and language.
       aria-controls="research-perception"
       data-project="perception"
     >
-      Perceptual Objects
+      Direct Realism
     </button>
 
 
