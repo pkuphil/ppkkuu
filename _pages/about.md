@@ -133,10 +133,11 @@ talks:
   }
 
   .home-shell {
-    --home-text: #2d2c2a;
-    --home-muted: #74716d;
-    --home-soft: #98948f;
-    --home-rule: rgba(45, 44, 42, 0.16);
+    --home-text: #47443f;
+    --home-heading: #34312d;
+    --home-muted: #817c75;
+    --home-soft: #a29d96;
+    --home-rule: rgba(52, 49, 45, 0.13);
     --home-accent: var(--global-theme-color, #735c8f);
 
     width: 100%;
@@ -155,6 +156,34 @@ talks:
   .home-shell a:hover,
   .home-shell a:focus {
     color: var(--home-accent);
+  }
+
+
+  /* =========================================================
+     HOMEPAGE NAME
+     ========================================================= */
+
+  .home-name {
+    margin: 0 0 2.35rem 0;
+
+    font-family:
+      "EB Garamond",
+      "Songti SC",
+      STSong,
+      "Noto Serif SC",
+      SimSun,
+      Garamond,
+      Georgia,
+      "Times New Roman",
+      serif;
+
+    font-size: clamp(2.15rem, 3.4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.04;
+
+    letter-spacing: -0.024em;
+
+    color: var(--home-heading);
   }
 
 
@@ -216,13 +245,13 @@ talks:
     line-height: 1.2;
     letter-spacing: -0.012em;
 
-    color: var(--home-text);
+    color: var(--home-heading);
   }
 
   .home-section-heading h2 a,
   .home-section-heading h2 a:link,
   .home-section-heading h2 a:visited {
-    color: var(--home-text) !important;
+    color: var(--home-heading) !important;
 
     text-decoration-line: underline;
     text-decoration-color: transparent;
@@ -237,7 +266,7 @@ talks:
 
   .home-section-heading h2 a:hover,
   .home-section-heading h2 a:focus {
-    color: var(--home-text) !important;
+    color: var(--home-heading) !important;
     text-decoration-color: currentColor;
   }
 
@@ -361,7 +390,7 @@ talks:
     line-height: 1.43;
     letter-spacing: -0.002em;
 
-    color: var(--home-text);
+    color: var(--home-heading);
   }
 
   .publication-meta {
@@ -467,7 +496,7 @@ talks:
     line-height: 1.4;
     letter-spacing: -0.004em;
 
-    color: var(--home-text);
+    color: var(--home-heading);
   }
 
   .talk-list {
@@ -629,18 +658,20 @@ talks:
 
   html[data-theme="dark"] .home-shell,
   body[data-theme="dark"] .home-shell {
-    --home-text: #e3e0dc;
-    --home-muted: #aaa6a1;
-    --home-soft: #807c77;
-    --home-rule: rgba(227, 224, 220, 0.14);
+    --home-text: #d6d2cd;
+    --home-heading: #ece8e3;
+    --home-muted: #aaa59e;
+    --home-soft: #807b75;
+    --home-rule: rgba(236, 232, 227, 0.12);
   }
 
   @media (prefers-color-scheme: dark) {
     .home-shell {
-      --home-text: #e3e0dc;
-      --home-muted: #aaa6a1;
-      --home-soft: #807c77;
-      --home-rule: rgba(227, 224, 220, 0.14);
+      --home-text: #d6d2cd;
+      --home-heading: #ece8e3;
+      --home-muted: #aaa59e;
+      --home-soft: #807b75;
+      --home-rule: rgba(236, 232, 227, 0.12);
     }
   }
 
@@ -708,6 +739,11 @@ talks:
       padding-bottom: 3.4rem;
     }
 
+    .home-name {
+      margin-bottom: 1.8rem;
+      font-size: 2.25rem;
+    }
+
     .home-grid {
       display: flex;
       flex-direction: column;
@@ -728,10 +764,6 @@ talks:
       margin: 2rem auto 0;
 
       position: static;
-    }
-
-    .home-portrait-caption {
-      text-align: center;
     }
 
     .home-academic {
@@ -845,6 +877,10 @@ talks:
 
 
 <div class="home-shell">
+
+  <h1 class="home-name">
+    Zhiwei Yang（杨嘉）
+  </h1>
 
   <div class="home-grid">
 
@@ -1063,10 +1099,6 @@ talks:
           src="{{ '/assets/img/prof_pic_color.jpg' | relative_url }}"
           alt="Portrait of Zhiwei Yang"
         >
-
-        <figcaption class="home-portrait-caption">
-          Zhiwei Yang（杨嘉）
-        </figcaption>
 
       </figure>
 
