@@ -364,11 +364,11 @@ talks:
   }
 
   .home-about-more summary::before {
-    content: "+";
+    content: "⌄";
   }
 
   .home-about-more[open] summary::before {
-    content: "−";
+    content: "⌃";
   }
 
   .home-about-more summary:hover,
@@ -994,7 +994,7 @@ talks:
         <p>
           Hi! I am Zhiwei. I received my PhD in Philosophy from
           <a href="https://www.pku.edu.cn/" target="_blank" rel="noopener noreferrer">Peking University</a>
-          in 2026. I mostly write about philosophy of mind and philosophy of perception.
+          in 2026. I mostly write about philosophy of perception.
         </p>
 
         <p>
