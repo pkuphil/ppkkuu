@@ -314,8 +314,99 @@ talks:
     text-decoration-color: currentColor;
   }
 
+  /* =========================================================
+     ABOUT — COLLAPSIBLE MORE
+     ========================================================= */
+
+  .home-about-more {
+    margin: 0.15rem 0 0 0;
+    padding: 0;
+  }
+
+  .home-about-more summary {
+    list-style: none;
+
+    display: grid;
+    place-items: center;
+
+    width: 1.05rem;
+    height: 1.05rem;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1;
+
+    color: var(--home-muted);
+
+    background: transparent !important;
+    border: 0;
+    border-radius: 0;
+
+    cursor: pointer;
+    user-select: none;
+
+    transition:
+      color 0.15s ease,
+      opacity 0.15s ease,
+      transform 0.15s ease;
+  }
+
+  .home-about-more summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .home-about-more summary::marker {
+    content: "";
+  }
+
+  .home-about-more summary::before {
+    content: "+";
+  }
+
+  .home-about-more[open] summary::before {
+    content: "−";
+  }
+
+  .home-about-more summary:hover,
+  .home-about-more summary:focus {
+    color: var(--home-text);
+    opacity: 0.82;
+    transform: translateY(-1px);
+
+    outline: none;
+  }
+
+  .home-about-more[open] summary {
+    margin-bottom: 0.78rem;
+  }
+
+  .home-about-more-body {
+    animation: homeAboutMoreIn 0.18s ease;
+  }
+
+  .home-about-more-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  @keyframes homeAboutMoreIn {
+    from {
+      opacity: 0;
+      transform: translateY(-2px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
   .home-contact {
-    margin-top: 1.65rem;
+    margin-top: 1.35rem;
     padding-top: 1.05rem;
 
     border-top: 1px solid var(--home-rule);
@@ -338,7 +429,7 @@ talks:
     margin: 0;
 
     font-size: 0.94rem;
-    font-style: italic;
+    font-style: normal;
     font-weight: 400;
     line-height: 1.45;
 
@@ -917,19 +1008,29 @@ talks:
           <a href="http://www.alexbyrne.org/" target="_blank" rel="noopener noreferrer">Alex Byrne</a>.
         </p>
 
-        <p>
-          Much of my recent work forms part of a broader project aimed at advancing the claim that,
-          roughly speaking, direct awareness of the world need not be unmediated: mediation can itself
-          be a means by which we are directly aware of the world.
-        </p>
+        <details class="home-about-more">
 
-        <p>
-          I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and reading
-          personal biographies. I'm also a fan of the band
-          <a href="https://music.apple.com/us/artist/twenty-one-pilots/349736311?l=zh-Hans-CN" target="_blank" rel="noopener noreferrer">Twenty One Pilots</a>
-          and Hong Kong singer
-          <a href="https://music.apple.com/us/artist/%E8%AE%B8%E5%86%A0%E6%9D%B0/41642722?l=zh-Hans-CN" target="_blank" rel="noopener noreferrer">Sam Hui</a>.
-        </p>
+          <summary aria-label="Show more about me"></summary>
+
+          <div class="home-about-more-body">
+
+            <p>
+              Much of my recent work forms part of a broader project aimed at advancing the claim that,
+              roughly speaking, direct awareness of the world need not be unmediated: mediation can itself
+              be a means by which we are directly aware of the world.
+            </p>
+
+            <p>
+              I enjoy cooking, wandering aimlessly, cycling, exploring narrative cinema, and reading
+              personal biographies. I'm also a fan of the band
+              <a href="https://music.apple.com/us/artist/twenty-one-pilots/349736311?l=zh-Hans-CN" target="_blank" rel="noopener noreferrer">Twenty One Pilots</a>
+              and Hong Kong singer
+              <a href="https://music.apple.com/us/artist/%E8%AE%B8%E5%86%A0%E6%9D%B0/41642722?l=zh-Hans-CN" target="_blank" rel="noopener noreferrer">Sam Hui</a>.
+            </p>
+
+          </div>
+
+        </details>
 
       </div>
 
