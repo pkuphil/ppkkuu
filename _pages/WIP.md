@@ -420,10 +420,6 @@ description: Research in philosophy of perception, emotion, and language.
 
     padding: 0.72rem 0 0.78rem;
 
-    border-bottom: 1px solid var(--research-rule);
-  }
-
-  .research-work:last-child {
     border-bottom: 0;
   }
 
