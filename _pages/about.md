@@ -329,18 +329,20 @@ talks:
     display: grid;
     place-items: center;
 
-    width: 1.05rem;
-    height: 1.05rem;
+    width: 100%;
+    height: 1.2rem;
 
-    margin: 0;
+    margin: 0.22rem 0 1.55rem 0;
     padding: 0;
 
     font-family: inherit;
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1;
 
-    color: var(--home-muted);
+    text-align: center;
+
+    color: var(--home-soft);
 
     background: transparent !important;
     border: 0;
@@ -381,7 +383,7 @@ talks:
   }
 
   .home-about-more[open] summary {
-    margin-bottom: 0.78rem;
+    margin-bottom: 0.9rem;
   }
 
   .home-about-more-body {
@@ -406,7 +408,7 @@ talks:
 
 
   .home-contact {
-    margin-top: 1.35rem;
+    margin-top: 0.25rem;
     padding-top: 1.05rem;
 
     border-top: 1px solid var(--home-rule);
